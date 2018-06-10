@@ -165,7 +165,7 @@ public class Game extends Canvas implements Runnable {
 	public void tick() {
 		tickCount++;
 		if(Player.itemID >=4 ) {
-			hint.showHint("Press E to interact");
+			hint.showHint("[E] INTERACT");
 		}
 		else {
 			hint.hideHint();
