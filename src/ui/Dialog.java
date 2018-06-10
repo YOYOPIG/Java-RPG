@@ -42,6 +42,7 @@ public class Dialog{
 		textbox.setHorizontalAlignment(JLabel.CENTER);
 		textbox.setVerticalTextPosition(JLabel.CENTER);
 		textbox.setHorizontalTextPosition(JLabel.CENTER);
+		textbox.setFont(new java.awt.Font("TimesRoman", java.awt.Font.PLAIN, 30));
 		//textbox.setBackground(Color.magenta);
 		//textbox.setForeground(Color.black);
 		textbox.setOpaque(true);

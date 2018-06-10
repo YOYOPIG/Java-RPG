@@ -167,7 +167,7 @@ public class Game extends Canvas implements Runnable {
 		tickCount++;
 		
 		//to interact use input.interact.getPressed() to return if E is pressed.
-		if(input.interact.getPressed()) {
+		if(input.interact.getKeyDown()) {
 			//dialog.showDialog("[DEFAULT_MESSAGE]How are u?");
 			ghost.talkTo();
 		}
