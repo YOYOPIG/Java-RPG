@@ -20,6 +20,8 @@ import gfx.Font;
 import gfx.Screen;
 import gfx.SpriteSheet;
 import level.Level;
+import ui.Dialog;
+import ui.Hint;
 
 public class Game extends Canvas implements Runnable {
 
@@ -49,6 +51,7 @@ public class Game extends Canvas implements Runnable {
 	
 	// dialog
 	public static Dialog dialog;
+	public static Hint hint;
 
 	public Game() {
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -68,6 +71,8 @@ public class Game extends Canvas implements Runnable {
 		frame.setLocationRelativeTo(null);
 		// init dialog
 		dialog=new Dialog(frame.getLayeredPane());
+		hint=new Hint(frame.getLayeredPane());
+		//Font.render("E Interact", screen, 100, 100, Colours.get(-1, -1, -1, 555));
 		//frame.add(dialog.panel,BorderLayout.SOUTH);
 		//contentPane.add(dialog.panel, BorderLayout.SOUTH);
 		
@@ -182,7 +187,6 @@ public class Game extends Canvas implements Runnable {
 			if(x % 10 == 0 && x != 0)	colour = Colours.get(-1, -1, -1, 500);
 		}
 
-		
 		for(int y=0;y<screen.height;y++) {
 			for(int x=0;x<screen.width;x++) {
 				int colourCode=screen.pixels[x+y*screen.width];

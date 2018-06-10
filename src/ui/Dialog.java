@@ -7,7 +7,7 @@
  */
 
 
-package game;
+package ui;
 import java.awt.BorderLayout;
 
 import java.awt.Color;
@@ -32,9 +32,7 @@ public class Dialog{
 	
 	// change position
 	public Dialog(){
-
 		System.out.println("Error! Please send a JLayeredPane to the Dialog class.");
-
 	}
 	
 	public Dialog(JLayeredPane FL)
