@@ -164,15 +164,18 @@ public class Game extends Canvas implements Runnable {
 //	private int x=0, y=0;
 	public void tick() {
 		tickCount++;
+		
+		/* hide and show the hint */
 		if(Player.itemID >=4 ) {
-			hint.showHint("Press E to interact");
+			hint.showHint("[E] INTERACT");
 		}
 		else {
 			hint.hideHint();
 		}
+		
 		//to interact use input.interact.getPressed() to return if E is pressed.
 		if(input.interact.getKeyDown() && Player.itemID >= 4 ) {
-			//dialog.showDialog("[DEFAULT_MESSAGE]How are u?");
+			
 			int NPCID = Player.itemID/4;
 			if(NPCID == 1) {
 				ghost.talkTo();
