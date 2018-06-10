@@ -53,13 +53,12 @@ public class Level {
 				else {
 					tiles[j+i*width] = Tile.STONE.getID();
 				}
-				tiles[2]=Tile.NPC11.getID();
-				tiles[3]=Tile.NPC12.getID();
-				tiles[2+width]=Tile.NPC21.getID();
-				tiles[3+width]=Tile.NPC22.getID();
 			}
 		}
-		
+		tiles[130]=Tile.NPC11.getID();
+		tiles[131]=Tile.NPC12.getID();
+		tiles[130+width]=Tile.NPC21.getID();
+		tiles[131+width]=Tile.NPC22.getID();
 	}
 	
 	public Tile getTile(int x, int y)
