@@ -55,6 +55,10 @@ public class Level {
 				}
 			}
 		}
+		tiles[8+28*32]=Tile.NPC11.getID();
+		tiles[9+28*32]=Tile.NPC12.getID();
+		tiles[8+29*32]=Tile.NPC21.getID();
+		tiles[9+29*32]=Tile.NPC22.getID();
 	}
 	
 	public Tile getTile(int x, int y)
