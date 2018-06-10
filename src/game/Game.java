@@ -154,7 +154,6 @@ public class Game extends Canvas implements Runnable {
 			}
 			if (System.currentTimeMillis() - lastTimer >= 1000) {
 				lastTimer += 1000;
-				//System.out.println(ticks + " ticks, " + frames+" frames");
 				frames = 0;
 				ticks = 0;
 			}
@@ -167,14 +166,16 @@ public class Game extends Canvas implements Runnable {
 		tickCount++;
 		
 		//to interact use input.interact.getPressed() to return if E is pressed.
-		if(input.interact.getKeyDown()) {
+		if(input.interact.getKeyDown() && Player.itemID >= 4 ) {
 			//dialog.showDialog("[DEFAULT_MESSAGE]How are u?");
-			ghost.talkTo();
+			int NPCID = Player.itemID/4;
+			if(NPCID == 1) {
+				ghost.talkTo();
+			}
 		}
 		
 		level.tick();
-
-	}
+}
 
 	public void render() {
 		BufferStrategy bs = getBufferStrategy();
