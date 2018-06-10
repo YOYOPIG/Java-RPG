@@ -45,6 +45,7 @@ public class Game extends Canvas implements Runnable {
 	public InputHandler input;
 	
 	public Level level;
+	public Font font;
 	public Player player;
 	
 	// dialog
@@ -176,6 +177,10 @@ public class Game extends Canvas implements Runnable {
 		double yOffset = player.y - (screen.height/2);
 		level.renderTiles(screen, xOffset, yOffset);
 		level.renderEntities(screen);
+		
+		//testing
+		font.render("Hi testing", screen, 32,0, Colours.get(-1, -1, -1, 555));
+		
 		for(int x = 0; x < level.width; x++) {
 			int colour = Colours.get(-1, -1, -1, 000);
 			if(x % 10 == 0 && x != 0)	colour = Colours.get(-1, -1, -1, 500);
