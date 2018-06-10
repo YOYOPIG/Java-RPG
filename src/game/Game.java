@@ -14,6 +14,7 @@ import java.time.Year;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
+import character.Ghost;
 import game.entities.Player;
 import gfx.Colours;
 import gfx.Font;
@@ -44,6 +45,7 @@ public class Game extends Canvas implements Runnable {
 	
 	
 	private Screen screen;
+	private Ghost ghost;
 	public InputHandler input;
 	
 	public Level level;
@@ -78,6 +80,7 @@ public class Game extends Canvas implements Runnable {
 		//contentPane.add(dialog.panel, BorderLayout.SOUTH);
 		
 		frame.setVisible(true);
+		ghost = new Ghost();
 
 	}
 
@@ -165,7 +168,8 @@ public class Game extends Canvas implements Runnable {
 		
 		//to interact use input.interact.getPressed() to return if E is pressed.
 		if(input.interact.getPressed()) {
-			dialog.showDialog("[DEFAULT_MESSAGE]How are u?");
+			//dialog.showDialog("[DEFAULT_MESSAGE]How are u?");
+			ghost.talkTo();
 		}
 		
 		level.tick();
@@ -184,7 +188,7 @@ public class Game extends Canvas implements Runnable {
 		level.renderEntities(screen);
 		
 		//testing
-		font.render("Hi testing", screen, 32,0, Colours.get(-1, -1, -1, 555));
+		//font.render("Hi testing", screen, 32,0, Colours.get(-1, -1, -1, 555));
 		
 		for(int x = 0; x < level.width; x++) {
 			int colour = Colours.get(-1, -1, -1, 000);
