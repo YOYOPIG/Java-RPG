@@ -6,7 +6,6 @@
  * @since   2018-06-10
  */
 
-
 package ui;
 import java.awt.BorderLayout;
 
@@ -27,7 +26,6 @@ import javax.swing.JPanel;
 public class Dialog{
 	
 	private JLabel textbox; //the text to be shown
-	private int height=200;
 	private JLayeredPane frameLayers;
 	
 	// change position
