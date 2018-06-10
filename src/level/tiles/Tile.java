@@ -13,6 +13,7 @@ public abstract class Tile {
 	public static final Tile GRASS = new BasicTile(2, 2, 0, Colours.get(-1,	131, 141, -1));
 	public static final Tile FLOOR = new BasicTile(3, 3, 0, Colours.get(211,321,211,420));
 	
+	
 	protected byte id;
 	protected boolean solid;
 	protected boolean emitter;
