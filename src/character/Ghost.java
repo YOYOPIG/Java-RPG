@@ -3,15 +3,11 @@ package character;
 import game.Game;
 import ui.Dialog;
 
-public class Ghost {
-	public int ID;
-	private String[] msg = new String[10];
-	private int talkctr;
+public class Ghost extends NPC{
 	
 	public Ghost()
 	{
-		talkctr = 0;
-		ID = 0;
+		super(0,new String[6],0);
 		msg[0] = "Hello, PLAYER";
 		msg[1] = "Welcome to THE GAME";
 		msg[2] = "Press E to keep talking";
