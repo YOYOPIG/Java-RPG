@@ -164,7 +164,9 @@ public class Game extends Canvas implements Runnable {
 //	private int x=0, y=0;
 	public void tick() {
 		tickCount++;
-		
+		if(Player.itemID >=4 ) {
+			hint.showHint("Press E to interact");
+		}
 		//to interact use input.interact.getPressed() to return if E is pressed.
 		if(input.interact.getKeyDown() && Player.itemID >= 4 ) {
 			//dialog.showDialog("[DEFAULT_MESSAGE]How are u?");
