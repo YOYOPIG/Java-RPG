@@ -16,17 +16,5 @@ public class Ghost extends NPC{
 		msg[5] = "ENDOFLINE";
 	}
 	
-	public void talkTo()
-	{
-		if(msg[talkctr].equals("ENDOFLINE"))
-		{
-			talkctr = 0;
-			Game.dialog.hideDialog();
-		}
-		else
-		{
-			Game.dialog.showDialog(msg[talkctr]);
-			talkctr++;
-		}
-	}
+	
 }
