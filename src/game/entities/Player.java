@@ -71,25 +71,36 @@ public class Player extends Mob{
 		int xMax=10;
 		int yMin=3;
 		int yMax=8;
+		
 		// check 4 edges of the box
 		for(int i=xMin;i<=xMax;i++) {
-			if(isSolidTile(xa,ya,i,yMin))
+			if(isSolidTile(xa,ya,i,yMin)) {
+				System.out.println(itemID);
 				return true;
+			}
+			
 		}
 		
 		for(int i=xMin;i<=xMax;i++) {
-			if(isSolidTile(xa,ya,i,yMax))
+			if(isSolidTile(xa,ya,i,yMax)) {
+				System.out.println(itemID);
 				return true;
+			}
 		}
 		
 		for(int i=yMin;i<=yMax;i++) {
-			if(isSolidTile(xa,ya,xMin,i))
+			if(isSolidTile(xa,ya,xMin,i)) {
+				System.out.println(itemID);
 				return true;
+			}
+				
 		}
 		
 		for(int i=yMin;i<=yMax;i++) {
-			if(isSolidTile(xa,ya,xMax,i))
+			if(isSolidTile(xa,ya,xMax,i)) {
+				System.out.println(itemID);
 				return true;
+			}
 		}
 		return false;
 	}

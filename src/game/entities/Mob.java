@@ -12,6 +12,7 @@ public abstract class Mob extends Entity{
 	protected boolean isMoving;
 	protected int movingDir = 1;
 	protected int scale = 1;
+	public static int itemID;
 	
 	public Mob(Level level, String name, int x, int y, int speed) {
 		super(level);
@@ -21,7 +22,6 @@ public abstract class Mob extends Entity{
 	}
 	
 	public void move(int xa, int ya) {
-		System.out.println("move is called!");
 		if(xa != 0 && ya != 0) {
 			move(xa, 0);
 			move(0, ya);
@@ -49,6 +49,7 @@ public abstract class Mob extends Entity{
 		
 		// if the lastTile is not equal to newTile a.k.a u did move && newTile is a solid 
 		if(!lastTile.equals(newTile) && newTile.isSolid()) {
+			itemID=newTile.getID();
 			return true;
 		}
 		return false;
