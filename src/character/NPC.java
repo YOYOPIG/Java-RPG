@@ -10,4 +10,8 @@ public abstract class NPC {
 		msg=m;
 		this.talkctr=talkctr;
 	}
+	
+	public abstract void talkTo() ;
+		
+	
 }
