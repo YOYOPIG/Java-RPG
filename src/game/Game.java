@@ -14,6 +14,7 @@ import java.time.Year;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
+import character.Ghost;
 import game.entities.Player;
 import gfx.Colours;
 import gfx.Font;
@@ -44,6 +45,7 @@ public class Game extends Canvas implements Runnable {
 	
 	
 	private Screen screen;
+	private Ghost ghost;
 	public InputHandler input;
 	
 	public Level level;
@@ -78,6 +80,7 @@ public class Game extends Canvas implements Runnable {
 		//contentPane.add(dialog.panel, BorderLayout.SOUTH);
 		
 		frame.setVisible(true);
+		ghost = new Ghost();
 
 	}
 
@@ -151,7 +154,6 @@ public class Game extends Canvas implements Runnable {
 			}
 			if (System.currentTimeMillis() - lastTimer >= 1000) {
 				lastTimer += 1000;
-				//System.out.println(ticks + " ticks, " + frames+" frames");
 				frames = 0;
 				ticks = 0;
 			}
@@ -163,14 +165,25 @@ public class Game extends Canvas implements Runnable {
 	public void tick() {
 		tickCount++;
 		
+		/* hide and show the hint */
+		if(Player.itemID >=4 ) {
+			hint.showHint("[E] INTERACT");
+		}
+		else {
+			hint.hideHint();
+		}
+		
 		//to interact use input.interact.getPressed() to return if E is pressed.
-		if(input.interact.getPressed()) {
-			dialog.showDialog("[DEFAULT_MESSAGE]How are u?");
+		if(input.interact.getKeyDown() && Player.itemID >= 4 ) {
+			
+			int NPCID = Player.itemID/4;
+			if(NPCID == 1) {
+				ghost.talkTo();
+			}
 		}
 		
 		level.tick();
-
-	}
+}
 
 	public void render() {
 		BufferStrategy bs = getBufferStrategy();
@@ -184,7 +197,7 @@ public class Game extends Canvas implements Runnable {
 		level.renderEntities(screen);
 		
 		//testing
-		font.render("Hi testing", screen, 32,0, Colours.get(-1, -1, -1, 555));
+		//font.render("Hi testing", screen, 32,0, Colours.get(-1, -1, -1, 555));
 		
 		for(int x = 0; x < level.width; x++) {
 			int colour = Colours.get(-1, -1, -1, 000);

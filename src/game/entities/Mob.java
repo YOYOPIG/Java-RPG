@@ -1,6 +1,7 @@
 package game.entities;
 
 
+import character.NPC;
 import level.Level;
 import level.tiles.Tile;
 
@@ -12,6 +13,7 @@ public abstract class Mob extends Entity{
 	protected boolean isMoving;
 	protected int movingDir = 1;
 	protected int scale = 1;
+	public static int itemID;
 	
 	public Mob(Level level, String name, int x, int y, int speed) {
 		super(level);
@@ -21,23 +23,25 @@ public abstract class Mob extends Entity{
 	}
 	
 	public void move(int xa, int ya) {
-		System.out.println("move is called!");
-		if(xa != 0 && ya != 0) {
-			move(xa, 0);
-			move(0, ya);
-			numSteps--;
-			return;
+		if(!NPC.isTalking) {
+			if(xa != 0 && ya != 0) {
+				move(xa, 0);
+				move(0, ya);
+				numSteps--;
+				return;
+			}
+			numSteps++;
+			
+			if(!hasCollided(xa,ya)) {
+				if(ya < 0)	movingDir = 0;
+				if(ya > 0)	movingDir = 1;
+				if(xa < 0)	movingDir = 2;
+				if(xa > 0)	movingDir = 3;
+				x += xa * speed;
+				y += ya * speed;
+			}
 		}
-		numSteps++;
 		
-		if(!hasCollided(xa,ya)) {
-			if(ya < 0)	movingDir = 0;
-			if(ya > 0)	movingDir = 1;
-			if(xa < 0)	movingDir = 2;
-			if(xa > 0)	movingDir = 3;
-			x += xa * speed;
-			y += ya * speed;
-		}
 	}
 	
 	public abstract boolean hasCollided(int xa, int ya);
@@ -46,7 +50,9 @@ public abstract class Mob extends Entity{
 		if(level == null ) return false;
 		Tile lastTile = level.getTile((this.x+x)>>3 , (this.y+y)>>3);
 		Tile newTile = level.getTile((this.x+x+xa)>>3 , (this.y+y+ya)>>3);
-		
+		// get what kind of Tile is the player on
+		// Solid or not solid
+		itemID=newTile.getID();
 		// if the lastTile is not equal to newTile a.k.a u did move && newTile is a solid 
 		if(!lastTile.equals(newTile) && newTile.isSolid()) {
 			return true;
