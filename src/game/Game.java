@@ -167,7 +167,7 @@ public class Game extends Canvas implements Runnable {
 		
 		/* hide and show the hint */
 		if(Player.itemID >=4 ) {
-			hint.showHint("Press E to interact");
+			hint.showHint("[E] INTERACT");
 		}
 		else {
 			hint.hideHint();

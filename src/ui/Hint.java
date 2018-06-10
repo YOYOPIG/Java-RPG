@@ -18,7 +18,7 @@ public class Hint {
 	{
 		//initialize the text box to show
 		textbox = new JLabel("E : Interact",JLabel.LEFT);
-		textbox.setFont(new java.awt.Font("TimesRoman", java.awt.Font.PLAIN, 50));
+		textbox.setFont(new java.awt.Font("TimesRoman", java.awt.Font.PLAIN, 30));
 		textbox.setVerticalAlignment(JLabel.CENTER);
 		textbox.setHorizontalAlignment(JLabel.CENTER);
 		//textbox.setBackground(new Color(0, 0, 0, 0));
