@@ -4,6 +4,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 
+import game.Game;
 import gfx.Font;
 
 public class Hint {
@@ -25,7 +26,7 @@ public class Hint {
 		//textbox.setForeground(Color.black);
 		//textbox.setOpaque(false);
 		// set position and dimension
-		textbox.setBounds(500, 820, 250, 80);
+		textbox.setBounds(500, Game.HEIGHT + 620, 250, 80);
 		textbox.setVisible(true);
 		layerPane.add(textbox, new Integer(1));
 		hideHint();
