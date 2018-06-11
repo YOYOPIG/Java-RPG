@@ -14,6 +14,8 @@ import java.time.Year;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
+import com.sun.javafx.webkit.UIClientImpl;
+
 import character.Ghost;
 import character.TreasureBox;
 import game.entities.Player;
@@ -26,6 +28,7 @@ import level.Level1;
 import level.LevelFloor;
 import ui.Dialog;
 import ui.Hint;
+import ui.MainUI;
 
 public class Game extends Canvas implements Runnable {
 
@@ -61,9 +64,10 @@ public class Game extends Canvas implements Runnable {
 	private Ghost ghost;
 	private TreasureBox treasureBox;
 	
-	// dialog
+	// UI
 	public static Dialog dialog;
 	public static Hint hint;
+	public MainUI ui;
 
 	public Game() {
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -84,6 +88,7 @@ public class Game extends Canvas implements Runnable {
 		// init dialog
 		dialog=new Dialog(frame.getLayeredPane());
 		hint=new Hint(frame.getLayeredPane());
+		ui = new MainUI(frame.getLayeredPane());
 		//Font.render("E Interact", screen, 100, 100, Colours.get(-1, -1, -1, 555));
 		//frame.add(dialog.panel,BorderLayout.SOUTH);
 		//contentPane.add(dialog.panel, BorderLayout.SOUTH);
