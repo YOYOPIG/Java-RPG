@@ -103,7 +103,7 @@ public class Game extends Canvas implements Runnable {
 		input = new InputHandler(this);
 		
 		level = new Level(64, 64);
-		player = new Player(level, 0, 0, input);
+		player = new Player(level, 64, 64, input);
 		level.addEntity(player);
 		
 	}
