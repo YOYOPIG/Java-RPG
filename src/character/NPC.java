@@ -7,6 +7,7 @@ public abstract class NPC {
 	protected String[] msg;
 	protected int talkctr;
 	public static boolean isTalking;
+	
 	public NPC(int ID,String[] m,int talkctr) {
 		this.ID=ID;
 		msg=m;

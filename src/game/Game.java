@@ -15,6 +15,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 import character.Ghost;
+import character.TreasureBox;
 import game.entities.Player;
 import gfx.Colours;
 import gfx.Font;
@@ -45,12 +46,15 @@ public class Game extends Canvas implements Runnable {
 	
 	
 	private Screen screen;
-	private Ghost ghost;
 	public InputHandler input;
 	
 	public Level level;
 	public Font font;
 	public Player player;
+	
+	// 
+	private Ghost ghost;
+	private TreasureBox treasureBox;
 	
 	// dialog
 	public static Dialog dialog;
@@ -175,10 +179,12 @@ public class Game extends Canvas implements Runnable {
 		
 		//to interact use input.interact.getPressed() to return if E is pressed.
 		if(input.interact.getKeyDown() && Player.itemID >= 4 ) {
-			
 			int NPCID = Player.itemID/4;
 			if(NPCID == 1) {
 				ghost.talkTo();
+			}
+			else if(NPCID == 2) {
+				treasureBox.talkTo();
 			}
 		}
 		
@@ -195,10 +201,7 @@ public class Game extends Canvas implements Runnable {
 		double yOffset = player.y - (screen.height/2);
 		level.renderTiles(screen, xOffset, yOffset);
 		level.renderEntities(screen);
-		
-		//testing
-		//font.render("Hi testing", screen, 32,0, Colours.get(-1, -1, -1, 555));
-		
+	
 		for(int x = 0; x < level.width; x++) {
 			int colour = Colours.get(-1, -1, -1, 000);
 			if(x % 10 == 0 && x != 0)	colour = Colours.get(-1, -1, -1, 500);
