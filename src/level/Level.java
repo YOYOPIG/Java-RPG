@@ -8,11 +8,11 @@ import game.entities.Entity;
 import gfx.Screen;
 import level.tiles.Tile;
 
-public class Level {
+public abstract class Level {
 	
 	public int height;
 	public int width;
-	private byte[] tiles;
+	protected byte[] tiles;
 	public List<Entity> entities = new ArrayList<Entity>();
 	
 	public Level(int height, int width)
@@ -41,26 +41,7 @@ public class Level {
 		
 	}
 
-	private void generateLevel()
-	{
-		for(int i=0;i<height;++i)
-		{
-			for(int j=0;j<width;j++)
-			{
-				if(j * i % 10 < 9) {		//change the numbers of stones (<9)
-					tiles[j+i*width] = Tile.FLOOR.getID();
-				}
-				else {
-					tiles[j+i*width] = Tile.STONE.getID();
-				}
-				tiles[2]=Tile.NPC11.getID();
-				tiles[3]=Tile.NPC12.getID();
-				tiles[2+width]=Tile.NPC21.getID();
-				tiles[3+width]=Tile.NPC22.getID();
-			}
-		}
-		
-	}
+	public abstract void generateLevel();
 	
 	public Tile getTile(int x, int y)
 	{

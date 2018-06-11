@@ -22,6 +22,8 @@ import gfx.Font;
 import gfx.Screen;
 import gfx.SpriteSheet;
 import level.Level;
+import level.Level1;
+import level.LevelFloor;
 import ui.Dialog;
 import ui.Hint;
 
@@ -48,7 +50,10 @@ public class Game extends Canvas implements Runnable {
 	private Screen screen;
 	public InputHandler input;
 	
-	public Level level;
+	//levels
+	public Level levelFloor;
+	public Level level1;
+	
 	public Font font;
 	public Player player;
 	
@@ -106,9 +111,12 @@ public class Game extends Canvas implements Runnable {
 		screen= new Screen(WIDTH,HEIGHT,new SpriteSheet("/sprite_sheet.png"));
 		input = new InputHandler(this);
 		
-		level = new Level(64, 64);
-		player = new Player(level, 0, 0, input);
-		level.addEntity(player);
+		//level initialization
+		levelFloor = new LevelFloor(64, 64);
+		level1=new Level1(64, 64);
+		
+		player = new Player(level1, 0, 0, input);
+		level1.addEntity(player);
 		
 	}
 
@@ -187,8 +195,8 @@ public class Game extends Canvas implements Runnable {
 				treasureBox.talkTo();
 			}
 		}
-		
-		level.tick();
+		levelFloor.tick();
+		level1.tick();
 }
 
 	public void render() {
@@ -199,13 +207,19 @@ public class Game extends Canvas implements Runnable {
 		}
 		double xOffset = player.x - (screen.width/2);
 		double yOffset = player.y - (screen.height/2);
-		level.renderTiles(screen, xOffset, yOffset);
-		level.renderEntities(screen);
+		
+		
+		levelFloor.renderTiles(screen, xOffset, yOffset);
+		//levelFloor.renderEntities(screen);
+		level1.renderTiles(screen, xOffset, yOffset);
+		level1.renderEntities(screen);
+		
+		
 	
-		for(int x = 0; x < level.width; x++) {
-			int colour = Colours.get(-1, -1, -1, 000);
-			if(x % 10 == 0 && x != 0)	colour = Colours.get(-1, -1, -1, 500);
-		}
+//		for(int x = 0; x < levelFloor.width; x++) {
+//			int colour = Colours.get(-1, -1, -1, 000);
+//			if(x % 10 == 0 && x != 0)	colour = Colours.get(-1, -1, -1, 500);
+//		}
 
 		for(int y=0;y<screen.height;y++) {
 			for(int x=0;x<screen.width;x++) {
