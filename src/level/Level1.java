@@ -13,5 +13,10 @@ public class Level1 extends Level {
 		tiles[3]=Tile.NPC12.getID();
 		tiles[2+width]=Tile.NPC21.getID();
 		tiles[3+width]=Tile.NPC22.getID();
+		
+		tiles[400] = Tile.Chest11.getID();
+		tiles[401] = Tile.Chest12.getID();
+		tiles[400+width] = Tile.Chest21.getID();
+		tiles[401+width] = Tile.Chest22.getID();
 	}
 }

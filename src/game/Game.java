@@ -197,7 +197,7 @@ public class Game extends Canvas implements Runnable {
 				ghost.talkTo();
 			}
 			else if(NPCID == 2) {
-				treasureBox.talkTo();
+				//treasureBox.talkTo();
 			}
 		}
 		levelFloor.tick();
