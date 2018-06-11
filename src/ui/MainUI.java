@@ -32,13 +32,13 @@ public class MainUI {
 		inventory = new JLabel();
 		// set position and dimension
 		hp.setBounds(25, 25, 236, 70);
-		inventory.setBounds(Game.WIDTH+260, Game.HEIGHT + 600, 496, 116);
+		inventory.setBounds(Game.WIDTH+260, Game.HEIGHT + 560, 496, 167);
 		//add image
 		ImageIcon icon = new ImageIcon("res/hp3.png");
 		icon = new ImageIcon(icon.getImage().getScaledInstance(236, 70, BufferedImage.SCALE_SMOOTH));
 		hp.setIcon(icon);
 		ImageIcon icon2 = new ImageIcon("res/inventory.png");
-		icon2 = new ImageIcon(icon2.getImage().getScaledInstance(496, 116, BufferedImage.SCALE_SMOOTH));
+		icon2 = new ImageIcon(icon2.getImage().getScaledInstance(496, 167, BufferedImage.SCALE_SMOOTH));
 		inventory.setIcon(icon2);
 		FL.add(hp, new Integer(1));
 		FL.add(inventory, new Integer(1));
