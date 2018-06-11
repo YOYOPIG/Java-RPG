@@ -210,7 +210,7 @@ public class Game extends Canvas implements Runnable {
 		
 		
 		levelFloor.renderTiles(screen, xOffset, yOffset);
-		//levelFloor.renderEntities(screen);
+		levelFloor.renderEntities(screen);
 		level1.renderTiles(screen, xOffset, yOffset);
 		level1.renderEntities(screen);
 		
