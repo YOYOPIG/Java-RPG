@@ -10,8 +10,8 @@ import level.tiles.Tile;
 
 public abstract class Level {
 	
-	public int height;
-	public int width;
+	public static int height;
+	public static int width;
 	protected byte[] tiles;
 	public List<Entity> entities = new ArrayList<Entity>();
 	
@@ -65,4 +65,10 @@ public abstract class Level {
 	public void addEntity(Entity entity) {
 		this.entities.add(entity);
 	}
+	
+	public byte[] getByteTiles() {
+		return tiles;
+	}
+	
+	public abstract void renderingOpen(int position);
 }

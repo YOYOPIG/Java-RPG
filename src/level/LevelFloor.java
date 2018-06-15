@@ -15,4 +15,11 @@ public class LevelFloor extends Level {
 			}
 		}
 	}
+
+	@Override
+	public void renderingOpen(int position) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

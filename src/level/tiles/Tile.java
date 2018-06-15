@@ -20,6 +20,10 @@ public abstract class Tile {
 	public static final Tile Chest12 = new BasicSolidTile(9, 1, 24, Colours.get(-1, 111, 440, 032));
 	public static final Tile Chest21 = new BasicSolidTile(10, 0, 25, Colours.get(-1, 111, 440, 032));
 	public static final Tile Chest22 = new BasicSolidTile(11, 1, 25, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestOpen11 = new BasicSolidTile(12, 2, 24, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestOpen12 = new BasicSolidTile(13, 3, 24, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestOpen21 = new BasicSolidTile(14, 2, 25, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestOpen22 = new BasicSolidTile(15, 3, 25, Colours.get(-1, 111, 440, 032));
 	
 	protected byte id;
 	protected boolean solid;
