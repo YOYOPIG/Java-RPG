@@ -96,7 +96,7 @@ public class Game extends Canvas implements Runnable {
 		
 		frame.setVisible(true);
 		ghost = new Ghost();
-
+		
 	}
 
 	public void init(){
@@ -120,7 +120,8 @@ public class Game extends Canvas implements Runnable {
 		//level initialization
 		levelFloor = new LevelFloor(64, 64);
 		level1=new Level1(64, 64);
-		
+		// passing current level to treasureBox
+		treasureBox=new TreasureBox(level1);
 		player = new Player(level1, 0, 0, input);
 		level1.addEntity(player);
 		
@@ -179,7 +180,7 @@ public class Game extends Canvas implements Runnable {
 		}
 	}
 
-//	private int x=0, y=0;
+// input handling the dialog
 	public void tick() {
 		tickCount++;
 		
@@ -198,7 +199,7 @@ public class Game extends Canvas implements Runnable {
 				ghost.talkTo();
 			}
 			else if(NPCID == 2) {
-				//treasureBox.talkTo();
+				treasureBox.talkTo();
 			}
 		}
 		levelFloor.tick();

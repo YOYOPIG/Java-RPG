@@ -18,5 +18,14 @@ public class Level1 extends Level {
 		tiles[401] = Tile.Chest12.getID();
 		tiles[400+width] = Tile.Chest21.getID();
 		tiles[401+width] = Tile.Chest22.getID();
+		
 	}
+	
+	public void renderingOpen(int position) {
+		tiles[position] = Tile.ChestOpen11.getID();
+		tiles[position+1] = Tile.ChestOpen12.getID();
+		tiles[position+width] = Tile.ChestOpen21.getID();
+		tiles[position+1+width] = Tile.ChestOpen22.getID();
+	}
+
 }
