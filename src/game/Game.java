@@ -122,7 +122,6 @@ public class Game extends Canvas implements Runnable {
 		
 		player = new Player(level1, 0, 0, input);
 		level1.addEntity(player);
-		
 	}
 
 	public synchronized void start() {
