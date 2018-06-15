@@ -28,12 +28,12 @@ public class TreasureBox extends NPC{
 			isTalking=false;
 			// set new dialog
 			setDialog();
-			// rendering opened pic
-			currentLevel.renderingOpen(400);
 		}
 		else
 		{
 			isTalking = true;
+			// rendering opened pic
+			currentLevel.renderingOpen(400);
 			Game.dialog.showDialog(msg.remove(0));
 		}
 	}
