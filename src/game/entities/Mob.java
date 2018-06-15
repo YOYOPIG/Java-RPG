@@ -23,6 +23,7 @@ public abstract class Mob extends Entity{
 	}
 	
 	public void move(int xa, int ya) {
+		// if the player is currently processing a talking, disable the move
 		if(!NPC.isTalking) {
 			if(xa != 0 && ya != 0) {
 				move(xa, 0);
