@@ -30,6 +30,7 @@ import ui.Dialog;
 import ui.Hint;
 import ui.MainUI;
 
+
 public class Game extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
