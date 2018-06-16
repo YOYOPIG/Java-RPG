@@ -43,7 +43,7 @@ public abstract class NPCWithItem extends NPC{
 			isTalking = true;
 			// rendering opened pic
 			// 3 is table with potion
-			if(ID==3) 
+			if(ID==2) 
 				currentLevel.renderingOpen(position,ID,3);	
 			else
 				currentLevel.renderingOpen(position,ID);

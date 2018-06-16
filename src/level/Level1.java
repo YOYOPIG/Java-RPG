@@ -92,7 +92,7 @@ public class Level1 extends Level {
 	
 	@ Override
 	public void renderingOpen(int position,int ID,int widthCount) {
-		if(ID==3) {
+		if(ID==2) {
 			tiles[position+widthCount*width] = Tile.TableWithoutItem11.getID();
 			tiles[position+1+widthCount*width] = Tile.TableWithoutItem12.getID();
 			tiles[position+(widthCount+1)*width] = Tile.TableWithoutItem21.getID();
