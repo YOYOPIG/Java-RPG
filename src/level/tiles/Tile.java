@@ -30,10 +30,10 @@ public abstract class Tile {
 	
 	
 	// 4
-	public static final Tile DoorBetweenR1AndHallway11 = new BasicSolidTile(16, 6, 24, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorBetweenR1AndHallway12 = new BasicSolidTile(17, 7, 24, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorBetweenR1AndHallway21 = new BasicSolidTile(18, 6, 25, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorBetweenR1AndHallway22 = new BasicSolidTile(19, 7, 25, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR1AndHallway11 = new BasicSolidTile(16, 4, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR1AndHallway12 = new BasicSolidTile(17, 5, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR1AndHallway21 = new BasicSolidTile(18, 4, 25, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR1AndHallway22 = new BasicSolidTile(19, 5, 25, Colours.get(-1, 111, 332, 321));
 	
 	
 	public static final Tile ChestOpen11 = new BasicSolidTile(100, 2, 24, Colours.get(-1, 111, 440, 032));
@@ -77,22 +77,29 @@ public abstract class Tile {
 	public static final Tile TableWithoutItem42 = new BasicSolidTile(43, 9, 27, Colours.get(-1, 214, 210, 321));
 	
 	//11
-	public static final Tile DoorBetweenR2AndHallway11 = new BasicSolidTile(44, 6, 24, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorBetweenR2AndHallway12 = new BasicSolidTile(45, 7, 24, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorBetweenR2AndHallway21 = new BasicSolidTile(46, 6, 25, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorBetweenR2AndHallway22 = new BasicSolidTile(47, 7, 25, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR2AndHallway11 = new BasicSolidTile(44, 4, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR2AndHallway12 = new BasicSolidTile(45, 5, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR2AndHallway21 = new BasicSolidTile(46, 4, 25, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR2AndHallway22 = new BasicSolidTile(47, 5, 25, Colours.get(-1, 111, 332, 321));
 	
 	//12
-	public static final Tile DoorBetweenR3AndHallway11 = new BasicSolidTile(48, 6, 24, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorBetweenR3AndHallway12 = new BasicSolidTile(49, 7, 24, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorBetweenR3AndHallway21 = new BasicSolidTile(50, 6, 25, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorBetweenR3AndHallway22 = new BasicSolidTile(51, 7, 25, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR3AndHallway11 = new BasicSolidTile(48, 4, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR3AndHallway12 = new BasicSolidTile(49, 5, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR3AndHallway21 = new BasicSolidTile(50, 4, 25, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorBetweenR3AndHallway22 = new BasicSolidTile(51, 5, 25, Colours.get(-1, 111, 332, 321));
 	
 	//13
-	public static final Tile DoorExit11 = new BasicSolidTile(52, 6, 24, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorExit12 = new BasicSolidTile(53, 7, 24, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorExit21 = new BasicSolidTile(54, 6, 25, Colours.get(-1, 111, 332, 321));
-	public static final Tile DoorExit22 = new BasicSolidTile(55, 7, 25, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorExit11 = new BasicSolidTile(52, 4, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorExit12 = new BasicSolidTile(53, 5, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorExit21 = new BasicSolidTile(54, 4, 25, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorExit22 = new BasicSolidTile(55, 5, 25, Colours.get(-1, 111, 332, 321));
+	
+	//14
+	public static final Tile DoorOpen11 = new BasicTile(56, 6, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorOpen12 = new BasicTile(57, 7, 24, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorOpen21 = new BasicTile(58, 6, 25, Colours.get(-1, 111, 332, 321));
+	public static final Tile DoorOpen22 = new BasicTile(59, 7, 25, Colours.get(-1, 111, 332, 321));
+	
 	
 	protected byte id;
 	protected boolean solid;

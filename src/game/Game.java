@@ -318,6 +318,7 @@ public class Game extends Canvas implements Runnable {
 				level1.addEntity(player);
 			} else if (endIsSelected && input.enter.getKeyDown()) {
 				// do end application
+				
 				System.out.println("close application");
 			}
 
