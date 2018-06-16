@@ -23,10 +23,10 @@ public class Player extends Mob{
 		int ya = 0;
 
 		// player moves
-		if(input.up.getPressed())	ya-=2;
-		if(input.down.getPressed())	ya+=2;
-		if(input.right.getPressed())xa+=2;
-		if(input.left.getPressed())	xa-=2;
+		if(input.up.getPressed())	ya--;
+		if(input.down.getPressed())	ya++;
+		if(input.right.getPressed())xa++;
+		if(input.left.getPressed())	xa--;
 		
 		if(xa != 0 || ya != 0) {
 			//System.out.println("condition is good!");
@@ -75,6 +75,7 @@ public class Player extends Mob{
 		// check 4 edges of the box
 		for(int i=xMin;i<=xMax;i++) {
 			if(isSolidTile(xa,ya,i,yMin)) {
+				
 				return true;
 			}
 			
@@ -82,12 +83,14 @@ public class Player extends Mob{
 		
 		for(int i=xMin;i<=xMax;i++) {
 			if(isSolidTile(xa,ya,i,yMax)) {
+				
 				return true;
 			}
 		}
 		
 		for(int i=yMin;i<=yMax;i++) {
 			if(isSolidTile(xa,ya,xMin,i)) {
+				
 				return true;
 			}
 				
@@ -95,6 +98,7 @@ public class Player extends Mob{
 		
 		for(int i=yMin;i<=yMax;i++) {
 			if(isSolidTile(xa,ya,xMax,i)) {
+				
 				return true;
 			}
 		}

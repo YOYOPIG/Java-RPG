@@ -51,11 +51,12 @@ public abstract class Mob extends Entity{
 		if(level == null ) return false;
 		Tile lastTile = level.getTile((this.x+x)>>3 , (this.y+y)>>3);
 		Tile newTile = level.getTile((this.x+x+xa)>>3 , (this.y+y+ya)>>3);
-		// get what kind of Tile is the player on
-		// Solid or not solid
-		itemID=newTile.getID();
+		itemID=0;
 		// if the lastTile is not equal to newTile a.k.a u did move && newTile is a solid 
 		if(!lastTile.equals(newTile) && newTile.isSolid()) {
+			// get what kind of Tile is the player on
+			// Solid or not solid
+			itemID=newTile.getID();
 			return true;
 		}
 		return false;
