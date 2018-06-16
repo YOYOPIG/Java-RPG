@@ -226,9 +226,16 @@ public class Game extends Canvas implements Runnable {
 			hint.hideHint();
 		}
 		
+		// if collide with something
 		if(Player.itemID >= 4) {
-			if(input.item2.getKeyDown() && ui.getPotionVisibility())
+			int NPCID = Player.itemID / 4;
+			// press 4 and 
+			if(input.item4.getKeyDown() && ui.getBluePotionVisibility() && NPCID==1)
 				npc1.missionCompleted();
+			else if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==1) {
+				System.out.println("loselose");
+				gameOver=true;
+			}
 		}
 		
 		// to interact use input.interact.getPressed() to return if E is pressed.
@@ -266,7 +273,7 @@ public class Game extends Canvas implements Runnable {
 		level1.renderTiles(screen, xOffset, yOffset);
 		level1.renderEntities(screen);
 
-		
+
 		startMenu();
 		
 		//Render Game Over!!
