@@ -9,6 +9,10 @@ public class Level1 extends Level {
 	}
 
 	public void generateLevel() {
+		for(int i=0;i<64*64;i++) {
+			tiles[i]=Tile.VOID.getID();
+		}
+		
 		// rendering walls
 		for (int i = 0; i < 30; i++) {
 			if(i == 8 || i == 9)	continue;
@@ -39,6 +43,7 @@ public class Level1 extends Level {
 		tiles[8+7*width]=Tile.NPC12.getID();
 		tiles[7+8*width]=Tile.NPC21.getID();
 		tiles[8+8*width]=Tile.NPC22.getID();
+		
 		// rendering ghost box
 		tiles[400] = Tile.ChestGhost11.getID();
 		tiles[401] = Tile.ChestGhost12.getID();
