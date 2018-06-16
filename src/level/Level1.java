@@ -37,8 +37,16 @@ public class Level1 extends Level {
 		tiles[301] =Tile.door12.getID();
 		tiles[300+width] =Tile.door21.getID();
 		tiles[301+width] =Tile.door22.getID();
-		
-		
+		// rendering walls
+		for (int i = 0; i < 28; i++) {
+			tiles[i + 28 * width] = Tile.STONE.getID();
+			tiles[i + 36 * width] = Tile.STONE.getID();
+		}
+		for (int i = 0; i < height; i++) {
+			System.out.println(i);
+			if(i == 32 || i == 33)	continue;
+			tiles[30 + i * width] = Tile.STONE.getID();
+		}
 		
 	}
 	
