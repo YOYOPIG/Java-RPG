@@ -14,6 +14,13 @@ public class TreasureBox extends NPCWithItem{
 		super(gameLevel,itemID);
 		sound = new AudioPlayer("res/Audios/open_box.wav");
 		msg.add("Items acquired!!");
+		if(itemID==0)
+		{
+			sound = new AudioPlayer("res/Audios/suprise.wav");
+			msg.clear();
+			msg.add("Surprise!!!!!!!!!!!!");
+			msg.add("groan groan groan!!!!!!");
+		}
 	}
 
 	@Override
