@@ -22,12 +22,10 @@ import gfx.Colours;
 import gfx.Font;
 import gfx.Screen;
 import gfx.SpriteSheet;
-import jdk.nashorn.internal.ir.ContinueNode;
 import level.Level;
 import level.Level1;
 import level.StartLevel;
 import level.LevelFloor;
-import sun.swing.UIAction;
 import ui.Dialog;
 import ui.Hint;
 import ui.MainUI;
@@ -57,7 +55,7 @@ public class Game extends Canvas implements Runnable {
 	// levels
 	public Level levelFloor;
 	public Level level1;
-	
+
 	public Level startLevel;
 	public Font font;
 
@@ -82,10 +80,10 @@ public class Game extends Canvas implements Runnable {
 	boolean endIsSelected = false;
 	int colourup = Colours.get(-1, -1, -1, 222), colourdown = Colours.get(-1, -1, -1, 222);
 	boolean gameStarted = false;
-	
-	
-	//boolean to test game whether stop
-	boolean gameOver=false;
+
+	// boolean to test game whether stop
+	boolean gameOver = false;
+	boolean gameOverMusicPlaying = false;
 
 	public Game() {
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -138,21 +136,18 @@ public class Game extends Canvas implements Runnable {
 		levelFloor = new LevelFloor(64, 64);
 		level1 = new Level1(64, 64);
 		// passing current level to treasureBox
-		// 0 stands for no-item box 
-		treasureBoxPotion=new TreasureBox(level1, 4);
-		treasureBoxKey=new TreasureBox(level1, 1);
-		treasureBoxGhost=new TreasureBox(level1, 0);
+		// 0 stands for no-item box
+		treasureBoxPotion = new TreasureBox(level1, 4);
+		treasureBoxKey = new TreasureBox(level1, 1);
+		treasureBoxGhost = new TreasureBox(level1, 0);
 		// a table with purple potion on it
 		table=new Table(level1,2);
-
 		npc1 = new NPC1(level1,1);
 		player = new Player(level1, 0, 0, input);
-		//level1.addEntity(player);
-
-		//each audioplayer object plays a song
-		//Play Bgm by new AudioPlay
+		// level1.addEntity(player);
 
 		// each audioplayer object plays a song
+
 		// Play Bgm by new AudioPlay
 		bgmPlayer = new AudioPlayer("./res/bgm.wav");
 		bgmPlayer.play();
@@ -236,11 +231,11 @@ public class Game extends Canvas implements Runnable {
 				gameOver=true;
 			}
 		}
-		
+
 		// to interact use input.interact.getPressed() to return if E is pressed.
 		if (input.interact.getKeyDown() && Player.itemID >= 4) {
 			int NPCID = Player.itemID / 4;
-			if (NPCID == 1 ) {
+			if (NPCID == 1) {
 				npc1.talkTo();
 			} else if (NPCID == 2 || NPCID == 25) {
 				treasureBoxPotion.talkTo(800);
@@ -248,9 +243,8 @@ public class Game extends Canvas implements Runnable {
 				treasureBoxKey.talkTo(600);
 			} else if (NPCID == 6) {
 				treasureBoxGhost.talkTo(400);
-				gameOver=true;
-			}
-			else if(NPCID== 7 || NPCID == 8 || NPCID==9 || NPCID==10) {
+				gameOver = true;
+			} else if (NPCID == 7 || NPCID == 8 || NPCID == 9 || NPCID == 10) {
 				table.talkTo(3);
 			}
 		}
@@ -272,13 +266,21 @@ public class Game extends Canvas implements Runnable {
 		level1.renderTiles(screen, xOffset, yOffset);
 		level1.renderEntities(screen);
 
-
 		startMenu();
-		
-		//Render Game Over!!
-		if(gameOver) {
-			Font.render("Game Over!", screen,WIDTH / 2 - "Game Over!".length() * 8 / 2+(int)xOffset, 20+(int)yOffset, Colours.get(333, -1, -1, 555));
-			Font.render("You Die!", screen,WIDTH / 2 - "You Die!".length() * 8 / 2+(int)xOffset, 20+(int)yOffset+8, Colours.get(333, -1, -1, 500));
+
+		// Render Game Over!!
+		if (gameOver) {
+			bgmPlayer.stop();
+			if (!gameOverMusicPlaying) {
+				AudioPlayer gameOverMusic = new AudioPlayer("./res/gameOver.wav");
+				gameOverMusic.play();
+				gameOverMusic.loop();
+				gameOverMusicPlaying=true;
+			}
+			Font.render("Game Over!", screen, WIDTH / 2 - "Game Over!".length() * 8 / 2 + (int) xOffset,
+					20 + (int) yOffset, Colours.get(333, -1, -1, 555));
+			Font.render("You Die!", screen, WIDTH / 2 - "You Die!".length() * 8 / 2 + (int) xOffset,
+					20 + (int) yOffset + 8, Colours.get(333, -1, -1, 500));
 		}
 
 		for (int y = 0; y < screen.height; y++) {
