@@ -47,4 +47,7 @@ public class AudioPlayer{
 	public void loop() {
 		clip.loop(Clip.LOOP_CONTINUOUSLY);
 	}
+	public void flush() {
+		clip.flush();
+	}
 }

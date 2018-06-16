@@ -1,5 +1,6 @@
 package character;
 
+import audio.AudioPlayer;
 import game.Game;
 import level.Level;
 import level.Level1;
@@ -10,11 +11,13 @@ import ui.MainUI;
 public class TreasureBox extends NPC{
 	
 	Level currentLevel;
+	private AudioPlayer sound;
 	private boolean isOpened;
 	private int ID;
 	public TreasureBox(Level gameLevel, int itemID) {
 		
 		super(1);
+		sound = new AudioPlayer("res/Audios/open_box.wav");
 		ID = itemID;
 		msg.add("Items acquired!!");
 		msg.add("ENDOFLINE");
@@ -42,6 +45,10 @@ public class TreasureBox extends NPC{
 		}
 		else
 		{
+			if(!isOpened)
+			{
+				sound.play();
+			}
 			isTalking = true;
 			// rendering opened pic
 			currentLevel.renderingOpen(position,ID);
