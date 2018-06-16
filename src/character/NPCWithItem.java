@@ -12,8 +12,8 @@ public abstract class NPCWithItem extends NPC{
 	protected Level currentLevel;
 	protected boolean isProcessed;
 	
-	public NPCWithItem(Level level,int ID) {
-		super(ID);
+	public NPCWithItem(Level level,int ID,int p) {
+		super(ID,p);
 		currentLevel = level;
 		isProcessed = false;
 	}
@@ -36,8 +36,11 @@ public abstract class NPCWithItem extends NPC{
 				isProcessed=true;
 				// get item ID and put item into inventory
 				Game.ui.acquireItem(ID);
-				sound.play();
 			}
+			
+			if(msg.get(0).equals("Item acquired!"))
+				sound.play();
+			
 			isTalking = true;
 			// rendering opened pic
 			// 3 is table with potion

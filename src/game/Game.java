@@ -64,7 +64,6 @@ public class Game extends Canvas implements Runnable {
 	//
 	private NPC1 npc1;
 	private TreasureBox treasureBoxPotion;
-	private TreasureBox treasureBoxKey;
 	private TreasureBox treasureBoxGhost;
 	private Table table;
 	// UI
@@ -137,12 +136,11 @@ public class Game extends Canvas implements Runnable {
 		level1 = new Level1(64, 64);
 		// passing current level to treasureBox
 		// 0 stands for no-item box
-		treasureBoxPotion = new TreasureBox(level1, 4);
-		treasureBoxKey = new TreasureBox(level1, 1);
-		treasureBoxGhost = new TreasureBox(level1, 0);
+		treasureBoxPotion = new TreasureBox(level1, 4 ,600);
+		treasureBoxGhost = new TreasureBox(level1, 0,400);
 		// a table with purple potion on it
-		table=new Table(level1,2);
-		npc1 = new NPC1(level1,1);
+		table=new Table(level1,2,3+3*Level.width);
+		npc1 = new NPC1(level1,1,455);
 		player = new Player(level1, 0, 0, input);
 		// level1.addEntity(player);
 
@@ -224,12 +222,13 @@ public class Game extends Canvas implements Runnable {
 		if(Player.itemID >= 4) {
 			int NPCID = Player.itemID / 4;
 			// press 4 and 
-			if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==1)
+			if(input.item4.getKeyDown() && ui.getBluePotionVisibility() && NPCID==1)
 				npc1.missionCompleted();
 			else if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==1) {
-				System.out.println("loselose");
+				level1.renderingOpen( npc1.getPosition(),npc1.getID());
 				gameOver=true;
 			}
+			
 		}
 
 		// to interact use input.interact.getPressed() to return if E is pressed.
@@ -238,10 +237,8 @@ public class Game extends Canvas implements Runnable {
 			if (NPCID == 1) {
 				npc1.talkTo();
 			} else if (NPCID == 2 || NPCID == 25) {
-				treasureBoxPotion.talkTo(800);
-			} else if (NPCID == 3 || NPCID == 25) {
-				treasureBoxKey.talkTo(600);
-			} else if (NPCID == 6) {
+				treasureBoxPotion.talkTo(600);
+			}  else if (NPCID == 6) {
 				treasureBoxGhost.talkTo(400);
 				gameOver = true;
 			} else if (NPCID == 7 || NPCID == 8 || NPCID == 9 || NPCID == 10) {

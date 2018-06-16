@@ -45,16 +45,11 @@ public class Level1 extends Level {
 		tiles[400+width] = Tile.ChestGhost21.getID();
 		tiles[401+width] = Tile.ChestGhost22.getID();
 		// rendering key box
-		tiles[600] = Tile.ChestKey11.getID();
-		tiles[601] = Tile.ChestKey12.getID();
-		tiles[600+width] = Tile.ChestKey21.getID();
-		tiles[601+width] = Tile.ChestKey22.getID();
+		tiles[600] = Tile.ChestPotion11.getID();
+		tiles[601] = Tile.ChestPotion12.getID();
+		tiles[600+width] =  Tile.ChestPotion21.getID();
+		tiles[601+width] = Tile.ChestPotion22.getID();
 
-		// rendering potion box
-		tiles[800] = Tile.ChestPotion11.getID();
-		tiles[801] = Tile.ChestPotion12.getID();
-		tiles[800+width] = Tile.ChestPotion21.getID();
-		tiles[801+width] = Tile.ChestPotion22.getID();
 		// rendering door
 		tiles[8+28*width] =Tile.DoorBetweenR1AndHallway11.getID();
 		tiles[9+28*width] =Tile.DoorBetweenR1AndHallway12.getID();
