@@ -9,6 +9,10 @@ public class Level1 extends Level {
 	}
 
 	public void generateLevel() {
+		for(int i=0;i<64*64;i++) {
+			tiles[i]=Tile.VOID.getID();
+		}
+		
 		// rendering walls
 		for (int i = 0; i < 30; i++) {
 			if(i == 8 || i == 9)	continue;
@@ -52,10 +56,10 @@ public class Level1 extends Level {
 		tiles[601+width] = Tile.ChestPotion22.getID();
 
 		// rendering door
-//		tiles[8+28*width] =Tile.DoorBetweenR1AndHallway11.getID();
-//		tiles[9+28*width] =Tile.DoorBetweenR1AndHallway12.getID();
-//		tiles[8+29*width] =Tile.DoorBetweenR1AndHallway21.getID();
-//		tiles[9+29*width] =Tile.DoorBetweenR1AndHallway22.getID();
+		tiles[8+28*width] =Tile.DoorBetweenR1AndHallway11.getID();
+		tiles[9+28*width] =Tile.DoorBetweenR1AndHallway12.getID();
+		tiles[8+29*width] =Tile.DoorBetweenR1AndHallway21.getID();
+		tiles[9+29*width] =Tile.DoorBetweenR1AndHallway22.getID();
 		
 		tiles[15+36*width] = Tile.DoorBetweenR2AndHallway11.getID();
 		tiles[16+36*width] = Tile.DoorBetweenR2AndHallway12.getID();
@@ -72,10 +76,10 @@ public class Level1 extends Level {
 		tiles[53+13*width] = Tile.DoorExit21.getID();
 		tiles[54+13*width] = Tile.DoorExit22.getID();
 		
-		tiles[8+28*width] = Tile.DoorOpen11.getID();
-		tiles[9+28*width] = Tile.DoorOpen12.getID();
-		tiles[8+29*width] = Tile.DoorOpen21.getID();
-		tiles[9+29*width] = Tile.DoorOpen22.getID();
+		tiles[5+12*width] = Tile.DoorOpen11.getID();
+		tiles[6+12*width] = Tile.DoorOpen12.getID();
+		tiles[5+13*width] = Tile.DoorOpen21.getID();
+		tiles[6+13*width] = Tile.DoorOpen22.getID();
 		
 		// rendering the table 
 		tiles[3+3*width] = Tile.Table11.getID();
