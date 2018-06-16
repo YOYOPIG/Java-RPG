@@ -230,6 +230,15 @@ public class Game extends Canvas implements Runnable {
 			}
 			
 		}
+		else //if no collide, we can see item description
+		{
+			if(input.item1.getKeyDown()&& ui.getKeyVisibility())
+				ui.showItemDescription(1);
+			else if(input.item2.getKeyDown()&& ui.getPotionVisibility())
+				ui.showItemDescription(2);
+			else if(input.item4.getKeyDown()&& ui.getBluePotionVisibility())
+				ui.showItemDescription(4);
+		}
 
 		// to interact use input.interact.getPressed() to return if E is pressed.
 		if (input.interact.getKeyDown() && Player.itemID >= 4) {
