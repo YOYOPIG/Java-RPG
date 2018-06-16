@@ -258,6 +258,11 @@ public class Game extends Canvas implements Runnable {
 		double xOffset = player.x - (screen.width / 2);
 		double yOffset = player.y - (screen.height / 2);
 
+		//System.out.println("player x:"+player.x+" play y:"+player.y);
+		int playerXTile=player.x/8+1;
+		int playerYTile=player.y/8+1;
+		System.out.println("player x tile:"+playerXTile+" play y tile:"+playerYTile);
+		
 		levelFloor.renderTiles(screen, xOffset, yOffset);
 		levelFloor.renderEntities(screen);
 		level1.renderTiles(screen, xOffset, yOffset);

@@ -9,6 +9,7 @@ public class Level1 extends Level {
 	}
 
 	public void generateLevel() {
+		
 		// rendering walls
 		for (int i = 0; i < 30; i++) {
 			if(i == 8 || i == 9)	continue;
