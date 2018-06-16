@@ -9,7 +9,8 @@ public class NPC1 extends NPC{
 	}
 	
 	public void missionCompleted() {
-		// give player item
+		System.out.println("Here");
 	}
+	
 	
 }
