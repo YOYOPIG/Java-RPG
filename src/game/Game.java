@@ -136,10 +136,7 @@ public class Game extends Canvas implements Runnable {
 		treasureBoxGhost=new TreasureBox(level1, 0);
 		// a table with purple potion on it
 		table=new Table(level1,2);
-		// 0 stands for no-item box
-		treasureBoxPotion = new TreasureBox(level1, 2);
-		treasureBoxKey = new TreasureBox(level1, 1);
-		treasureBoxGhost = new TreasureBox(level1, 0);
+
 
 		player = new Player(level1, 0, 0, input);
 		level1.addEntity(player);
