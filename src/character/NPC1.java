@@ -13,6 +13,9 @@ public class NPC1 extends NPCWithItem{
 		super(gameLevel,itemID,p);
 		sound = new AudioPlayer("res/Audios/open_box.wav");
 		msg.add("Hello, PLAYER");
+		msg.add("I am thirsty.");
+		msg.add("Could you please find me something to drink?");
+		
 	}
 	
 	public void missionCompleted() {
@@ -34,6 +37,10 @@ public class NPC1 extends NPCWithItem{
 	public void setNormalDialog() {
 		msg.clear();
 		msg.add("Hello, PLAYER");
+		if(!isProcessed) {
+			msg.add("I am thirsty.");
+			msg.add("Could you please find me something to drink?");
+		}
 	}
 	
 	
