@@ -1,7 +1,6 @@
 package audio;
 
 import java.io.File;
-import java.util.ArrayList;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -10,42 +9,42 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.FloatControl;
 
-public class MusicPlayer implements Runnable{
+public class AudioPlayer{
 
-	
-	private ArrayList<String> musicFiles;
-	private int currentSongIndex;
-	
-	
-	public MusicPlayer(String... files) {
-		musicFiles = new ArrayList<String>();
-		for(String file : files) {
-			musicFiles.add("./res/" + file);
-			 
-		}
-	}
-	
-	private void playSound(String filename,boolean loop) {
+	private Clip clip;
+
+	public AudioPlayer(String s) {
 		try {
-			File soundFile = new File(filename);
+			File soundFile = new File(s);
 			AudioInputStream ais = AudioSystem.getAudioInputStream(soundFile);
 			AudioFormat format = ais.getFormat();
 			DataLine.Info info = new DataLine.Info(Clip.class, format);
-			Clip clip = (Clip)AudioSystem.getLine(info);
+			clip = (Clip)AudioSystem.getLine(info);
 			clip.open(ais);
-			if(loop) {
-				clip.loop(Clip.LOOP_CONTINUOUSLY);
-			}
 			FloatControl gainControl = (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);
 			gainControl.setValue(-10);
-			clip.start();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
 	
-	public void run() {
-		playSound(musicFiles.get(currentSongIndex),true);
+	public void play() {
+		if(clip==null)return;
+		stop();
+		clip.setFramePosition(0);
+		clip.start();
 	}
-
+	
+	public void stop() {
+		if(clip.isRunning())clip.stop();
+	}
+	
+	public void close() {
+		stop();
+		clip.close();
+	}
+	
+	public void loop() {
+		clip.loop(Clip.LOOP_CONTINUOUSLY);
+	}
 }

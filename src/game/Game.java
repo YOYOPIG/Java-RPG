@@ -10,7 +10,7 @@ import java.awt.image.DataBufferInt;
 
 import javax.swing.JFrame;
 
-import audio.MusicPlayer;
+import audio.AudioPlayer;
 import character.Ghost;
 import character.TreasureBox;
 import game.entities.Player;
@@ -64,6 +64,9 @@ public class Game extends Canvas implements Runnable {
 	public static Hint hint;
 	public MainUI ui;
 
+	//AudioPlayer
+	private AudioPlayer bgmPlayer;
+	
 	public Game() {
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -118,11 +121,14 @@ public class Game extends Canvas implements Runnable {
 		treasureBoxPotion=new TreasureBox(level1);
 		treasureBoxKey=new TreasureBox(level1);
 		player = new Player(level1, 0, 0, input);
-		level1.addEntity(player);
+		level1.addEntity(player);	
 		
-		//player BGM  but only play once, going to fix it to looping
-		MusicPlayer musicPlayer = new MusicPlayer("bgm.wav");
-		musicPlayer.run();
+		//each audioplayer object plays a song
+		//Play Bgm by new AudioPlay
+		bgmPlayer = new AudioPlayer("./res/bgm.wav");
+		bgmPlayer.play();
+		//u call loop ,u loop it
+		bgmPlayer.loop();
 		
 	}
 
