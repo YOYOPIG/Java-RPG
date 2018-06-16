@@ -114,5 +114,18 @@ public class MainUI {
 			break;
 		}
 	}
+	
+	public boolean getKeyVisibility() {
+		return key.isVisible();
+	}
+	public boolean getPotionVisibility() {
+		return potion.isVisible();
+	}
+	public boolean getLightVisibility() {
+		return light.isVisible();
+	}
+	public boolean getBluePotionVisibility() {
+		return bluePotion.isVisible();
+	}
 
 }

@@ -31,7 +31,6 @@ public class Level1 extends Level {
 		tiles[801] = Tile.ChestPotion12.getID();
 		tiles[800+width] = Tile.ChestPotion21.getID();
 		tiles[801+width] = Tile.ChestPotion22.getID();
-		
 		// rendering door
 		tiles[300] =Tile.door11.getID();
 		tiles[301] =Tile.door12.getID();

@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
 import javax.swing.JFrame;
+import javax.xml.stream.events.Namespace;
 
 import audio.AudioPlayer;
 import character.Ghost;
@@ -25,6 +26,7 @@ import jdk.nashorn.internal.ir.ContinueNode;
 import level.Level;
 import level.Level1;
 import level.LevelFloor;
+import sun.swing.UIAction;
 import ui.Dialog;
 import ui.Hint;
 import ui.MainUI;
@@ -220,8 +222,17 @@ public class Game extends Canvas implements Runnable {
 		// to interact use input.interact.getPressed() to return if E is pressed.
 		if (input.interact.getKeyDown() && Player.itemID >= 4) {
 			int NPCID = Player.itemID / 4;
-			if (NPCID == 1) {
-				npc1.talkTo();
+			if (NPCID == 1 ) {
+				if(ui.getPotionVisibility()) {
+					System.out.println("You lose");
+					// maybe some music
+				}
+				else if(ui.getBluePotionVisibility()) {
+					npc1.missionCompleted();
+					npc1.talkTo();
+				}
+				else	
+					npc1.talkTo();
 			} else if (NPCID == 2 || NPCID == 25) {
 				treasureBoxPotion.talkTo(800);
 			} else if (NPCID == 3 || NPCID == 25) {
