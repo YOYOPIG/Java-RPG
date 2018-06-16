@@ -18,6 +18,8 @@ import game.Game;
 public class MainUI {
 	private JLabel hp;
 	private JLabel inventory;
+	private JLabel key;
+	private JLabel potion;
 	private JLayeredPane pane;
 	
 	public MainUI()
@@ -30,18 +32,33 @@ public class MainUI {
 		//initialize
 		hp = new JLabel();
 		inventory = new JLabel();
+		key = new JLabel();
+		potion = new JLabel();
+		
 		// set position and dimension
 		hp.setBounds(25, 25, 236, 70);
 		inventory.setBounds(Game.WIDTH+260, Game.HEIGHT + 560, 496, 167);
+		key.setBounds(Game.WIDTH+285, Game.HEIGHT + 635, 65, 65);
+		potion.setBounds(Game.WIDTH+365, Game.HEIGHT + 635, 65, 65);
+		
 		//add image
 		ImageIcon icon = new ImageIcon("res/hp3.png");
 		icon = new ImageIcon(icon.getImage().getScaledInstance(236, 70, BufferedImage.SCALE_SMOOTH));
 		hp.setIcon(icon);
-		ImageIcon icon2 = new ImageIcon("res/inventory.png");
+		ImageIcon icon2 = new ImageIcon("res/inventory2.png");
 		icon2 = new ImageIcon(icon2.getImage().getScaledInstance(496, 167, BufferedImage.SCALE_SMOOTH));
 		inventory.setIcon(icon2);
+		key.setIcon(new ImageIcon("res/key.png"));
+		potion.setIcon(new ImageIcon("res/potion.png"));
+		
+		//add to frame
 		FL.add(hp, new Integer(1));
 		FL.add(inventory, new Integer(1));
+		FL.add(key, new Integer(2));
+		FL.add(potion, new Integer(2));
+		key.setVisible(false);
+		potion.setVisible(false);
+		
 	}
 	
 	public void changeHP(int value)
@@ -63,6 +80,21 @@ public class MainUI {
 			ImageIcon icon = new ImageIcon("res/hp3.png");
 			icon = new ImageIcon(icon.getImage().getScaledInstance(236, 70, BufferedImage.SCALE_SMOOTH));
 			hp.setIcon(icon);
+		}
+	}
+	
+	public void acquireItem(int itemID)
+	{
+		switch (itemID) {
+		case 1:
+			key.setVisible(true);
+			break;
+		case 2:
+			potion.setVisible(true);
+			break;
+
+		default:
+			break;
 		}
 	}
 

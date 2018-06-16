@@ -62,7 +62,7 @@ public class Game extends Canvas implements Runnable {
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
-	public MainUI ui;
+	public static MainUI ui;
 
 	//AudioPlayer
 	private AudioPlayer bgmPlayer;
@@ -118,8 +118,8 @@ public class Game extends Canvas implements Runnable {
 		levelFloor = new LevelFloor(64, 64);
 		level1=new Level1(64, 64);
 		// passing current level to treasureBox
-		treasureBoxPotion=new TreasureBox(level1);
-		treasureBoxKey=new TreasureBox(level1);
+		treasureBoxPotion=new TreasureBox(level1, 2);
+		treasureBoxKey=new TreasureBox(level1, 1);
 		player = new Player(level1, 0, 0, input);
 		level1.addEntity(player);	
 		

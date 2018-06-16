@@ -4,15 +4,18 @@ import game.Game;
 import level.Level;
 import level.Level1;
 import level.tiles.*;
+import ui.MainUI;
 
 
 public class TreasureBox extends NPC{
 	
 	Level currentLevel;
-	private boolean isOpened;  
-	public TreasureBox(Level gameLevel) {
+	private boolean isOpened;
+	private int ID;
+	public TreasureBox(Level gameLevel, int itemID) {
 		
 		super(1);
+		ID = itemID;
 		msg.add("Items acquired!!");
 		msg.add("ENDOFLINE");
 		// take real level1 as parameter 
@@ -26,6 +29,7 @@ public class TreasureBox extends NPC{
 		{
 			if(!isOpened) {
 				isOpened=true;
+				Game.ui.acquireItem(ID);
 				// set new dialog
 				setDialog();
 			}
@@ -52,5 +56,6 @@ public class TreasureBox extends NPC{
 		msg.add("This is empty!");
 		msg.add("ENDOFLINE");
 	}
+	
 }
 
