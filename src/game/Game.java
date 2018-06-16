@@ -21,6 +21,7 @@ import gfx.Screen;
 import gfx.SpriteSheet;
 import level.Level;
 import level.Level1;
+import level.StartLevel;
 import level.LevelFloor;
 import ui.Dialog;
 import ui.Hint;
@@ -53,7 +54,7 @@ public class Game extends Canvas implements Runnable {
 	//levels
 	public Level levelFloor;
 	public Level level1;
-	
+	public Level startLevel;
 	public Font font;
 	public Player player;
 	
@@ -96,6 +97,7 @@ public class Game extends Canvas implements Runnable {
 		
 		frame.setVisible(true);
 		npc1 = new NPC1();
+
 		
 	}
 
@@ -128,6 +130,8 @@ public class Game extends Canvas implements Runnable {
 		
 		player = new Player(level1, 0, 0, input);
 		level1.addEntity(player);	
+
+		startLevel = new StartLevel(64, 64);
 		
 		//each audioplayer object plays a song
 		//Play Bgm by new AudioPlay
@@ -237,6 +241,8 @@ public class Game extends Canvas implements Runnable {
 		levelFloor.renderEntities(screen);
 		level1.renderTiles(screen, xOffset, yOffset);
 		level1.renderEntities(screen);
+		
+		startLevel.renderTiles(screen, xOffset, yOffset);
 		
 		
 	

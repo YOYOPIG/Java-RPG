@@ -9,6 +9,32 @@ public class Level1 extends Level {
 	}
 
 	public void generateLevel() {
+		// rendering walls
+		for (int i = 0; i < 30; i++) {
+			if(i == 8 || i == 9)	continue;
+			tiles[i + 28 * width] = Tile.STONE.getID();
+			tiles[i + 29 * width] = Tile.STONE.getID();
+		}
+		for (int i = 31; i < 55; i++) {
+			tiles[i + 11 * width] = Tile.STONE.getID();
+			tiles[i + 10 * width] = Tile.STONE.getID();
+		}
+		for (int i = 0; i < 55; i++) {
+			if(i == 15 || i == 16)	continue;
+			tiles[i + 36 * width] = Tile.STONE.getID();
+			tiles[i + 37 * width] = Tile.STONE.getID();
+		}
+		for (int i = 0; i < height; i++) {
+			if(i == 32 || i == 33)	continue;
+			tiles[31 + i * width] = Tile.STONE.getID();
+			tiles[30 + i * width] = Tile.STONE.getID();
+		}
+		for (int i = 10; i < 38; i++) {
+			tiles[55 + i * width] = Tile.STONE.getID();
+			tiles[56 + i * width] = Tile.STONE.getID();
+		}
+		
+
 		tiles[2]=Tile.NPC11.getID();
 		tiles[3]=Tile.NPC12.getID();
 		tiles[2+width]=Tile.NPC21.getID();
@@ -24,8 +50,6 @@ public class Level1 extends Level {
 		tiles[600+width] = Tile.ChestKey21.getID();
 		tiles[601+width] = Tile.ChestKey22.getID();
 
-		//	rendering walls
-
 		// rendering potion box
 		tiles[800] = Tile.ChestPotion11.getID();
 		tiles[801] = Tile.ChestPotion12.getID();
@@ -37,25 +61,6 @@ public class Level1 extends Level {
 		tiles[301] =Tile.door12.getID();
 		tiles[300+width] =Tile.door21.getID();
 		tiles[301+width] =Tile.door22.getID();
-		
-		// rendering walls
-		for (int i = 0; i < 29; i++) {
-			tiles[i + 29 * width] = Tile.STONE.getID();
-		}
-		for (int i = 31; i < 55; i++) {
-			tiles[i + 11 * width] = Tile.STONE.getID();
-		}
-		for (int i = 0; i < 55; i++) {
-			if(i == 15 || i == 16)	continue;
-			tiles[i + 36 * width] = Tile.STONE.getID();
-		}
-		for (int i = 0; i < height; i++) {
-			if(i == 32 || i == 33)	continue;
-			tiles[31 + i * width] = Tile.STONE.getID();
-		}
-		for (int i = 11; i < 37; i++) {
-			tiles[55 + i * width] = Tile.STONE.getID();
-		}
 		
 		// rendering the table 
 		tiles[3+3*width] = Tile.Table11.getID();

@@ -8,9 +8,9 @@ public abstract class Tile {
 
 	
 	public static final Tile[] tiles = new Tile[256];
-	public static final Tile VOID = new BasicSolidTile(0, 0, 0, Colours.get(-1, -1, -1, -1), 0xFF000000);
-	public static final Tile STONE = new BasicSolidTile(1, 1, 0,Colours.get(-1, 333, -1, -1), 0xFF555555);
-	public static final Tile GRASS = new BasicTile(2, 2, 0, Colours.get(-1,	131, 141, -1), 0xFF00FF00);
+	public static final Tile VOID = new BasicSolidTile(0, 0, 0, Colours.get(-1, -1, -1, -1));
+	public static final Tile STONE = new BasicSolidTile(1, 1, 0,Colours.get(-1, 333, -1, -1));
+	public static final Tile GRASS = new BasicTile(2, 2, 0, Colours.get(-1,	131, 141, -1));
 	public static final Tile FLOOR = new BasicTile(3, 3, 0, Colours.get(111,111,321,-1));
 	public static final Tile NPC11 = new BasicSolidTile(4, 8, 28, Colours.get(-1, 111, 145, 543));
 	public static final Tile NPC12 = new BasicSolidTile(5, 9, 28, Colours.get(-1, 111, 145, 543));
