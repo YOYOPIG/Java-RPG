@@ -42,7 +42,7 @@ public class Level1 extends Level {
 		for (int i = 0; i < 29; i++) {
 			tiles[i + 29 * width] = Tile.STONE.getID();
 		}
-		for (int i = 30; i < 55; i++) {
+		for (int i = 31; i < 55; i++) {
 			tiles[i + 11 * width] = Tile.STONE.getID();
 		}
 		for (int i = 0; i < 55; i++) {
