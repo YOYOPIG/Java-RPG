@@ -35,10 +35,10 @@ public class Level1 extends Level {
 		}
 		
 
-		tiles[2]=Tile.NPC11.getID();
-		tiles[3]=Tile.NPC12.getID();
-		tiles[2+width]=Tile.NPC21.getID();
-		tiles[3+width]=Tile.NPC22.getID();
+		tiles[7+7*width]=Tile.NPC11.getID();
+		tiles[8+7*width]=Tile.NPC12.getID();
+		tiles[7+8*width]=Tile.NPC21.getID();
+		tiles[8+8*width]=Tile.NPC22.getID();
 		// rendering ghost box
 		tiles[400] = Tile.ChestGhost11.getID();
 		tiles[401] = Tile.ChestGhost12.getID();
@@ -56,10 +56,25 @@ public class Level1 extends Level {
 		tiles[800+width] = Tile.ChestPotion21.getID();
 		tiles[801+width] = Tile.ChestPotion22.getID();
 		// rendering door
-		tiles[300] =Tile.door11.getID();
-		tiles[301] =Tile.door12.getID();
-		tiles[300+width] =Tile.door21.getID();
-		tiles[301+width] =Tile.door22.getID();
+		tiles[8+28*width] =Tile.DoorBetweenR1AndHallway11.getID();
+		tiles[9+28*width] =Tile.DoorBetweenR1AndHallway12.getID();
+		tiles[8+29*width] =Tile.DoorBetweenR1AndHallway21.getID();
+		tiles[9+29*width] =Tile.DoorBetweenR1AndHallway22.getID();
+		
+		tiles[15+36*width] = Tile.DoorBetweenR2AndHallway11.getID();
+		tiles[16+36*width] = Tile.DoorBetweenR2AndHallway12.getID();
+		tiles[15+37*width] = Tile.DoorBetweenR2AndHallway21.getID();
+		tiles[16+37*width] = Tile.DoorBetweenR2AndHallway22.getID();
+		
+		tiles[30+32*width] = Tile.DoorBetweenR3AndHallway11.getID();
+		tiles[31+32*width] = Tile.DoorBetweenR3AndHallway12.getID();
+		tiles[30+33*width] = Tile.DoorBetweenR3AndHallway21.getID();
+		tiles[31+33*width] = Tile.DoorBetweenR3AndHallway22.getID();
+		
+		tiles[53+12*width] = Tile.DoorExit11.getID();
+		tiles[54+12*width] = Tile.DoorExit12.getID();
+		tiles[53+13*width] = Tile.DoorExit21.getID();
+		tiles[54+13*width] = Tile.DoorExit22.getID();
 		
 		// rendering the table 
 		tiles[3+3*width] = Tile.Table11.getID();

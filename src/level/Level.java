@@ -35,7 +35,7 @@ public abstract class Level {
 			this.loadLevelFromFile();
 		}
 	}
-	
+		
 	private void loadLevelFromFile() {
 		try {
 			this.image = ImageIO.read(Level.class.getResource(this.imagePath));

@@ -225,21 +225,17 @@ public class Game extends Canvas implements Runnable {
 		} else {
 			hint.hideHint();
 		}
-
+		
+		if(Player.itemID >= 4) {
+			if(input.item2.getKeyDown() && ui.getPotionVisibility())
+				npc1.missionCompleted();
+		}
+		
 		// to interact use input.interact.getPressed() to return if E is pressed.
 		if (input.interact.getKeyDown() && Player.itemID >= 4) {
 			int NPCID = Player.itemID / 4;
 			if (NPCID == 1 ) {
-				if(ui.getPotionVisibility()) {
-					System.out.println("You lose");
-					// maybe some music
-				}
-				else if(ui.getBluePotionVisibility()) {
-					npc1.missionCompleted();
-					npc1.talkTo();
-				}
-				else	
-					npc1.talkTo();
+				npc1.talkTo();
 			} else if (NPCID == 2 || NPCID == 25) {
 				treasureBoxPotion.talkTo(800);
 			} else if (NPCID == 3 || NPCID == 25) {
