@@ -8,10 +8,9 @@ import level.Level1;
 
 
 public abstract class NPC {
-	public int ID;
+	protected int ID;
 	protected ArrayList<String> msg = new ArrayList<String>(); ;
 	public static boolean isTalking;
-	private Level1 level;
 	
 	public NPC(int ID) {
 		this.ID=ID;
@@ -37,5 +36,4 @@ public abstract class NPC {
 		}
 	};
 		
-	
 }

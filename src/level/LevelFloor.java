@@ -21,5 +21,12 @@ public class LevelFloor extends Level {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void renderingOpen(int position, int ID, int widthCount) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

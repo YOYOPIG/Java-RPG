@@ -14,6 +14,7 @@ import audio.AudioPlayer;
 import character.Ghost;
 import character.NPC;
 import character.NPC1;
+import character.Table;
 import character.TreasureBox;
 import game.entities.Player;
 import gfx.Font;
@@ -62,6 +63,7 @@ public class Game extends Canvas implements Runnable {
 	private TreasureBox treasureBoxPotion;
 	private TreasureBox treasureBoxKey;
 	private TreasureBox treasureBoxGhost;
+	private Table table;
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
@@ -125,7 +127,8 @@ public class Game extends Canvas implements Runnable {
 		treasureBoxPotion=new TreasureBox(level1, 2);
 		treasureBoxKey=new TreasureBox(level1, 1);
 		treasureBoxGhost=new TreasureBox(level1, 0);
-		
+		// a table with purple potion on it
+		table=new Table(level1,3);
 		player = new Player(level1, 0, 0, input);
 		level1.addEntity(player);	
 		
@@ -217,6 +220,9 @@ public class Game extends Canvas implements Runnable {
 			}
 			else if(NPCID == 6) {
 				treasureBoxGhost.talkTo(400);
+			}
+			else if(NPCID== 7 || NPCID == 8 || NPCID==9 || NPCID==10) {
+				table.talkTo(3);
 			}
 		}
 		levelFloor.tick();

@@ -123,4 +123,5 @@ public abstract class Level {
 	}
 	
 	public abstract void renderingOpen(int position,int ID);
+	public abstract void renderingOpen(int position,int ID,int widthCount);
 }
