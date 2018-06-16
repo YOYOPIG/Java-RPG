@@ -11,7 +11,7 @@ public abstract class Tile {
 	public static final Tile VOID = new BasicSolidTile(0, 0, 0, Colours.get(-1, -1, -1, -1), 0xFF000000);
 	public static final Tile STONE = new BasicSolidTile(1, 1, 0,Colours.get(-1, 333, -1, -1), 0xFF555555);
 	public static final Tile GRASS = new BasicTile(2, 2, 0, Colours.get(-1,	131, 141, -1), 0xFF00FF00);
-	public static final Tile FLOOR = new BasicTile(3, 3, 0, Colours.get(211,321,211,420));
+	public static final Tile FLOOR = new BasicTile(3, 3, 0, Colours.get(111,111,321,-1));
 	public static final Tile NPC11 = new BasicSolidTile(4, 8, 28, Colours.get(-1, 111, 145, 543));
 	public static final Tile NPC12 = new BasicSolidTile(5, 9, 28, Colours.get(-1, 111, 145, 543));
 	public static final Tile NPC21 = new BasicSolidTile(6, 8, 29, Colours.get(-1, 111, 145, 543));
@@ -42,10 +42,10 @@ public abstract class Tile {
 	public static final Tile ChestOpen22 = new BasicSolidTile(103, 3, 25, Colours.get(-1, 111, 440, 032));
 	
 	// 5
-	public static final Tile Ghost11 = new BasicSolidTile(20, 0, 26, Colours.get(-1, 500, 333, 000));
-	public static final Tile Ghost12 = new BasicSolidTile(21, 1, 26, Colours.get(-1, 500, 333, 000));
-	public static final Tile Ghost21 = new BasicSolidTile(22, 0, 27, Colours.get(-1, 500, 333, 000));
-	public static final Tile Ghost22 = new BasicSolidTile(23, 1, 27, Colours.get(-1, 500, 333, 000));
+	public static final Tile Ghost11 = new BasicSolidTile(20, 0, 26, Colours.get(-1, 500, 555, 000));
+	public static final Tile Ghost12 = new BasicSolidTile(21, 1, 26, Colours.get(-1, 500, 555, 000));
+	public static final Tile Ghost21 = new BasicSolidTile(22, 0, 27, Colours.get(-1, 500, 555, 000));
+	public static final Tile Ghost22 = new BasicSolidTile(23, 1, 27, Colours.get(-1, 500, 555, 000));
 	
 	// 6
 	public static final Tile ChestGhost11 = new BasicSolidTile(24, 0, 24, Colours.get(-1, 111, 440, 032));

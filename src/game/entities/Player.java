@@ -8,7 +8,7 @@ import level.Level;
 public class Player extends Mob{
 
 	private InputHandler input;
-	private int colour = Colours.get(-1, 111, 400, 543);
+	private int colour = Colours.get(-1, 000, 400, 543);
 	
 	public Player(Level level, int x, int y, InputHandler input) {
 		super(level, "Player", x, y, 1);

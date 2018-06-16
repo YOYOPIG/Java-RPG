@@ -11,7 +11,7 @@ public class LevelFloor extends Level {
 	public void generateLevel() {
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
-					tiles[j + i * width] = Tile.FLOOR.getID();
+						tiles[j + i * width] = Tile.FLOOR.getID();
 			}
 		}
 	}
