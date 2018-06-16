@@ -33,7 +33,15 @@ public class Level1 extends Level {
 		tiles[301] =Tile.door12.getID();
 		tiles[300+width] =Tile.door21.getID();
 		tiles[301+width] =Tile.door22.getID();
-		
+		// rendering the table 
+		tiles[3+3*width] = Tile.Table11.getID();
+		tiles[4+3*width] = Tile.Table12.getID();
+		tiles[3+4*width] = Tile.Table21.getID();
+		tiles[4+4*width] = Tile.Table22.getID();
+		tiles[5+3*width] = Tile.Table31.getID();
+		tiles[6+3*width] = Tile.Table32.getID();
+		tiles[5+4*width] = Tile.Table41.getID();
+		tiles[6+4*width] = Tile.Table42.getID();
 		
 		
 	}

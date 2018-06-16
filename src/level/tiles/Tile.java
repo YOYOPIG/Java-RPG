@@ -28,11 +28,6 @@ public abstract class Tile {
 	public static final Tile ChestKey21 = new BasicSolidTile(14, 0, 25, Colours.get(-1, 111, 440, 032));
 	public static final Tile ChestKey22 = new BasicSolidTile(15, 1, 25, Colours.get(-1, 111, 440, 032));
 	
-	// 6
-	public static final Tile ChestGhost11 = new BasicSolidTile(24, 0, 24, Colours.get(-1, 111, 440, 032));
-	public static final Tile ChestGhost12 = new BasicSolidTile(25, 1, 24, Colours.get(-1, 111, 440, 032));
-	public static final Tile ChestGhost21 = new BasicSolidTile(26, 0, 25, Colours.get(-1, 111, 440, 032));
-	public static final Tile ChestGhost22 = new BasicSolidTile(27, 1, 25, Colours.get(-1, 111, 440, 032));
 	
 	// 4
 	public static final Tile door11 = new BasicSolidTile(16, 6, 24, Colours.get(-1, 111, 332, 321));
@@ -51,6 +46,24 @@ public abstract class Tile {
 	public static final Tile Ghost12 = new BasicSolidTile(21, 1, 26, Colours.get(-1, 500, 333, 000));
 	public static final Tile Ghost21 = new BasicSolidTile(22, 0, 27, Colours.get(-1, 500, 333, 000));
 	public static final Tile Ghost22 = new BasicSolidTile(23, 1, 27, Colours.get(-1, 500, 333, 000));
+	
+	// 6
+	public static final Tile ChestGhost11 = new BasicSolidTile(24, 0, 24, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestGhost12 = new BasicSolidTile(25, 1, 24, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestGhost21 = new BasicSolidTile(26, 0, 25, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestGhost22 = new BasicSolidTile(27, 1, 25, Colours.get(-1, 111, 440, 032));
+		
+	// 7
+	public static final Tile Table11 = new BasicSolidTile(28, 2, 26, Colours.get(-1, 214, 210, 321));
+	public static final Tile Table12 = new BasicSolidTile(29, 3, 26, Colours.get(-1, 214, 210, 321));
+	public static final Tile Table21 = new BasicSolidTile(30, 2, 27, Colours.get(-1, 214, 210, 321));
+	public static final Tile Table22 = new BasicSolidTile(31, 3, 27, Colours.get(-1, 214, 210, 321));
+	
+	// 8 (dark gray,gray,white)
+	public static final Tile Table31 = new BasicSolidTile(32, 4, 26, Colours.get(-1, 214, 210, 321));
+	public static final Tile Table32 = new BasicSolidTile(33, 5, 26, Colours.get(-1, 214, 210, 321));
+	public static final Tile Table41 = new BasicSolidTile(34, 4, 27, Colours.get(-1, 214, 210, 321));
+	public static final Tile Table42 = new BasicSolidTile(35, 5, 27, Colours.get(-1, 214, 210, 312));
 	
 	
 	
