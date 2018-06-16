@@ -8,8 +8,8 @@ import audio.AudioPlayer;
  * The InputHandler class implements the KeyListener class. This class can
  * handle w,a,s,d inputs to the game.
  * 
- * @version 1.0
- * @since 2018-05-26
+ * @version 1.5
+ * @since 2018-06-16
  */
 
 public class InputHandler implements KeyListener {
