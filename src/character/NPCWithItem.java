@@ -46,7 +46,7 @@ public abstract class NPCWithItem extends NPC{
 			// 3 is table with potion
 			if(ID==2) 
 				currentLevel.renderingOpen(position,ID,3);	
-			else
+			else if(getID()!=1)
 				currentLevel.renderingOpen(position,ID);
 			// display msg
 			Game.dialog.showDialog(msg.remove(0));
