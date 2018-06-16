@@ -57,8 +57,8 @@ public class Game extends Canvas implements Runnable {
 	
 	// 
 	private Ghost ghost;
-	private TreasureBox treasureBox;
-	
+	private TreasureBox treasureBoxPotion;
+	private TreasureBox treasureBoxKey;
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
@@ -115,7 +115,8 @@ public class Game extends Canvas implements Runnable {
 		levelFloor = new LevelFloor(64, 64);
 		level1=new Level1(64, 64);
 		// passing current level to treasureBox
-		treasureBox=new TreasureBox(level1);
+		treasureBoxPotion=new TreasureBox(level1);
+		treasureBoxKey=new TreasureBox(level1);
 		player = new Player(level1, 0, 0, input);
 		level1.addEntity(player);
 		
@@ -196,7 +197,10 @@ public class Game extends Canvas implements Runnable {
 				ghost.talkTo();
 			}
 			else if(NPCID == 2) {
-				treasureBox.talkTo();
+				treasureBoxPotion.talkTo(400);
+			}
+			else if(NPCID == 3) {
+				treasureBoxKey.talkTo(600);
 			}
 		}
 		levelFloor.tick();

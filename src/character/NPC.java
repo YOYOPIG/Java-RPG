@@ -24,11 +24,18 @@ public abstract class NPC {
 		{
 			Game.dialog.hideDialog();
 			isTalking=false;
+			// push back the first dialog
+			msg.add(msg.get(0));
+			msg.remove(0);
 		}
 		else
 		{
 			isTalking = true;
+			// push back the first dialog
+			msg.add(msg.get(0));
+			System.out.println(msg.get(0));
 			Game.dialog.showDialog(msg.remove(0));
+		
 		}
 	};
 		
