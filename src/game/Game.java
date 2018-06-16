@@ -12,6 +12,8 @@ import javax.swing.JFrame;
 
 import audio.AudioPlayer;
 import character.Ghost;
+import character.NPC;
+import character.NPC1;
 import character.TreasureBox;
 import game.entities.Player;
 import gfx.Font;
@@ -56,9 +58,10 @@ public class Game extends Canvas implements Runnable {
 	public Player player;
 	
 	// 
-	private Ghost ghost;
+	private NPC1 npc1;
 	private TreasureBox treasureBoxPotion;
 	private TreasureBox treasureBoxKey;
+	private TreasureBox treasureBoxGhost;
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
@@ -92,7 +95,7 @@ public class Game extends Canvas implements Runnable {
 		//contentPane.add(dialog.panel, BorderLayout.SOUTH);
 		
 		frame.setVisible(true);
-		ghost = new Ghost();
+		npc1 = new NPC1();
 		
 	}
 
@@ -118,8 +121,11 @@ public class Game extends Canvas implements Runnable {
 		levelFloor = new LevelFloor(64, 64);
 		level1=new Level1(64, 64);
 		// passing current level to treasureBox
+		// 0 stands for no-item box 
 		treasureBoxPotion=new TreasureBox(level1, 2);
 		treasureBoxKey=new TreasureBox(level1, 1);
+		treasureBoxGhost=new TreasureBox(level1, 0);
+		
 		player = new Player(level1, 0, 0, input);
 		level1.addEntity(player);	
 		
@@ -201,13 +207,16 @@ public class Game extends Canvas implements Runnable {
 		if(input.interact.getKeyDown() && Player.itemID >= 4 ) {
 			int NPCID = Player.itemID/4;
 			if(NPCID == 1) {
-				ghost.talkTo();
+				npc1.talkTo();
 			}
 			else if(NPCID == 2 || NPCID==25) {
-				treasureBoxPotion.talkTo(400);
+				treasureBoxPotion.talkTo(800);
 			}
 			else if(NPCID == 3 || NPCID==25) {
 				treasureBoxKey.talkTo(600);
+			}
+			else if(NPCID == 6) {
+				treasureBoxGhost.talkTo(400);
 			}
 		}
 		levelFloor.tick();

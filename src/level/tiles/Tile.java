@@ -16,15 +16,25 @@ public abstract class Tile {
 	public static final Tile NPC12 = new BasicSolidTile(5, 9, 28, Colours.get(-1, 111, 145, 543));
 	public static final Tile NPC21 = new BasicSolidTile(6, 8, 29, Colours.get(-1, 111, 145, 543));
 	public static final Tile NPC22 = new BasicSolidTile(7, 9, 29, Colours.get(-1, 111, 145, 543));
+	// 2
 	public static final Tile ChestPotion11 = new BasicSolidTile(8, 0, 24, Colours.get(-1, 111, 440, 032));
 	public static final Tile ChestPotion12 = new BasicSolidTile(9, 1, 24, Colours.get(-1, 111, 440, 032));
 	public static final Tile ChestPotion21 = new BasicSolidTile(10, 0, 25, Colours.get(-1, 111, 440, 032));
 	public static final Tile ChestPotion22 = new BasicSolidTile(11, 1, 25, Colours.get(-1, 111, 440, 032));
+	
+	// 3
 	public static final Tile ChestKey11 = new BasicSolidTile(12, 0, 24, Colours.get(-1, 111, 440, 032));
 	public static final Tile ChestKey12 = new BasicSolidTile(13, 1, 24, Colours.get(-1, 111, 440, 032));
 	public static final Tile ChestKey21 = new BasicSolidTile(14, 0, 25, Colours.get(-1, 111, 440, 032));
 	public static final Tile ChestKey22 = new BasicSolidTile(15, 1, 25, Colours.get(-1, 111, 440, 032));
 	
+	// 6
+	public static final Tile ChestGhost11 = new BasicSolidTile(24, 0, 24, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestGhost12 = new BasicSolidTile(25, 1, 24, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestGhost21 = new BasicSolidTile(26, 0, 25, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestGhost22 = new BasicSolidTile(27, 1, 25, Colours.get(-1, 111, 440, 032));
+	
+	// 4
 	public static final Tile door11 = new BasicSolidTile(16, 6, 24, Colours.get(-1, 111, 332, 321));
 	public static final Tile door12 = new BasicSolidTile(17, 7, 24, Colours.get(-1, 111, 332, 321));
 	public static final Tile door21 = new BasicSolidTile(18, 6, 25, Colours.get(-1, 111, 332, 321));
@@ -35,6 +45,14 @@ public abstract class Tile {
 	public static final Tile ChestOpen12 = new BasicSolidTile(101, 3, 24, Colours.get(-1, 111, 440, 032));
 	public static final Tile ChestOpen21 = new BasicSolidTile(102, 2, 25, Colours.get(-1, 111, 440, 032));
 	public static final Tile ChestOpen22 = new BasicSolidTile(103, 3, 25, Colours.get(-1, 111, 440, 032));
+	
+	// 5
+	public static final Tile Ghost11 = new BasicSolidTile(20, 0, 26, Colours.get(-1, 500, 333, 000));
+	public static final Tile Ghost12 = new BasicSolidTile(21, 1, 26, Colours.get(-1, 500, 333, 000));
+	public static final Tile Ghost21 = new BasicSolidTile(22, 0, 27, Colours.get(-1, 500, 333, 000));
+	public static final Tile Ghost22 = new BasicSolidTile(23, 1, 27, Colours.get(-1, 500, 333, 000));
+	
+	
 	
 	protected byte id;
 	protected boolean solid;

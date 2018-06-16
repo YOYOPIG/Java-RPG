@@ -17,7 +17,7 @@ public class LevelFloor extends Level {
 	}
 
 	@Override
-	public void renderingOpen(int position) {
+	public void renderingOpen(int position,int ID) {
 		// TODO Auto-generated method stub
 		
 	}
