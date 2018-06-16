@@ -1,10 +1,19 @@
+/** 
+ * This class adds the hint pop up layer into the game.
+ * To show a certain message, please use the showHint() method, using a string(ur message)
+ * as argument.
+ * @version 1.2
+ * @since   2018-06-11
+ */
+
 package ui;
 
 import java.awt.Color;
+
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 
-import gfx.Font;
+import game.Game;
 
 public class Hint {
 	private JLabel textbox; //the text to be shown
@@ -22,12 +31,12 @@ public class Hint {
 		textbox.setVerticalAlignment(JLabel.CENTER);
 		textbox.setHorizontalAlignment(JLabel.CENTER);
 		//textbox.setBackground(new Color(0, 0, 0, 0));
-		//textbox.setForeground(Color.black);
+		textbox.setForeground(Color.white);
 		//textbox.setOpaque(false);
 		// set position and dimension
-		textbox.setBounds(500, 820, 250, 80);
+		textbox.setBounds(530, Game.HEIGHT + 566, 250, 50);
 		textbox.setVisible(true);
-		layerPane.add(textbox, new Integer(1));
+		layerPane.add(textbox, new Integer(2));
 		hideHint();
 	}
 	

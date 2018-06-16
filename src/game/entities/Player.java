@@ -8,7 +8,7 @@ import level.Level;
 public class Player extends Mob{
 
 	private InputHandler input;
-	private int colour = Colours.get(-1, 111, 145, 543);
+	private int colour = Colours.get(-1, 000, 400, 543);
 	
 	public Player(Level level, int x, int y, InputHandler input) {
 		super(level, "Player", x, y, 1);
@@ -75,7 +75,6 @@ public class Player extends Mob{
 		// check 4 edges of the box
 		for(int i=xMin;i<=xMax;i++) {
 			if(isSolidTile(xa,ya,i,yMin)) {
-				System.out.println(itemID);
 				return true;
 			}
 			
@@ -83,14 +82,12 @@ public class Player extends Mob{
 		
 		for(int i=xMin;i<=xMax;i++) {
 			if(isSolidTile(xa,ya,i,yMax)) {
-				System.out.println(itemID);
 				return true;
 			}
 		}
 		
 		for(int i=yMin;i<=yMax;i++) {
 			if(isSolidTile(xa,ya,xMin,i)) {
-				System.out.println(itemID);
 				return true;
 			}
 				
@@ -98,7 +95,6 @@ public class Player extends Mob{
 		
 		for(int i=yMin;i<=yMax;i++) {
 			if(isSolidTile(xa,ya,xMax,i)) {
-				System.out.println(itemID);
 				return true;
 			}
 		}

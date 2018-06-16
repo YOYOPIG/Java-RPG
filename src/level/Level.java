@@ -1,26 +1,78 @@
 package level;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 
 import game.entities.Entity;
 import gfx.Screen;
 import level.tiles.Tile;
 
-public class Level {
+public abstract class Level {
 	
-	public int height;
-	public int width;
-	private byte[] tiles;
+	public static int height;
+	public static int width;
+	protected byte[] tiles;
 	public List<Entity> entities = new ArrayList<Entity>();
+	private String imagePath;
+	private BufferedImage image;
 	
 	public Level(int height, int width)
 	{
-		tiles = new byte[height * width];
-		this.height = height;
-		this.width = width;
-		this.generateLevel();
+			tiles = new byte[height * width];
+			this.height = 64;//height;
+			this.width = 64;//width;
+			this.generateLevel();
+	}
+	
+	public Level(String imagePath) {
+		if(imagePath != null) {
+			this.imagePath = imagePath;
+			this.loadLevelFromFile();
+		}
+	}
+	
+	private void loadLevelFromFile() {
+		try {
+			this.image = ImageIO.read(Level.class.getResource(this.imagePath));
+			this.width = image.getWidth();
+			this.height = image.getHeight();
+			tiles = new byte[width * height];
+			this.loadTiles();
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void loadTiles() {
+		int[] tileColours = this.image.getRGB(0, 0, width, height, null, 0, width);
+		for(int y = 0; y < height; y++) {
+			for(int x = 0; x < width; x++) {
+				tileCheck: for(Tile t: Tile.tiles) {
+					if(t != null && t.getLevelColour() == tileColours[x + y * width]) {
+						this.tiles[x + y * width] = t.getID();
+						break tileCheck;
+					}
+				}
+			}
+		}
+	}
+	//store image
+	private void saveLevelToTiles() {
+		try {
+			ImageIO.write(image, "png", new File(Level.class.getResource(this.imagePath).getFile()));
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+	//update tile
+	public void alterTile(int x, int y, Tile newTile) {
+		this.tiles[x + y * width] = newTile.getID();
+		image.setRGB(x, y, newTile.getLevelColour());
 	}
 	
 	public void renderTiles(Screen screen, double xOffset, double yOffset){
@@ -41,27 +93,9 @@ public class Level {
 		
 	}
 
-	private void generateLevel()
-	{
-		for(int i=0;i<height;++i)
-		{
-			for(int j=0;j<width;j++)
-			{
-				if(j * i % 10 < 9) {		//change the numbers of stones (<9)
-					tiles[j+i*width] = Tile.FLOOR.getID();
-				}
-				else {
-					tiles[j+i*width] = Tile.STONE.getID();
-				}
-				tiles[2]=Tile.NPC11.getID();
-				tiles[3]=Tile.NPC12.getID();
-				tiles[2+width]=Tile.NPC21.getID();
-				tiles[3+width]=Tile.NPC22.getID();
-			}
-		}
-		
-	}
-	
+
+	public abstract void generateLevel();
+
 	public Tile getTile(int x, int y)
 	{
 		if(x<0||x>=width||y<0||y>=height)	return Tile.VOID;		
@@ -83,4 +117,11 @@ public class Level {
 	public void addEntity(Entity entity) {
 		this.entities.add(entity);
 	}
+	
+	public byte[] getByteTiles() {
+		return tiles;
+	}
+	
+	public abstract void renderingOpen(int position,int ID);
+	public abstract void renderingOpen(int position,int ID,int widthCount);
 }

@@ -2,34 +2,38 @@ package game;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.time.Year;
 
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 
+import audio.AudioPlayer;
 import character.Ghost;
+import character.NPC;
+import character.NPC1;
+import character.Table;
+import character.TreasureBox;
 import game.entities.Player;
-import gfx.Colours;
 import gfx.Font;
 import gfx.Screen;
 import gfx.SpriteSheet;
 import level.Level;
+import level.Level1;
+import level.LevelFloor;
 import ui.Dialog;
 import ui.Hint;
+import ui.MainUI;
+
 
 public class Game extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 
 	public static final int WIDTH = 160;
-	public static final int HEIGHT = WIDTH / 12 * 9;
+	public static final int HEIGHT = WIDTH / 12 * 8;
 	public static final int SCALE = 8;
 	public static final String NAME = "Game";
 
@@ -45,17 +49,29 @@ public class Game extends Canvas implements Runnable {
 	
 	
 	private Screen screen;
-	private Ghost ghost;
 	public InputHandler input;
 	
-	public Level level;
+	//levels
+	public Level levelFloor;
+	public Level level1;
+	
 	public Font font;
 	public Player player;
 	
-	// dialog
+	// 
+	private NPC1 npc1;
+	private TreasureBox treasureBoxPotion;
+	private TreasureBox treasureBoxKey;
+	private TreasureBox treasureBoxGhost;
+	private Table table;
+	// UI
 	public static Dialog dialog;
 	public static Hint hint;
+	public static MainUI ui;
 
+	//AudioPlayer
+	private AudioPlayer bgmPlayer;
+	
 	public Game() {
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -75,13 +91,14 @@ public class Game extends Canvas implements Runnable {
 		// init dialog
 		dialog=new Dialog(frame.getLayeredPane());
 		hint=new Hint(frame.getLayeredPane());
+		ui = new MainUI(frame.getLayeredPane());
 		//Font.render("E Interact", screen, 100, 100, Colours.get(-1, -1, -1, 555));
 		//frame.add(dialog.panel,BorderLayout.SOUTH);
 		//contentPane.add(dialog.panel, BorderLayout.SOUTH);
 		
 		frame.setVisible(true);
-		ghost = new Ghost();
-
+		npc1 = new NPC1();
+		
 	}
 
 	public void init(){
@@ -102,9 +119,25 @@ public class Game extends Canvas implements Runnable {
 		screen= new Screen(WIDTH,HEIGHT,new SpriteSheet("/sprite_sheet.png"));
 		input = new InputHandler(this);
 		
-		level = new Level(64, 64);
-		player = new Player(level, 0, 0, input);
-		level.addEntity(player);
+		//level initialization
+		levelFloor = new LevelFloor(64, 64);
+		level1=new Level1(64, 64);
+		// passing current level to treasureBox
+		// 0 stands for no-item box 
+		treasureBoxPotion=new TreasureBox(level1, 4);
+		treasureBoxKey=new TreasureBox(level1, 1);
+		treasureBoxGhost=new TreasureBox(level1, 0);
+		// a table with purple potion on it
+		table=new Table(level1,2);
+		player = new Player(level1, 0, 0, input);
+		level1.addEntity(player);	
+		
+		//each audioplayer object plays a song
+		//Play Bgm by new AudioPlay
+		bgmPlayer = new AudioPlayer("./res/bgm.wav");
+		bgmPlayer.play();
+		//u call loop ,u loop it
+		bgmPlayer.loop();
 		
 	}
 
@@ -161,7 +194,7 @@ public class Game extends Canvas implements Runnable {
 		}
 	}
 
-//	private int x=0, y=0;
+// input handling the dialog
 	public void tick() {
 		tickCount++;
 		
@@ -175,14 +208,25 @@ public class Game extends Canvas implements Runnable {
 		
 		//to interact use input.interact.getPressed() to return if E is pressed.
 		if(input.interact.getKeyDown() && Player.itemID >= 4 ) {
-			
 			int NPCID = Player.itemID/4;
 			if(NPCID == 1) {
-				ghost.talkTo();
+				npc1.talkTo();
+			}
+			else if(NPCID == 2 || NPCID==25) {
+				treasureBoxPotion.talkTo(800);
+			}
+			else if(NPCID == 3 || NPCID==25) {
+				treasureBoxKey.talkTo(600);
+			}
+			else if(NPCID == 6) {
+				treasureBoxGhost.talkTo(400);
+			}
+			else if(NPCID== 7 || NPCID == 8 || NPCID==9 || NPCID==10) {
+				table.talkTo(3);
 			}
 		}
-		
-		level.tick();
+		levelFloor.tick();
+		level1.tick();
 }
 
 	public void render() {
@@ -193,16 +237,19 @@ public class Game extends Canvas implements Runnable {
 		}
 		double xOffset = player.x - (screen.width/2);
 		double yOffset = player.y - (screen.height/2);
-		level.renderTiles(screen, xOffset, yOffset);
-		level.renderEntities(screen);
 		
-		//testing
-		//font.render("Hi testing", screen, 32,0, Colours.get(-1, -1, -1, 555));
 		
-		for(int x = 0; x < level.width; x++) {
-			int colour = Colours.get(-1, -1, -1, 000);
-			if(x % 10 == 0 && x != 0)	colour = Colours.get(-1, -1, -1, 500);
-		}
+		levelFloor.renderTiles(screen, xOffset, yOffset);
+		levelFloor.renderEntities(screen);
+		level1.renderTiles(screen, xOffset, yOffset);
+		level1.renderEntities(screen);
+		
+		
+	
+//		for(int x = 0; x < levelFloor.width; x++) {
+//			int colour = Colours.get(-1, -1, -1, 000);
+//			if(x % 10 == 0 && x != 0)	colour = Colours.get(-1, -1, -1, 500);
+//		}
 
 		for(int y=0;y<screen.height;y++) {
 			for(int x=0;x<screen.width;x++) {

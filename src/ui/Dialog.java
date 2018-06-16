@@ -7,21 +7,13 @@
  */
 
 package ui;
-import java.awt.BorderLayout;
-
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.Point;
 import java.awt.image.BufferedImage;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
+
+import game.Game;
 
 public class Dialog{
 	
@@ -47,7 +39,7 @@ public class Dialog{
 		//textbox.setForeground(Color.black);
 		textbox.setOpaque(true);
 		// set position and dimension
-		textbox.setBounds(25, 780, 1250, 160);
+		textbox.setBounds(15, Game.HEIGHT + 550, 1250, 160);
 		
 		//textbox.setIcon();
 		ImageIcon icon = new ImageIcon("res/dialog_box.png");
