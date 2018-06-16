@@ -20,4 +20,8 @@ public class StartLevel extends Level{
 		
 	}
 
+	public void renderingOpen(int position, int ID, int widthCount) {
+		
+	}
+
 }
