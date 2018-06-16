@@ -145,13 +145,10 @@ public class Game extends Canvas implements Runnable {
 		treasureBoxGhost = new TreasureBox(level1, 0);
 
 		player = new Player(level1, 0, 0, input);
-		level1.addEntity(player);	
+		//level1.addEntity(player);
 
-		
 		//each audioplayer object plays a song
 		//Play Bgm by new AudioPlay
-
-		level1.addEntity(player);
 
 		// each audioplayer object plays a song
 		// Play Bgm by new AudioPlay
@@ -301,6 +298,7 @@ public class Game extends Canvas implements Runnable {
 			if (startIsSelected && input.enter.getKeyDown()) {
 				// start game
 				gameStarted = true;
+				level1.addEntity(player);
 			} else if (endIsSelected && input.enter.getKeyDown()) {
 				// do end application
 				System.out.println("close application");
