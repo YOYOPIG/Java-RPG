@@ -2,24 +2,18 @@ package game;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.time.Year;
 
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-import com.sun.javafx.webkit.UIClientImpl;
-
+import audio.MusicPlayer;
 import character.Ghost;
 import character.TreasureBox;
 import game.entities.Player;
-import gfx.Colours;
 import gfx.Font;
 import gfx.Screen;
 import gfx.SpriteSheet;
@@ -29,6 +23,7 @@ import level.LevelFloor;
 import ui.Dialog;
 import ui.Hint;
 import ui.MainUI;
+
 
 public class Game extends Canvas implements Runnable {
 
@@ -124,6 +119,10 @@ public class Game extends Canvas implements Runnable {
 		treasureBoxKey=new TreasureBox(level1);
 		player = new Player(level1, 0, 0, input);
 		level1.addEntity(player);
+		
+		//player BGM  but only play once, going to fix it to looping
+		MusicPlayer musicPlayer = new MusicPlayer("bgm.wav");
+		musicPlayer.run();
 		
 	}
 
