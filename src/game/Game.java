@@ -112,7 +112,6 @@ public class Game extends Canvas implements Runnable {
 		// contentPane.add(dialog.panel, BorderLayout.SOUTH);
 
 		frame.setVisible(true);
-		npc1 = new NPC1();
 	}
 
 	public void init() {
@@ -146,7 +145,7 @@ public class Game extends Canvas implements Runnable {
 		// a table with purple potion on it
 		table=new Table(level1,2);
 
-
+		npc1 = new NPC1(level1,1);
 		player = new Player(level1, 0, 0, input);
 		//level1.addEntity(player);
 
@@ -230,7 +229,7 @@ public class Game extends Canvas implements Runnable {
 		if(Player.itemID >= 4) {
 			int NPCID = Player.itemID / 4;
 			// press 4 and 
-			if(input.item4.getKeyDown() && ui.getBluePotionVisibility() && NPCID==1)
+			if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==1)
 				npc1.missionCompleted();
 			else if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==1) {
 				System.out.println("loselose");

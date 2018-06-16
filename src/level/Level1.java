@@ -90,7 +90,7 @@ public class Level1 extends Level {
 	}
 	@ Override
 	public void renderingOpen(int position,int ID) {
-		if(ID==0) {
+		if(ID==0 || ID==1) {
 			tiles[position] = Tile.Ghost11.getID();
 			tiles[position+1] = Tile.Ghost12.getID();
 			tiles[position+width] = Tile.Ghost21.getID();

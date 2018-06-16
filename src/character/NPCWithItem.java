@@ -9,10 +9,8 @@ import level.Level1;
 
 public abstract class NPCWithItem extends NPC{
 	
-	protected ArrayList<String> msg = new ArrayList<String>();
 	protected Level currentLevel;
 	protected boolean isProcessed;
-	protected AudioPlayer sound;
 	
 	public NPCWithItem(Level level,int ID) {
 		super(ID);

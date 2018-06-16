@@ -11,6 +11,12 @@ public class Ghost extends NPC{
 		msg.add("groan groan groan!!!!!!");
 		msg.add("ENDOFLINE");
 	}
+
+	@Override
+	public void setDialog() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
