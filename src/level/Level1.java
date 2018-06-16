@@ -76,11 +76,6 @@ public class Level1 extends Level {
 		tiles[53+13*width] = Tile.DoorExit21.getID();
 		tiles[54+13*width] = Tile.DoorExit22.getID();
 		
-		tiles[5+12*width] = Tile.DoorOpen11.getID();
-		tiles[6+12*width] = Tile.DoorOpen12.getID();
-		tiles[5+13*width] = Tile.DoorOpen21.getID();
-		tiles[6+13*width] = Tile.DoorOpen22.getID();
-		
 		// rendering the table 
 		tiles[3+3*width] = Tile.Table11.getID();
 		tiles[4+3*width] = Tile.Table12.getID();
