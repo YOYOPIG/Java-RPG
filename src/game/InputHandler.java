@@ -43,7 +43,12 @@ public class InputHandler implements KeyListener {
 	public Key down = new Key();
 	public Key right = new Key();
 	public Key interact = new Key();
-
+	
+	//add new key to select menu 
+	public Key selectUp = new Key();
+	public Key selectDown = new Key();
+	public Key enter = new Key();
+	
 	public void keyPressed(KeyEvent e) {
 		toggleKey(e.getKeyCode(), true);
 		// System.out.println(e.getKeyCode());
@@ -73,28 +78,40 @@ public class InputHandler implements KeyListener {
 	 * This method sets each keys' status(pressed or not)
 	 */
 	public void toggleKey(int keyCode, boolean pressStatus) {
-		if (keyCode == KeyEvent.VK_W || keyCode == KeyEvent.VK_UP) {
+		if (keyCode == KeyEvent.VK_W) {
 			footstepSFX1.play();
 			footstepSFX1.loop();
 			up.setPressed(pressStatus);
 		}
-		if (keyCode == KeyEvent.VK_A || keyCode == KeyEvent.VK_LEFT) {
+		if (keyCode == KeyEvent.VK_A) {
 			footstepSFX2.play();
 			footstepSFX2.loop();
 			left.setPressed(pressStatus);
 		}
-		if (keyCode == KeyEvent.VK_S || keyCode == KeyEvent.VK_DOWN) {
+		if (keyCode == KeyEvent.VK_S) {
 			footstepSFX3.play();
 			footstepSFX3.loop();
 			down.setPressed(pressStatus);
 		}
-		if (keyCode == KeyEvent.VK_D || keyCode == KeyEvent.VK_RIGHT) {
+		if (keyCode == KeyEvent.VK_D) {
 			footstepSFX4.play();
 			footstepSFX4.loop();
 			right.setPressed(pressStatus);
 		}
 		if (keyCode == KeyEvent.VK_E) {
 			interact.setPressed(pressStatus);
+		}
+		
+		if (keyCode == KeyEvent.VK_UP) {
+			selectUp.setPressed(pressStatus);
+		}
+		
+		if (keyCode == KeyEvent.VK_DOWN) {
+			selectDown.setPressed(pressStatus);
+		}
+		
+		if (keyCode == KeyEvent.VK_ENTER) {
+			enter.setPressed(pressStatus);
 		}
 	}
 }
