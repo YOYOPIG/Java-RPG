@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
 import javax.swing.JFrame;
+import javax.xml.stream.events.Namespace;
 
 import audio.AudioPlayer;
 import character.Ghost;
@@ -26,6 +27,7 @@ import level.Level;
 import level.Level1;
 import level.StartLevel;
 import level.LevelFloor;
+import sun.swing.UIAction;
 import ui.Dialog;
 import ui.Hint;
 import ui.MainUI;
@@ -78,8 +80,12 @@ public class Game extends Canvas implements Runnable {
 	// boolean for menu
 	boolean startIsSelected = false;
 	boolean endIsSelected = false;
-	int colourup = Colours.get(-1, -1, -1, 555), colourdown = Colours.get(-1, -1, -1, 555);
+	int colourup = Colours.get(-1, -1, -1, 222), colourdown = Colours.get(-1, -1, -1, 222);
 	boolean gameStarted = false;
+	
+	
+	//boolean to test game whether stop
+	boolean gameOver=false;
 
 	public Game() {
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -139,10 +145,7 @@ public class Game extends Canvas implements Runnable {
 		treasureBoxGhost=new TreasureBox(level1, 0);
 		// a table with purple potion on it
 		table=new Table(level1,2);
-		// 0 stands for no-item box
-		treasureBoxPotion = new TreasureBox(level1, 2);
-		treasureBoxKey = new TreasureBox(level1, 1);
-		treasureBoxGhost = new TreasureBox(level1, 0);
+
 
 		player = new Player(level1, 0, 0, input);
 		//level1.addEntity(player);
@@ -222,11 +225,16 @@ public class Game extends Canvas implements Runnable {
 		} else {
 			hint.hideHint();
 		}
-
+		
+		if(Player.itemID >= 4) {
+			if(input.item2.getKeyDown() && ui.getPotionVisibility())
+				npc1.missionCompleted();
+		}
+		
 		// to interact use input.interact.getPressed() to return if E is pressed.
 		if (input.interact.getKeyDown() && Player.itemID >= 4) {
 			int NPCID = Player.itemID / 4;
-			if (NPCID == 1) {
+			if (NPCID == 1 ) {
 				npc1.talkTo();
 			} else if (NPCID == 2 || NPCID == 25) {
 				treasureBoxPotion.talkTo(800);
@@ -234,6 +242,7 @@ public class Game extends Canvas implements Runnable {
 				treasureBoxKey.talkTo(600);
 			} else if (NPCID == 6) {
 				treasureBoxGhost.talkTo(400);
+				gameOver=true;
 			}
 			else if(NPCID== 7 || NPCID == 8 || NPCID==9 || NPCID==10) {
 				table.talkTo(3);
@@ -259,6 +268,12 @@ public class Game extends Canvas implements Runnable {
 
 		
 		startMenu();
+		
+		//Render Game Over!!
+		if(gameOver) {
+			Font.render("Game Over!", screen,WIDTH / 2 - "Game Over!".length() * 8 / 2+(int)xOffset, 20+(int)yOffset, Colours.get(333, -1, -1, 555));
+			Font.render("You Die!", screen,WIDTH / 2 - "You Die!".length() * 8 / 2+(int)xOffset, 20+(int)yOffset+8, Colours.get(333, -1, -1, 500));
+		}
 
 		for (int y = 0; y < screen.height; y++) {
 			for (int x = 0; x < screen.width; x++) {
@@ -285,15 +300,15 @@ public class Game extends Canvas implements Runnable {
 				startIsSelected = false;
 			}
 			if (startIsSelected) {
-				colourup = Colours.get(-1, -1, -1, 222);
+				colourup = Colours.get(-1, -1, -1, 555);
 			}
 
 			else
-				colourup = Colours.get(-1, -1, -1, 555);
+				colourup = Colours.get(-1, -1, -1, 444);
 			if (endIsSelected) {
-				colourdown = Colours.get(-1, -1, -1, 222);
-			} else
 				colourdown = Colours.get(-1, -1, -1, 555);
+			} else
+				colourdown = Colours.get(-1, -1, -1, 444);
 
 			if (startIsSelected && input.enter.getKeyDown()) {
 				// start game

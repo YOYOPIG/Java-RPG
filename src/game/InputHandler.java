@@ -8,8 +8,8 @@ import audio.AudioPlayer;
  * The InputHandler class implements the KeyListener class. This class can
  * handle w,a,s,d inputs to the game.
  * 
- * @version 1.0
- * @since 2018-05-26
+ * @version 1.5
+ * @since 2018-06-16
  */
 
 public class InputHandler implements KeyListener {
@@ -43,6 +43,15 @@ public class InputHandler implements KeyListener {
 	public Key down = new Key();
 	public Key right = new Key();
 	public Key interact = new Key();
+	
+	//keys to use item
+	public Key item1 = new Key();
+	public Key item2 = new Key();
+	public Key item3 = new Key();
+	public Key item4 = new Key();
+	public Key item5 = new Key();
+	public Key item6 = new Key();
+	
 	
 	//add new key to select menu 
 	public Key selectUp = new Key();
@@ -112,6 +121,30 @@ public class InputHandler implements KeyListener {
 		
 		if (keyCode == KeyEvent.VK_ENTER) {
 			enter.setPressed(pressStatus);
+		}
+		
+		if (keyCode == KeyEvent.VK_1) {
+			item1.setPressed(pressStatus);
+		}
+		
+		if (keyCode == KeyEvent.VK_2) {
+			item2.setPressed(pressStatus);
+		}
+		
+		if (keyCode == KeyEvent.VK_3) {
+			item3.setPressed(pressStatus);
+		}
+		
+		if (keyCode == KeyEvent.VK_4) {
+			item4.setPressed(pressStatus);
+		}
+		
+		if (keyCode == KeyEvent.VK_5) {
+			item5.setPressed(pressStatus);
+		}
+		
+		if (keyCode == KeyEvent.VK_6) {
+			item6.setPressed(pressStatus);
 		}
 	}
 }

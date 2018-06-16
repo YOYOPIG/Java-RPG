@@ -6,7 +6,11 @@ public class NPC1 extends NPC{
 	{
 		super(0);
 		msg.add("Hello, PLAYER");
-		msg.add("ENDOFLINE");
 	}
+	
+	public void missionCompleted() {
+		System.out.println("Here");
+	}
+	
 	
 }

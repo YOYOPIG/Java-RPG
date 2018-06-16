@@ -18,19 +18,14 @@ public abstract class NPC {
 	
 	public void talkTo() {
 		
-		if(msg.get(0).equals("ENDOFLINE"))
+		if(msg.isEmpty())
 		{
 			Game.dialog.hideDialog();
 			isTalking=false;
-			// push back the first dialog
-			msg.add(msg.get(0));
-			msg.remove(0);
 		}
 		else
 		{
 			isTalking = true;
-			// push back the first dialog
-			msg.add(msg.get(0));
 			Game.dialog.showDialog(msg.remove(0));
 		
 		}
