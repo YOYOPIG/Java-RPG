@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.xml.stream.events.Namespace;
 
 import audio.AudioPlayer;
+import character.Door;
 import character.Ghost;
 import character.NPC;
 import character.NPC1;
@@ -61,11 +62,12 @@ public class Game extends Canvas implements Runnable {
 
 	public Player player;
 
-	//
+	// gameObject
 	private NPC1 npc1;
 	private TreasureBox treasureBoxPotion;
 	private TreasureBox treasureBoxGhost;
 	private Table table;
+	private Door doorR1ToHallway;
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
@@ -142,7 +144,7 @@ public class Game extends Canvas implements Runnable {
 		table=new Table(level1,2,3+3*Level.width);
 		npc1 = new NPC1(level1,1,455);
 		player = new Player(level1, 0, 0, input);
-		// level1.addEntity(player);
+		doorR1ToHallway = new Door(level1, 5, 1800);
 
 		// each audioplayer object plays a song
 
@@ -228,6 +230,10 @@ public class Game extends Canvas implements Runnable {
 				level1.renderingOpen( npc1.getPosition(),npc1.getID());
 				gameOver=true;
 			}
+			else if(input.item1.getKeyDown() && ui.getKeyVisibility() && NPCID==4) {
+				System.out.println("hey!!");
+				level1.renderingOpen(doorR1ToHallway.getPosition(), doorR1ToHallway.getID());
+			}
 			
 		}
 
@@ -243,6 +249,8 @@ public class Game extends Canvas implements Runnable {
 				gameOver = true;
 			} else if (NPCID == 7 || NPCID == 8 || NPCID == 9 || NPCID == 10) {
 				table.talkTo(3);
+			} else if(NPCID==4 || NPCID==14) {
+				doorR1ToHallway.talkTo();
 			}
 		}
 		levelFloor.tick();
