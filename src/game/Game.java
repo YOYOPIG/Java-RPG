@@ -197,10 +197,10 @@ public class Game extends Canvas implements Runnable {
 			if(NPCID == 1) {
 				ghost.talkTo();
 			}
-			else if(NPCID == 2) {
+			else if(NPCID == 2 || NPCID==25) {
 				treasureBoxPotion.talkTo(400);
 			}
-			else if(NPCID == 3) {
+			else if(NPCID == 3 || NPCID==25) {
 				treasureBoxKey.talkTo(600);
 			}
 		}

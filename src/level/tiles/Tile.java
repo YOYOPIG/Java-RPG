@@ -31,10 +31,10 @@ public abstract class Tile {
 	public static final Tile door22 = new BasicSolidTile(19, 7, 25, Colours.get(-1, 111, 440, 032));
 	
 	
-	public static final Tile ChestOpen11 = new BasicSolidTile(99, 2, 24, Colours.get(-1, 111, 440, 032));
-	public static final Tile ChestOpen12 = new BasicSolidTile(100, 3, 24, Colours.get(-1, 111, 440, 032));
-	public static final Tile ChestOpen21 = new BasicSolidTile(101, 2, 25, Colours.get(-1, 111, 440, 032));
-	public static final Tile ChestOpen22 = new BasicSolidTile(102, 3, 25, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestOpen11 = new BasicSolidTile(100, 2, 24, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestOpen12 = new BasicSolidTile(101, 3, 24, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestOpen21 = new BasicSolidTile(102, 2, 25, Colours.get(-1, 111, 440, 032));
+	public static final Tile ChestOpen22 = new BasicSolidTile(103, 3, 25, Colours.get(-1, 111, 440, 032));
 	
 	protected byte id;
 	protected boolean solid;
