@@ -78,8 +78,12 @@ public class Game extends Canvas implements Runnable {
 	// boolean for menu
 	boolean startIsSelected = false;
 	boolean endIsSelected = false;
-	int colourup = Colours.get(-1, -1, -1, 555), colourdown = Colours.get(-1, -1, -1, 555);
+	int colourup = Colours.get(-1, -1, -1, 222), colourdown = Colours.get(-1, -1, -1, 222);
 	boolean gameStarted = false;
+	
+	
+	//boolean to test game whether stop
+	boolean gameOver=false;
 
 	public Game() {
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -234,6 +238,7 @@ public class Game extends Canvas implements Runnable {
 				treasureBoxKey.talkTo(600);
 			} else if (NPCID == 6) {
 				treasureBoxGhost.talkTo(400);
+				gameOver=true;
 			}
 			else if(NPCID== 7 || NPCID == 8 || NPCID==9 || NPCID==10) {
 				table.talkTo(3);
@@ -259,6 +264,12 @@ public class Game extends Canvas implements Runnable {
 
 		
 		startMenu();
+		
+		//Render Game Over!!
+		if(gameOver) {
+			Font.render("Game Over!", screen,WIDTH / 2 - "Game Over!".length() * 8 / 2+(int)xOffset, 20+(int)yOffset, Colours.get(333, -1, -1, 555));
+			Font.render("You Die!", screen,WIDTH / 2 - "You Die!".length() * 8 / 2+(int)xOffset, 20+(int)yOffset+8, Colours.get(333, -1, -1, 500));
+		}
 
 		for (int y = 0; y < screen.height; y++) {
 			for (int x = 0; x < screen.width; x++) {
@@ -285,15 +296,15 @@ public class Game extends Canvas implements Runnable {
 				startIsSelected = false;
 			}
 			if (startIsSelected) {
-				colourup = Colours.get(-1, -1, -1, 222);
+				colourup = Colours.get(-1, -1, -1, 555);
 			}
 
 			else
-				colourup = Colours.get(-1, -1, -1, 555);
+				colourup = Colours.get(-1, -1, -1, 444);
 			if (endIsSelected) {
-				colourdown = Colours.get(-1, -1, -1, 222);
-			} else
 				colourdown = Colours.get(-1, -1, -1, 555);
+			} else
+				colourdown = Colours.get(-1, -1, -1, 444);
 
 			if (startIsSelected && input.enter.getKeyDown()) {
 				// start game
