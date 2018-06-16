@@ -76,6 +76,7 @@ public class Game extends Canvas implements Runnable {
 
 	// AudioPlayer
 	private AudioPlayer bgmPlayer;
+	private AudioPlayer gameOverSFX;
 
 	// boolean for menu
 	boolean startIsSelected = false;
@@ -150,10 +151,9 @@ public class Game extends Canvas implements Runnable {
 		player = new Player(level1, 0, 0, input);
 		//level1.addEntity(player);
 
-		//each audioplayer object plays a song
-		//Play Bgm by new AudioPlay
-
 		// each audioplayer object plays a song
+		gameOverSFX = new AudioPlayer("./res/gameover.wav");
+		
 		// Play Bgm by new AudioPlay
 		bgmPlayer = new AudioPlayer("./res/bgm.wav");
 		bgmPlayer.play();
@@ -275,6 +275,9 @@ public class Game extends Canvas implements Runnable {
 		
 		//Render Game Over!!
 		if(gameOver) {
+			bgmPlayer.stop();
+			gameOverSFX.play();
+			gameOverSFX.loop();
 			Font.render("Game Over!", screen,WIDTH / 2 - "Game Over!".length() * 8 / 2+(int)xOffset, 20+(int)yOffset, Colours.get(333, -1, -1, 555));
 			Font.render("You Die!", screen,WIDTH / 2 - "You Die!".length() * 8 / 2+(int)xOffset, 20+(int)yOffset+8, Colours.get(333, -1, -1, 500));
 		}
