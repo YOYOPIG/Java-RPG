@@ -9,13 +9,11 @@ import level.Level1;
 
 public abstract class NPCWithItem extends NPC{
 	
-	protected ArrayList<String> msg = new ArrayList<String>();
 	protected Level currentLevel;
 	protected boolean isProcessed;
-	protected AudioPlayer sound;
 	
-	public NPCWithItem(Level level,int ID) {
-		super(ID);
+	public NPCWithItem(Level level,int ID,int p) {
+		super(ID,p);
 		currentLevel = level;
 		isProcessed = false;
 	}
@@ -38,14 +36,17 @@ public abstract class NPCWithItem extends NPC{
 				isProcessed=true;
 				// get item ID and put item into inventory
 				Game.ui.acquireItem(ID);
-				sound.play();
 			}
+			
+			if(msg.get(0).equals("Item acquired!"))
+				sound.play();
+			
 			isTalking = true;
 			// rendering opened pic
 			// 3 is table with potion
 			if(ID==2) 
 				currentLevel.renderingOpen(position,ID,3);	
-			else
+			else if(getID()!=1)
 				currentLevel.renderingOpen(position,ID);
 			// display msg
 			Game.dialog.showDialog(msg.remove(0));
