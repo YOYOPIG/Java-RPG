@@ -20,7 +20,7 @@ public class TreasureBox extends NPC{
 		
 	}
 	
-	public void talkTo() {
+	public void talkTo(int position) {
 		
 		if(msg.get(0).equals("ENDOFLINE"))
 		{
@@ -33,12 +33,13 @@ public class TreasureBox extends NPC{
 		{
 			isTalking = true;
 			// rendering opened pic
-			currentLevel.renderingOpen(400);
+			currentLevel.renderingOpen(position);
 			Game.dialog.showDialog(msg.remove(0));
 		}
 	}
 	
 	public void setDialog() {
+		// clear dialog list
 		msg.clear();
 		msg.add("This is empty!");
 		msg.add("ENDOFLINE");
