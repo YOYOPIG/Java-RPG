@@ -14,7 +14,6 @@ public class LevelFloor extends Level {
 					tiles[j + i * width] = Tile.FLOOR.getID();
 			}
 		}
-
 	}
 
 	@Override

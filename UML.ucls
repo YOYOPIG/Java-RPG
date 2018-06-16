@@ -199,313 +199,309 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="23">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="24">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <association id="25">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="26" name="screen"/>      
-      <multiplicity id="27" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="28">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="29">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="11"/>  
-  </dependency>  
-  <dependency id="30">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="21"/>  
-  </dependency>  
-  <dependency id="31">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="32">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <association id="33">    
+  <association id="23">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="34" name="ChestOpen21"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
+      <attribute id="24" name="Table41"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="36">    
-    <end type="SOURCE" refId="7"/>    
+  <dependency id="26">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <association id="28">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="29" name="screen"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="31">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="32">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="33" name="Table21"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="35">    
+    <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="11"/>  
   </dependency>  
-  <generalization id="37">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="7"/>  
-  </generalization>  
+  <dependency id="36">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="37">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
   <dependency id="38">    
-    <end type="SOURCE" refId="10"/>    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="6"/>  
   </dependency>  
   <association id="39">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="40" name="ChestPotion11"/>      
+      <attribute id="40" name="ChestOpen21"/>      
       <multiplicity id="41" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="42">    
+  <dependency id="42">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <generalization id="43">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <dependency id="44">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <association id="45">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="46" name="ChestPotion11"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="49" name="Table42"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="51">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="43" name="levelFloor"/>      
-      <multiplicity id="44" minimum="0" maximum="1"/>    
+      <attribute id="52" name="levelFloor"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="45">    
+  <association id="54">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="46" name="entities"/>      
-      <multiplicity id="47" minimum="0" maximum="2147483647"/>    
+      <attribute id="55" name="entities"/>      
+      <multiplicity id="56" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="48">    
+  <dependency id="57">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="15"/>  
   </dependency>  
-  <generalization id="49">    
+  <generalization id="58">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
-  <dependency id="50">    
+  <association id="59">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="60" name="Table22"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="62">    
     <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="13"/>  
   </dependency>  
-  <generalization id="51">    
+  <generalization id="63">    
     <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="12"/>  
   </generalization>  
-  <dependency id="52">    
+  <dependency id="64">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="9"/>  
   </dependency>  
-  <dependency id="53">    
+  <dependency id="65">    
     <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="19"/>  
   </dependency>  
-  <association id="54">    
+  <association id="66">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="55" name="dialog"/>      
-      <multiplicity id="56" minimum="0" maximum="1"/>    
+      <attribute id="67" name="dialog"/>      
+      <multiplicity id="68" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="19" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="57">    
+  <association id="69">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="58" name="Ghost12"/>      
-      <multiplicity id="59" minimum="0" maximum="1"/>    
+      <attribute id="70" name="Ghost12"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="60">    
+  <association id="72">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="61" name="sheet"/>      
-      <multiplicity id="62" minimum="0" maximum="1"/>    
+      <attribute id="73" name="sheet"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="63">    
+  <association id="75">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="64" name="footstepSFX2"/>      
-      <multiplicity id="65" minimum="0" maximum="1"/>    
+      <attribute id="76" name="footstepSFX2"/>      
+      <multiplicity id="77" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="66">    
+  <association id="78">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="79" name="Table12"/>      
+      <multiplicity id="80" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="81">    
     <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="67" name="sound"/>      
-      <multiplicity id="68" minimum="0" maximum="1"/>    
+      <attribute id="82" name="sound"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="69">    
+  <dependency id="84">    
     <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="6"/>  
   </dependency>  
-  <association id="70">    
+  <association id="85">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="71" name="STONE"/>      
-      <multiplicity id="72" minimum="0" maximum="1"/>    
+      <attribute id="86" name="STONE"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="73">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="74" name="NPC21"/>      
-      <multiplicity id="75" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="76">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="77" name="VOID"/>      
-      <multiplicity id="78" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="79">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="80" name="level"/>      
-      <multiplicity id="81" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="82">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="11"/>  
-  </dependency>  
-  <dependency id="83">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <association id="84">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="85" name="player"/>      
-      <multiplicity id="86" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="87">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
   <association id="88">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="89" name="ChestGhost21"/>      
+      <attribute id="89" name="NPC21"/>      
       <multiplicity id="90" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="91">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <association id="92">    
+  <association id="91">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="93" name="ChestPotion21"/>      
-      <multiplicity id="94" minimum="0" maximum="1"/>    
+      <attribute id="92" name="VOID"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="95">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="96" name="ui"/>      
-      <multiplicity id="97" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="98">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="99" name="ChestGhost22"/>      
-      <multiplicity id="100" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="101">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="102" name="door21"/>      
-      <multiplicity id="103" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="104">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="105" name="currentLevel"/>      
-      <multiplicity id="106" minimum="0" maximum="1"/>    
+  <association id="94">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="95" name="level"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="107">    
+  <dependency id="97">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="98">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <association id="99">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="100" name="player"/>      
+      <multiplicity id="101" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="102">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <association id="103">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="108" name="ChestKey22"/>      
-      <multiplicity id="109" minimum="0" maximum="1"/>    
+      <attribute id="104" name="ChestGhost21"/>      
+      <multiplicity id="105" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="106">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="107" name="Table32"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="109">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
   <association id="110">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="111" name="Ghost22"/>      
+      <attribute id="111" name="ChestPotion21"/>      
       <multiplicity id="112" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="113">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <association id="114">    
+  <association id="113">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="114" name="ui"/>      
+      <multiplicity id="115" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="116">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="115" name="ChestOpen12"/>      
-      <multiplicity id="116" minimum="0" maximum="1"/>    
+      <attribute id="117" name="ChestGhost22"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="117">    
+  <association id="119">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="118" name="Ghost11"/>      
-      <multiplicity id="119" minimum="0" maximum="1"/>    
+      <attribute id="120" name="door21"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="120">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <dependency id="121">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="14"/>  
-  </dependency>  
   <association id="122">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="123" name="ChestKey12"/>      
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="123" name="currentLevel"/>      
       <multiplicity id="124" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="125">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="126" name="Ghost21"/>      
+      <attribute id="126" name="ChestKey22"/>      
       <multiplicity id="127" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
@@ -513,171 +509,171 @@
   </association>  
   <association id="128">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="129" name="tiles"/>      
-      <multiplicity id="130" minimum="0" maximum="2147483647"/>    
+      <attribute id="129" name="Ghost22"/>      
+      <multiplicity id="130" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="131">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="132" name="ChestGhost11"/>      
-      <multiplicity id="133" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="134">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="19"/>  
+  <dependency id="131">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="1"/>  
   </dependency>  
+  <association id="132">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="133" name="ChestOpen12"/>      
+      <multiplicity id="134" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="135">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="136" name="ChestKey21"/>      
+      <attribute id="136" name="Ghost11"/>      
       <multiplicity id="137" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="138">    
+  <generalization id="138">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <dependency id="139">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <association id="140">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="139" name="FLOOR"/>      
-      <multiplicity id="140" minimum="0" maximum="1"/>    
+      <attribute id="141" name="ChestKey12"/>      
+      <multiplicity id="142" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="141">    
+  <association id="143">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="144" name="Ghost21"/>      
+      <multiplicity id="145" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="146">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="147" name="tiles"/>      
+      <multiplicity id="148" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="149">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="150" name="ChestGhost11"/>      
+      <multiplicity id="151" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="152">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <association id="153">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="154" name="ChestKey21"/>      
+      <multiplicity id="155" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="156">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="157" name="FLOOR"/>      
+      <multiplicity id="158" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="159">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="142" name="up"/>      
-      <multiplicity id="143" minimum="0" maximum="1"/>    
+      <attribute id="160" name="up"/>      
+      <multiplicity id="161" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="144">    
+  <association id="162">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="145" name="GRASS"/>      
-      <multiplicity id="146" minimum="0" maximum="1"/>    
+      <attribute id="163" name="GRASS"/>      
+      <multiplicity id="164" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="147">    
+  <generalization id="165">    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="11"/>  
   </generalization>  
-  <association id="148">    
+  <association id="166">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="149" name="left"/>      
-      <multiplicity id="150" minimum="0" maximum="1"/>    
+      <attribute id="167" name="left"/>      
+      <multiplicity id="168" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="151">    
+  <dependency id="169">    
     <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="14"/>  
   </dependency>  
-  <association id="152">    
+  <association id="170">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="153" name="treasureBoxKey"/>      
-      <multiplicity id="154" minimum="0" maximum="1"/>    
+      <attribute id="171" name="treasureBoxKey"/>      
+      <multiplicity id="172" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="155">    
+  <association id="173">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="156" name="footstepSFX1"/>      
-      <multiplicity id="157" minimum="0" maximum="1"/>    
+      <attribute id="174" name="footstepSFX1"/>      
+      <multiplicity id="175" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="158">    
+  <association id="176">    
     <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="159" name="input"/>      
-      <multiplicity id="160" minimum="0" maximum="1"/>    
+      <attribute id="177" name="input"/>      
+      <multiplicity id="178" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="161">    
+  <association id="179">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="162" name="down"/>      
-      <multiplicity id="163" minimum="0" maximum="1"/>    
+      <attribute id="180" name="down"/>      
+      <multiplicity id="181" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="164">    
+  <association id="182">    
     <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="165" name="level"/>      
-      <multiplicity id="166" minimum="0" maximum="1"/>    
+      <attribute id="183" name="level"/>      
+      <multiplicity id="184" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="167">    
+  <dependency id="185">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="3"/>  
   </dependency>  
-  <association id="168">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="169" name="ChestPotion22"/>      
-      <multiplicity id="170" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="171">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="172" name="NPC22"/>      
-      <multiplicity id="173" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="174">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="175" name="ChestOpen22"/>      
-      <multiplicity id="176" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="177">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="178">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <association id="179">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="180" name="door12"/>      
-      <multiplicity id="181" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="182">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <association id="183">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="184" name="door11"/>      
-      <multiplicity id="185" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="186">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="187" name="ChestPotion12"/>      
+      <attribute id="187" name="ChestPotion22"/>      
       <multiplicity id="188" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
@@ -685,170 +681,238 @@
   </association>  
   <association id="189">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="190" name="NPC12"/>      
+      <attribute id="190" name="NPC22"/>      
       <multiplicity id="191" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="192">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="193" name="footstepSFX3"/>      
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="193" name="ChestOpen22"/>      
       <multiplicity id="194" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="195">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="196">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <association id="197">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="198" name="door12"/>      
+      <multiplicity id="199" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="200">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="201">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="202" name="door11"/>      
+      <multiplicity id="203" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="204">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="205" name="ChestPotion12"/>      
+      <multiplicity id="206" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="207">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="208" name="NPC12"/>      
+      <multiplicity id="209" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="210">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="211" name="footstepSFX3"/>      
+      <multiplicity id="212" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="195">    
+  <dependency id="213">    
     <end type="SOURCE" refId="21"/>    
     <end type="TARGET" refId="1"/>  
   </dependency>  
-  <generalization id="196">    
+  <generalization id="214">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="7"/>  
   </generalization>  
-  <association id="197">    
+  <association id="215">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="198" name="hint"/>      
-      <multiplicity id="199" minimum="0" maximum="1"/>    
+      <attribute id="216" name="hint"/>      
+      <multiplicity id="217" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="200">    
+  <association id="218">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="201" name="right"/>      
-      <multiplicity id="202" minimum="0" maximum="1"/>    
+      <attribute id="219" name="right"/>      
+      <multiplicity id="220" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="203">    
+  <association id="221">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="204" name="door22"/>      
-      <multiplicity id="205" minimum="0" maximum="1"/>    
+      <attribute id="222" name="door22"/>      
+      <multiplicity id="223" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="206">    
+  <association id="224">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="207" name="level1"/>      
-      <multiplicity id="208" minimum="0" maximum="1"/>    
+      <attribute id="225" name="level1"/>      
+      <multiplicity id="226" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="209">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="210" name="ChestGhost12"/>      
-      <multiplicity id="211" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="212">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="213" name="interact"/>      
-      <multiplicity id="214" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="215">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <association id="216">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="217" name="treasureBoxPotion"/>      
-      <multiplicity id="218" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="219">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="220" name="footstepSFX4"/>      
-      <multiplicity id="221" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="222">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <dependency id="223">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="17"/>  
-  </dependency>  
-  <generalization id="224">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <dependency id="225">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="226">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="11"/>  
-  </dependency>  
   <association id="227">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="228" name="ChestKey11"/>      
+      <attribute id="228" name="ChestGhost12"/>      
       <multiplicity id="229" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="230">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="231" name="treasureBoxGhost"/>      
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="231" name="interact"/>      
       <multiplicity id="232" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="233">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="234">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="235" name="treasureBoxPotion"/>      
+      <multiplicity id="236" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="233">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="7"/>  
+  <association id="237">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="238" name="footstepSFX4"/>      
+      <multiplicity id="239" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="240">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
   </dependency>  
-  <association id="234">    
+  <dependency id="241">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <generalization id="242">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="243">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="235" name="NPC11"/>      
-      <multiplicity id="236" minimum="0" maximum="1"/>    
+      <attribute id="244" name="Table31"/>      
+      <multiplicity id="245" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="237">    
+  <dependency id="246">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="247">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <association id="248">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="249" name="ChestKey11"/>      
+      <multiplicity id="250" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="251">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="238" name="input"/>      
-      <multiplicity id="239" minimum="0" maximum="1"/>    
+      <attribute id="252" name="treasureBoxGhost"/>      
+      <multiplicity id="253" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="254">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <association id="255">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="256" name="NPC11"/>      
+      <multiplicity id="257" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="258">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="259" name="input"/>      
+      <multiplicity id="260" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="240">    
+  <association id="261">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="241" name="ChestOpen11"/>      
-      <multiplicity id="242" minimum="0" maximum="1"/>    
+      <attribute id="262" name="ChestOpen11"/>      
+      <multiplicity id="263" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="243">    
+  <generalization id="264">    
     <end type="SOURCE" refId="16"/>    
     <end type="TARGET" refId="17"/>  
   </generalization>  
-  <association id="244">    
+  <association id="265">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="245" name="bgmPlayer"/>      
-      <multiplicity id="246" minimum="0" maximum="1"/>    
+      <attribute id="266" name="bgmPlayer"/>      
+      <multiplicity id="267" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="268">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="269" name="Table11"/>      
+      <multiplicity id="270" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
