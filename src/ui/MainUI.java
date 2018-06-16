@@ -22,6 +22,7 @@ public class MainUI {
 	private JLabel potion;
 	private JLabel light;
 	private JLabel bluePotion;
+	private JLabel itemDescription;
 	private JLayeredPane pane;
 	
 	public MainUI()
@@ -38,6 +39,7 @@ public class MainUI {
 		potion = new JLabel();
 		light = new JLabel();
 		bluePotion = new JLabel();
+		itemDescription = new JLabel();
 		
 		// set position and dimension
 		hp.setBounds(25, 25, 236, 70);
@@ -46,6 +48,7 @@ public class MainUI {
 		potion.setBounds(Game.WIDTH+365, Game.HEIGHT + 635, 65, 65);
 		light.setBounds(Game.WIDTH+440, Game.HEIGHT + 635, 65, 65);
 		bluePotion.setBounds(Game.WIDTH+512, Game.HEIGHT + 635, 65, 65);
+		itemDescription.setBounds(Game.WIDTH+320, Game.HEIGHT + 150, 386, 378);
 		
 		//add image
 		ImageIcon icon = new ImageIcon("res/hp3.png");
@@ -58,6 +61,7 @@ public class MainUI {
 		potion.setIcon(new ImageIcon("res/potion.png"));
 		light.setIcon(new ImageIcon("res/light.png"));
 		bluePotion.setIcon(new ImageIcon("res/blue_potion.png"));
+		itemDescription.setIcon(new ImageIcon("res/keyUI.png"));
 		
 		//add to frame
 		FL.add(hp, new Integer(1));
@@ -66,10 +70,12 @@ public class MainUI {
 		FL.add(potion, new Integer(2));
 		FL.add(light, new Integer(2));
 		FL.add(bluePotion, new Integer(2));
+		FL.add(itemDescription, new Integer(2));
 		key.setVisible(false);
 		potion.setVisible(false);
 		light.setVisible(false);
 		bluePotion.setVisible(false);
+		itemDescription.setVisible(false);
 	}
 	
 	public void changeHP(int value)
@@ -112,6 +118,35 @@ public class MainUI {
 
 		default:
 			break;
+		}
+	}
+	
+	public void showItemDescription(int itemID)
+	{
+		if(itemDescription.isVisible())
+			itemDescription.setVisible(false);
+		else 
+		{
+			switch (itemID) {
+			case 1:
+				itemDescription.setIcon(new ImageIcon("res/keyUI.png"));
+				itemDescription.setVisible(true);
+				break;
+			case 2:
+				itemDescription.setIcon(new ImageIcon("res/potionUI.png"));
+				itemDescription.setVisible(true);
+				break;
+			case 3:
+				itemDescription.setVisible(true);
+				break;
+			case 4:
+				itemDescription.setIcon(new ImageIcon("res/blueUI.png"));
+				itemDescription.setVisible(true);
+				break;
+
+			default:
+				break;
+			}
 		}
 	}
 	
