@@ -25,6 +25,7 @@ import gfx.SpriteSheet;
 import jdk.nashorn.internal.ir.ContinueNode;
 import level.Level;
 import level.Level1;
+import level.StartLevel;
 import level.LevelFloor;
 import sun.swing.UIAction;
 import ui.Dialog;
@@ -56,6 +57,9 @@ public class Game extends Canvas implements Runnable {
 	// levels
 	public Level levelFloor;
 	public Level level1;
+	
+	public Level startLevel;
+	public Font font;
 
 	public Player player;
 
@@ -105,7 +109,6 @@ public class Game extends Canvas implements Runnable {
 
 		frame.setVisible(true);
 		npc1 = new NPC1();
-
 	}
 
 	public void init() {
@@ -138,13 +141,13 @@ public class Game extends Canvas implements Runnable {
 		treasureBoxGhost=new TreasureBox(level1, 0);
 		// a table with purple potion on it
 		table=new Table(level1,2);
-		// 0 stands for no-item box
-		treasureBoxPotion = new TreasureBox(level1, 2);
-		treasureBoxKey = new TreasureBox(level1, 1);
-		treasureBoxGhost = new TreasureBox(level1, 0);
+
 
 		player = new Player(level1, 0, 0, input);
-		level1.addEntity(player);
+		//level1.addEntity(player);
+
+		//each audioplayer object plays a song
+		//Play Bgm by new AudioPlay
 
 		// each audioplayer object plays a song
 		// Play Bgm by new AudioPlay
@@ -262,6 +265,7 @@ public class Game extends Canvas implements Runnable {
 		level1.renderTiles(screen, xOffset, yOffset);
 		level1.renderEntities(screen);
 
+		
 		startMenu();
 
 		for (int y = 0; y < screen.height; y++) {
@@ -302,6 +306,7 @@ public class Game extends Canvas implements Runnable {
 			if (startIsSelected && input.enter.getKeyDown()) {
 				// start game
 				gameStarted = true;
+				level1.addEntity(player);
 			} else if (endIsSelected && input.enter.getKeyDown()) {
 				// do end application
 				System.out.println("close application");
