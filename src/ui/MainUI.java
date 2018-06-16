@@ -20,6 +20,7 @@ public class MainUI {
 	private JLabel inventory;
 	private JLabel key;
 	private JLabel potion;
+	private JLabel light;
 	private JLayeredPane pane;
 	
 	public MainUI()
@@ -34,12 +35,14 @@ public class MainUI {
 		inventory = new JLabel();
 		key = new JLabel();
 		potion = new JLabel();
+		light = new JLabel();
 		
 		// set position and dimension
 		hp.setBounds(25, 25, 236, 70);
 		inventory.setBounds(Game.WIDTH+260, Game.HEIGHT + 560, 496, 167);
 		key.setBounds(Game.WIDTH+285, Game.HEIGHT + 635, 65, 65);
 		potion.setBounds(Game.WIDTH+365, Game.HEIGHT + 635, 65, 65);
+		light.setBounds(Game.WIDTH+440, Game.HEIGHT + 635, 65, 65);
 		
 		//add image
 		ImageIcon icon = new ImageIcon("res/hp3.png");
@@ -50,15 +53,17 @@ public class MainUI {
 		inventory.setIcon(icon2);
 		key.setIcon(new ImageIcon("res/key.png"));
 		potion.setIcon(new ImageIcon("res/potion.png"));
+		light.setIcon(new ImageIcon("res/light.png"));
 		
 		//add to frame
 		FL.add(hp, new Integer(1));
 		FL.add(inventory, new Integer(1));
 		FL.add(key, new Integer(2));
 		FL.add(potion, new Integer(2));
+		FL.add(light, new Integer(2));
 		key.setVisible(false);
 		potion.setVisible(false);
-		
+		light.setVisible(false);
 	}
 	
 	public void changeHP(int value)

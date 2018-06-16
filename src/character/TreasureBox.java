@@ -18,7 +18,7 @@ public class TreasureBox extends NPC{
 		
 		super(1);
 		sound = new AudioPlayer("res/Audios/open_box.wav");
-		ID = itemID;
+		ID = itemID; 
 		msg.add("Items acquired!!");
 		msg.add("ENDOFLINE");
 		// take real level1 as parameter 
