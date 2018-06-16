@@ -12,6 +12,7 @@ public class BasicTile extends Tile{
 		super(id, false, false);
 		this.tileID = x + y*32;
 		this.tileColour = tileColour;
+		this.solid = false;
 	}
 	
 	public BasicTile(int id, int x, int y, int tileColour, int levelColour) {
