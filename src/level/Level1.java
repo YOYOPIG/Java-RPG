@@ -69,7 +69,7 @@ public class Level1 extends Level {
 		
 		
 	}
-	
+	@ Override
 	public void renderingOpen(int position,int ID) {
 		if(ID==0) {
 			tiles[position] = Tile.Ghost11.getID();
@@ -77,11 +77,25 @@ public class Level1 extends Level {
 			tiles[position+width] = Tile.Ghost21.getID();
 			tiles[position+1+width] = Tile.Ghost22.getID();
 		}
-		else {
+		else{
 			tiles[position] = Tile.ChestOpen11.getID();
 			tiles[position+1] = Tile.ChestOpen12.getID();
 			tiles[position+width] = Tile.ChestOpen21.getID();
 			tiles[position+1+width] = Tile.ChestOpen22.getID();
+		}
+	}
+	
+	@ Override
+	public void renderingOpen(int position,int ID,int widthCount) {
+		if(ID==2) {
+			tiles[position+widthCount*width] = Tile.TableWithoutItem11.getID();
+			tiles[position+1+widthCount*width] = Tile.TableWithoutItem12.getID();
+			tiles[position+(widthCount+1)*width] = Tile.TableWithoutItem21.getID();
+			tiles[position+1+(widthCount+1)*width] = Tile.TableWithoutItem22.getID();
+			tiles[position+2+widthCount*width] = Tile.TableWithoutItem31.getID();
+			tiles[position+3+widthCount*width] = Tile.TableWithoutItem32.getID();
+			tiles[position+2+(widthCount+1)*width] = Tile.TableWithoutItem41.getID();
+			tiles[position+3+(widthCount+1)*width] = Tile.TableWithoutItem42.getID();
 		}
 	}
 	

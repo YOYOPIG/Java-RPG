@@ -65,7 +65,16 @@ public abstract class Tile {
 	public static final Tile Table41 = new BasicSolidTile(34, 4, 27, Colours.get(-1, 214, 210, 321));
 	public static final Tile Table42 = new BasicSolidTile(35, 5, 27, Colours.get(-1, 214, 210, 312));
 	
-	
+	// 9
+	public static final Tile TableWithoutItem11 = new BasicSolidTile(36, 6, 26, Colours.get(-1, 214, 210, 321));
+	public static final Tile TableWithoutItem12 = new BasicSolidTile(37, 7, 26, Colours.get(-1, 214, 210, 321));
+	public static final Tile TableWithoutItem21 = new BasicSolidTile(38, 6, 27, Colours.get(-1, 214, 210, 321));
+	public static final Tile TableWithoutItem22 = new BasicSolidTile(39, 7, 27, Colours.get(-1, 214, 210, 321));
+	// 10
+	public static final Tile TableWithoutItem31 = new BasicSolidTile(40, 8, 26, Colours.get(-1, 214, 210, 321));
+	public static final Tile TableWithoutItem32 = new BasicSolidTile(41, 9, 26, Colours.get(-1, 214, 210, 321));
+	public static final Tile TableWithoutItem41 = new BasicSolidTile(42, 8, 27, Colours.get(-1, 214, 210, 321));
+	public static final Tile TableWithoutItem42 = new BasicSolidTile(43, 9, 27, Colours.get(-1, 214, 210, 321));
 	
 	protected byte id;
 	protected boolean solid;
