@@ -122,5 +122,5 @@ public abstract class Level {
 		return tiles;
 	}
 	
-	public abstract void renderingOpen(int position);
+	public abstract void renderingOpen(int position,int ID);
 }

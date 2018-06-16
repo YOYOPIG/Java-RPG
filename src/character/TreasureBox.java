@@ -44,7 +44,7 @@ public class TreasureBox extends NPC{
 		{
 			isTalking = true;
 			// rendering opened pic
-			currentLevel.renderingOpen(position);
+			currentLevel.renderingOpen(position,ID);
 			msg.add(msg.get(0));
 			Game.dialog.showDialog(msg.remove(0));
 		}
