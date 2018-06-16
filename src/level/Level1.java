@@ -23,6 +23,8 @@ public class Level1 extends Level {
 		tiles[601] = Tile.ChestKey12.getID();
 		tiles[600+width] = Tile.ChestKey21.getID();
 		tiles[601+width] = Tile.ChestKey22.getID();
+		//	rendering walls
+//		tiles[]
 		// rendering door
 		tiles[300] =Tile.door11.getID();
 		tiles[301] =Tile.door12.getID();
