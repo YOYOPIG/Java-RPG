@@ -24,6 +24,7 @@ import gfx.SpriteSheet;
 import jdk.nashorn.internal.ir.ContinueNode;
 import level.Level;
 import level.Level1;
+import level.StartLevel;
 import level.LevelFloor;
 import ui.Dialog;
 import ui.Hint;
@@ -54,6 +55,9 @@ public class Game extends Canvas implements Runnable {
 	// levels
 	public Level levelFloor;
 	public Level level1;
+	
+	public Level startLevel;
+	public Font font;
 
 	public Player player;
 
@@ -103,7 +107,6 @@ public class Game extends Canvas implements Runnable {
 
 		frame.setVisible(true);
 		npc1 = new NPC1();
-
 	}
 
 	public void init() {
@@ -143,6 +146,9 @@ public class Game extends Canvas implements Runnable {
 
 		player = new Player(level1, 0, 0, input);
 		//level1.addEntity(player);
+
+		//each audioplayer object plays a song
+		//Play Bgm by new AudioPlay
 
 		// each audioplayer object plays a song
 		// Play Bgm by new AudioPlay
@@ -251,6 +257,7 @@ public class Game extends Canvas implements Runnable {
 		level1.renderTiles(screen, xOffset, yOffset);
 		level1.renderEntities(screen);
 
+		
 		startMenu();
 
 		for (int y = 0; y < screen.height; y++) {
