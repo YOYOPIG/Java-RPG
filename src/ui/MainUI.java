@@ -86,6 +86,7 @@ public class MainUI {
 		potion.setVisible(false);
 		light.setVisible(false);
 		bluePotion.setVisible(false);
+		//key2.setVisible(false);
 		itemDescription.setVisible(false);
 		jumpscare.setVisible(false);
 	}
@@ -154,6 +155,10 @@ public class MainUI {
 				break;
 			case 4:
 				itemDescription.setIcon(new ImageIcon("res/blueUI2.png"));
+				itemDescription.setVisible(true);
+				break;
+			case 5:
+				itemDescription.setIcon(new ImageIcon("res/key2UI.png"));
 				itemDescription.setVisible(true);
 				break;
 
