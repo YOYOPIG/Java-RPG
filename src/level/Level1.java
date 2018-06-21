@@ -62,10 +62,10 @@ public class Level1 extends Level {
 		tiles[8+29*width] =Tile.DoorBetweenR1AndHallway21.getID();
 		tiles[9+29*width] =Tile.DoorBetweenR1AndHallway22.getID();
 		
-		tiles[15+36*width] = Tile.DoorBetweenR2AndHallway11.getID();
-		tiles[16+36*width] = Tile.DoorBetweenR2AndHallway12.getID();
-		tiles[15+37*width] = Tile.DoorBetweenR2AndHallway21.getID();
-		tiles[16+37*width] = Tile.DoorBetweenR2AndHallway22.getID();
+//		tiles[15+36*width] = Tile.DoorBetweenR2AndHallway11.getID();
+//		tiles[16+36*width] = Tile.DoorBetweenR2AndHallway12.getID();
+//		tiles[15+37*width] = Tile.DoorBetweenR2AndHallway21.getID();
+//		tiles[16+37*width] = Tile.DoorBetweenR2AndHallway22.getID();
 
 		
 //		tiles[30+32*width] = Tile.DoorBetweenR3AndHallway11.getID();
@@ -73,6 +73,7 @@ public class Level1 extends Level {
 //		tiles[30+33*width] = Tile.DoorBetweenR3AndHallway21.getID();
 //		tiles[31+33*width] = Tile.DoorBetweenR3AndHallway22.getID();
 		
+
 
 
 //		tiles[30+32*width] = Tile.DoorBetweenR3AndHallway11.getID();
@@ -108,6 +109,16 @@ public class Level1 extends Level {
 		tiles[44+24*width] = Tile.lattern12.getID();
 		tiles[43+25*width] =  Tile.lattern21.getID();
 		tiles[44+25*width] = Tile.lattern22.getID();
+		
+		//rendering deadbody 
+		tiles[20+40*width] = Tile.DeadBody11.getID();
+		tiles[21+40*width] = Tile.DeadBody12.getID();
+		tiles[20+41*width] = Tile.DeadBody21.getID();
+		tiles[21+41*width] = Tile.DeadBody22.getID();
+		tiles[22+40*width] = Tile.DeadBody31.getID();
+		tiles[23+40*width] = Tile.DeadBody32.getID();
+		tiles[22+41*width] = Tile.DeadBody41.getID();
+		tiles[23+41*width] = Tile.DeadBody42.getID();
 		
 		
 		// rendering candles

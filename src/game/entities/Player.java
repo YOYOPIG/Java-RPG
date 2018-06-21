@@ -104,5 +104,4 @@ public class Player extends Mob{
 		}
 		return false;
 	}
-
 }
