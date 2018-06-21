@@ -40,6 +40,7 @@ public class Game extends Canvas implements Runnable {
 	//player tile
 	public int playerXTile=0;
 	public int playerYTile=0;
+	public boolean light=false;
 	public static Game game;
 
 	private static final long serialVersionUID = 1L;
