@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.xml.stream.events.Namespace;
 
 import audio.AudioPlayer;
+import character.Candle;
 import character.Door;
 import character.Ghost;
 import character.NPC;
@@ -75,6 +76,7 @@ public class Game extends Canvas implements Runnable {
 	private TreasureBox treasureBoxGhost;
 	private Table table;
 	private Door doorR1ToHallway;
+	private Candle candle;
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
@@ -150,12 +152,12 @@ public class Game extends Canvas implements Runnable {
 		
 		// passing current level to treasureBox
 		// 0 stands for no-item box
-		treasureBoxPotion = new TreasureBox(level1, 4 ,600);
+		player = new Player(level1, 0, 0, input);
 		treasureBoxGhost = new TreasureBox(level1, 0,400);
+		npc1 = new NPC1(level1,1,455);
 		// a table with purple potion on it
 		table=new Table(level1,2,3+3*Level.width);
-		npc1 = new NPC1(level1,1,455);
-		player = new Player(level1, 0, 0, input);
+		treasureBoxPotion = new TreasureBox(level1, 4 ,600);
 		doorR1ToHallway = new Door(level1, 5, 1800);
 
 		// each audioplayer object plays a song
@@ -271,6 +273,8 @@ public class Game extends Canvas implements Runnable {
 				table.talkTo(3);
 			} else if(NPCID==4 || NPCID==14) {
 				doorR1ToHallway.talkTo();
+			} else if(NPCID==15) {
+				candle.talkTo();
 			}
 		}
 		levelFloor.tick();

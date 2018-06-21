@@ -29,9 +29,11 @@ public abstract class NPC {
 			Game.dialog.hideDialog();
 			isTalking=false;
 			setNormalDialog();
+			System.out.println("here!!");
 		}
 		else
 		{
+			System.out.println("here for first!");
 			isTalking = true;
 			Game.dialog.showDialog(msg.remove(0));
 			if( !msg.isEmpty() && msg.get(0).equals("Item acquired!"))
