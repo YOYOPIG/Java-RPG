@@ -159,7 +159,7 @@ public class Game extends Canvas implements Runnable {
 		
 		// passing current level to treasureBox
 		// 0 stands for no-item box
-		player = new Player(level1, 0, 0, input);
+		player = new Player(level1, 33*8,33*8, input);
 		treasureBoxGhost = new TreasureBox(level1, 0,400);
 		npc1 = new NPC1(level1,1,455);
 		deadBody1 = new DeadBody(level1, 9, 20+40*64);
@@ -256,10 +256,10 @@ public class Game extends Canvas implements Runnable {
 				level1.renderingOpen( npc1.getPosition(),npc1.getID());
 				gameOver=true;
 			}
-			else if(input.item4.getKeyDown() && ui.getBluePotionVisibility() && NPCID==19) {
+			else if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==19) {
 				System.out.println("hit!");
 			}
-			else if(input.item4.getKeyDown() && ui.getBluePotionVisibility() && NPCID==20) {
+			else if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==20) {
 				System.out.println("hit!");
 			}
 			else if(input.item1.getKeyDown() && ui.getKeyVisibility() && NPCID==4) {

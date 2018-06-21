@@ -24,6 +24,7 @@ public class MainUI {
 	private JLabel bluePotion;
 	private JLabel key2;
 	private JLabel itemDescription;
+	private JLabel jumpscare;
 	private JLayeredPane pane;
 	
 	public MainUI()
@@ -42,6 +43,7 @@ public class MainUI {
 		bluePotion = new JLabel();
 		key2 = new JLabel();
 		itemDescription = new JLabel();
+		jumpscare = new JLabel();
 		
 		// set position and dimension
 		//hp.setBounds(25, 25, 236, 70);
@@ -53,6 +55,7 @@ public class MainUI {
 		key2.setBounds(Game.WIDTH+590, Game.HEIGHT + 635, 65, 65);
 		//itemDescription.setBounds(Game.WIDTH+320, Game.HEIGHT + 150, 386*2, 378*2);
 		itemDescription.setBounds(Game.WIDTH+220, Game.HEIGHT, 579, 567);
+		jumpscare.setBounds(Game.WIDTH, Game.HEIGHT, 900, 601);
 		
 		//add image
 		ImageIcon icon = new ImageIcon("res/hp3.png");
@@ -67,6 +70,7 @@ public class MainUI {
 		bluePotion.setIcon(new ImageIcon("res/blue_potion.png"));
 		itemDescription.setIcon(new ImageIcon("res/keyUI.png"));
 		key2.setIcon(new ImageIcon("res/key2.png"));
+		jumpscare.setIcon(new ImageIcon("res/jump scare.jpg"));
 		
 		//add to frame
 		//FL.add(hp, new Integer(1));
@@ -77,11 +81,13 @@ public class MainUI {
 		FL.add(bluePotion, new Integer(2));
 		FL.add(key2, new Integer(2));
 		FL.add(itemDescription, new Integer(2));
+		FL.add(jumpscare, new Integer(3));
 		key.setVisible(false);
 		potion.setVisible(false);
 		light.setVisible(false);
 		bluePotion.setVisible(false);
 		itemDescription.setVisible(false);
+		jumpscare.setVisible(false);
 	}
 	
 	public void changeHP(int value)
@@ -155,6 +161,11 @@ public class MainUI {
 				break;
 			}
 		}
+	}
+	
+	public void jumpScare()
+	{
+		jumpscare.setVisible(true);
 	}
 	
 	public boolean getKeyVisibility() {
