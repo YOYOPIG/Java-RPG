@@ -145,6 +145,12 @@ public abstract class Tile {
 	public static final Tile litCandle21 = new BasicSolidTile(86, 10, 25, Colours.get(-1, 500, 542, 555));
 	public static final Tile litCandle22 = new BasicSolidTile(87, 11, 25, Colours.get(-1, 500, 542, 555));
 	
+	//22
+	public static final Tile sign11 = new BasicSolidTile(88, 12, 26, Colours.get(-1, 530, 542, 555));
+	public static final Tile sign12 = new BasicSolidTile(89, 13, 26, Colours.get(-1, 530, 542, 555));
+	public static final Tile sign21 = new BasicSolidTile(90, 12, 27, Colours.get(-1, 530, 542, 555));
+	public static final Tile sign22 = new BasicSolidTile(91, 13, 27, Colours.get(-1, 530, 542, 555));
+	
 	//Dark tile
 	public static final Tile Dark = new BasicTile(99, 0, 2, Colours.get(000, 000, 000, 000));
 	
