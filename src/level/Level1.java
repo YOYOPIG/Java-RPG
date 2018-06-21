@@ -120,52 +120,118 @@ public class Level1 extends Level {
 		tiles[22+41*width] = Tile.DeadBody41.getID();
 		tiles[23+41*width] = Tile.DeadBody42.getID();
 		
+		// rendering candles
+		renderingCandles();
 		
+		
+		
+	}
+	private void renderingCandles() {
 		// rendering candles
 		// top side
 		for(int i=32 ; i< 56 ; i+=2 ) {
 			if(i==40) {
-				// rendering Paint beside DoorExit
-				tiles[40+12*width] = Tile.Paint11.getID();
-				tiles[41+12*width] = Tile.Paint12.getID();
-				tiles[40+13*width] = Tile.Paint21.getID();
-				tiles[41+13*width] = Tile.Paint22.getID();
-				continue;
+					// rendering Paint beside DoorExit
+						tiles[40+12*width] = Tile.Paint11.getID();
+						tiles[41+12*width] = Tile.Paint12.getID();
+						tiles[40+13*width] = Tile.Paint21.getID();
+						tiles[41+13*width] = Tile.Paint22.getID();
+						continue;
+					}
+					else if(i==50 || i== 52) continue; // don't rendering candle to make a room for player to go to the exit
+					tiles[i+12*width] = Tile.candle11.getID();
+					tiles[i+1+12*width] = Tile.candle12.getID();
+					tiles[i+13*width] = Tile.candle21.getID();
+					tiles[i+1+13*width] = Tile.candle22.getID();
+				}
+				
+				// right side
+				for(int i=12 ; i < 36 ; i+=2 ) {
+					tiles[54+i*width] = Tile.candle11.getID();
+					tiles[55+i*width] = Tile.candle12.getID();
+					tiles[54+(i+1)*width] = Tile.candle21.getID();
+					tiles[55+(i+1)*width] = Tile.candle22.getID();
+				}
+				
+				// down side
+				for(int i=54 ; i> 32 ; i-=2 ) {
+					if(i==40) {
+						tiles[i+34*width] = Tile.specialCandle11.getID();
+						tiles[i+1+34*width] = Tile.specialCandle12.getID();
+						tiles[i+35*width] = Tile.specialCandle21.getID();
+						tiles[i+1+35*width] = Tile.specialCandle22.getID();
+					}
+					else {
+					tiles[i+34*width] = Tile.candle11.getID();
+					tiles[i+1+34*width] = Tile.candle12.getID();
+					tiles[i+35*width] = Tile.candle21.getID();
+					tiles[i+1+35*width] = Tile.candle22.getID();
+				}
 			}
-			else if(i==50 || i== 52) continue; // don't rendering candle to make a room for player to go to the exit
-			tiles[i+12*width] = Tile.candle11.getID();
-			tiles[i+1+12*width] = Tile.candle12.getID();
-			tiles[i+13*width] = Tile.candle21.getID();
-			tiles[i+1+13*width] = Tile.candle22.getID();
-		}
-		
-		// right side
-		for(int i=12 ; i < 36 ; i+=2 ) {
-			tiles[54+i*width] = Tile.candle11.getID();
-			tiles[55+i*width] = Tile.candle12.getID();
-			tiles[54+(i+1)*width] = Tile.candle21.getID();
-			tiles[55+(i+1)*width] = Tile.candle22.getID();
-		}
-		
-		// down side
-		for(int i=54 ; i> 32 ; i-=2 ) {
-			tiles[i+34*width] = Tile.candle11.getID();
-			tiles[i+1+34*width] = Tile.candle12.getID();
-			tiles[i+35*width] = Tile.candle21.getID();
-			tiles[i+1+35*width] = Tile.candle22.getID();
-		}
-		
-		// left side
-		for(int i=34 ; i > 12 ; i-=2 ) {
-			if(i==32) continue;
-			tiles[32+i*width] = Tile.candle11.getID();
-			tiles[33+i*width] = Tile.candle12.getID();
-			tiles[32+(i+1)*width] = Tile.candle21.getID();
-			tiles[33+(i+1)*width] = Tile.candle22.getID();
-		}
-		
-		
+				
+				// left side
+				for(int i=34 ; i > 12 ; i-=2 ) {
+					if(i==32) continue;
+					tiles[32+i*width] = Tile.candle11.getID();
+					tiles[33+i*width] = Tile.candle12.getID();
+					tiles[32+(i+1)*width] = Tile.candle21.getID();
+					tiles[33+(i+1)*width] = Tile.candle22.getID();
+				}
 	}
+	
+	private void renderingLitCandles() {
+		// rendering candles
+		// top side
+		for(int i=32 ; i< 56 ; i+=2 ) {
+			if(i==40) {
+					// rendering Paint beside DoorExit
+						tiles[40+12*width] = Tile.Paint11.getID();
+						tiles[41+12*width] = Tile.Paint12.getID();
+						tiles[40+13*width] = Tile.Paint21.getID();
+						tiles[41+13*width] = Tile.Paint22.getID();
+						continue;
+					}
+					else if(i==50 || i== 52) continue; // don't rendering candle to make a room for player to go to the exit
+					tiles[i+12*width] = Tile.litCandle11.getID();
+					tiles[i+1+12*width] = Tile.litCandle12.getID();
+					tiles[i+13*width] = Tile.litCandle21.getID();
+					tiles[i+1+13*width] = Tile.litCandle22.getID();
+				}
+				
+				// right side
+				for(int i=12 ; i < 36 ; i+=2 ) {
+					tiles[i+12*width] = Tile.litCandle11.getID();
+					tiles[i+1+12*width] = Tile.litCandle12.getID();
+					tiles[i+13*width] = Tile.litCandle21.getID();
+					tiles[i+1+13*width] = Tile.litCandle22.getID();
+				}
+				
+				// down side
+				for(int i=54 ; i> 32 ; i-=2 ) {
+					if(i==40) {
+						tiles[i+12*width] = Tile.litCandle11.getID();
+						tiles[i+1+12*width] = Tile.litCandle12.getID();
+						tiles[i+13*width] = Tile.litCandle21.getID();
+						tiles[i+1+13*width] = Tile.litCandle22.getID();
+					}
+					else {
+						tiles[i+12*width] = Tile.litCandle11.getID();
+						tiles[i+1+12*width] = Tile.litCandle12.getID();
+						tiles[i+13*width] = Tile.litCandle21.getID();
+						tiles[i+1+13*width] = Tile.litCandle22.getID();
+				}
+			}
+				
+				// left side
+				for(int i=34 ; i > 12 ; i-=2 ) {
+					if(i==32) continue;
+					tiles[i+12*width] = Tile.litCandle11.getID();
+					tiles[i+1+12*width] = Tile.litCandle12.getID();
+					tiles[i+13*width] = Tile.litCandle21.getID();
+					tiles[i+1+13*width] = Tile.litCandle22.getID();
+				}
+	}
+	
 	@ Override
 	public void renderingOpen(int position,int ID) {
 		if(ID==0 || ID==1) { // npc and chest
@@ -185,6 +251,9 @@ public class Level1 extends Level {
 			tiles[position+1] = Tile.FLOOR.getID();
 			tiles[position+width] = Tile.FLOOR.getID();
 			tiles[position+1+width] = Tile.FLOOR.getID();
+		}
+		else if(ID==8) { // lit the special candle
+			renderingLitCandles();
 		}
 		else{ 
 			tiles[position] = Tile.ChestOpen11.getID();

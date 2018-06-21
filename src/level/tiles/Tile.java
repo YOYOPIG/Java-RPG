@@ -139,6 +139,11 @@ public abstract class Tile {
 	public static final Tile DeadBody41 = new BasicSolidTile(82, 14, 29, Colours.get(-1, 000, 500, 543));
 	public static final Tile DeadBody42 = new BasicSolidTile(83, 15, 29, Colours.get(-1, 000, 500, 543));
 	
+	//21
+	public static final Tile litCandle11 = new BasicSolidTile(84, 10, 24, Colours.get(-1, 500, 542, 555));
+	public static final Tile litCandle12 = new BasicSolidTile(85, 11, 24, Colours.get(-1, 500, 542, 555));
+	public static final Tile litCandle21 = new BasicSolidTile(86, 10, 25, Colours.get(-1, 500, 542, 555));
+	public static final Tile litCandle22 = new BasicSolidTile(87, 11, 25, Colours.get(-1, 500, 542, 555));
 	
 	//Dark tile
 	public static final Tile Dark = new BasicTile(99, 0, 2, Colours.get(000, 000, 000, 000));

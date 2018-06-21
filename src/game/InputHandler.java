@@ -3,6 +3,7 @@ package game;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import audio.AudioPlayer;
+import game.entities.Player;
 
 /**
  * The InputHandler class implements the KeyListener class. This class can
@@ -133,6 +134,7 @@ public class InputHandler implements KeyListener {
 		
 		if (keyCode == KeyEvent.VK_3) {
 			item3.setPressed(pressStatus);
+			System.out.println(Player.itemID/4);
 		}
 		
 		if (keyCode == KeyEvent.VK_4) {

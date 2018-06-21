@@ -18,6 +18,7 @@ import character.Ghost;
 import character.Lattern;
 import character.NPC;
 import character.NPC1;
+import character.SpecialCandle;
 import character.Table;
 import character.TreasureBox;
 import game.entities.Player;
@@ -79,6 +80,7 @@ public class Game extends Canvas implements Runnable {
 	private Door doorR1ToHallway;
 	private Candle candle;
 	private Lattern lattern;
+	private SpecialCandle specialCandle;
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
@@ -163,6 +165,7 @@ public class Game extends Canvas implements Runnable {
 		doorR1ToHallway = new Door(level1, 5, 1800);
 		candle = new Candle();
 		lattern  = new Lattern(level1,7,1579);
+		specialCandle = new SpecialCandle(level1, 8, 2216);
 		// each audioplayer object plays a song
 
 		// Play Bgm by new AudioPlay
@@ -250,6 +253,9 @@ public class Game extends Canvas implements Runnable {
 			else if(input.item1.getKeyDown() && ui.getKeyVisibility() && NPCID==4) {
 				level1.renderingOpen(doorR1ToHallway.getPosition(), doorR1ToHallway.getID());
 			}
+			else if(input.item3.getKeyDown() && ui.getLightVisibility() && NPCID==16) {
+				level1.renderingOpen(specialCandle.getPosition(), specialCandle.getID());
+			}
 			
 		}
 		else //if no collide, we can see item description
@@ -282,6 +288,9 @@ public class Game extends Canvas implements Runnable {
 				candle.talkTo();
 			} else if(NPCID==17) {
 				lattern.talkTo(lattern.getPosition());
+			}
+			else if(NPCID==16) {
+				specialCandle.talkTo(specialCandle.getPosition());
 			}
 		}
 		levelFloor.tick();
