@@ -96,7 +96,7 @@ public class Level1 extends Level {
 		tiles[5+4*width] = Tile.Table41.getID();
 		tiles[6+4*width] = Tile.Table42.getID();
 		
-		// rendering key box
+		// rendering lattern 43 24
 		tiles[43+24*width] = Tile.lattern11.getID();
 		tiles[44+24*width] = Tile.lattern12.getID();
 		tiles[43+25*width] =  Tile.lattern21.getID();

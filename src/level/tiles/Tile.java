@@ -115,10 +115,10 @@ public abstract class Tile {
 	public static final Tile specialCandle22 = new BasicSolidTile(67, 8, 24, Colours.get(-1, 555, 542, 555));
 	
 	// 17 (dark gray,gray,white)
-	public static final Tile lattern11 = new BasicSolidTile(68, 10, 26, Colours.get(-1, 555, 542, 555));
-	public static final Tile lattern12 = new BasicSolidTile(69, 11, 26, Colours.get(-1, 555, 542, 555));
-	public static final Tile lattern21 = new BasicSolidTile(70, 10, 27, Colours.get(-1, 555, 542, 555));
-	public static final Tile lattern22 = new BasicSolidTile(71, 11, 27, Colours.get(-1, 555, 542, 555));
+	public static final Tile lattern11 = new BasicSolidTile(68, 10, 26, Colours.get(-1, 542, 430, 500));
+	public static final Tile lattern12 = new BasicSolidTile(69, 11, 26, Colours.get(-1, 542, 430, 500));
+	public static final Tile lattern21 = new BasicSolidTile(70, 10, 27, Colours.get(-1, 542, 430, 500));
+	public static final Tile lattern22 = new BasicSolidTile(71, 11, 27, Colours.get(-1, 542, 430, 500));
 
 	//Dark tile
 	public static final Tile Dark = new BasicTile(99, 0, 2, Colours.get(000, 000, 000, 000));
