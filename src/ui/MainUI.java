@@ -22,6 +22,7 @@ public class MainUI {
 	private JLabel potion;
 	private JLabel light;
 	private JLabel bluePotion;
+	private JLabel key2;
 	private JLabel itemDescription;
 	private JLayeredPane pane;
 	
@@ -39,6 +40,7 @@ public class MainUI {
 		potion = new JLabel();
 		light = new JLabel();
 		bluePotion = new JLabel();
+		key2 = new JLabel();
 		itemDescription = new JLabel();
 		
 		// set position and dimension
@@ -48,6 +50,7 @@ public class MainUI {
 		potion.setBounds(Game.WIDTH+365, Game.HEIGHT + 635, 65, 65);
 		light.setBounds(Game.WIDTH+440, Game.HEIGHT + 635, 65, 65);
 		bluePotion.setBounds(Game.WIDTH+512, Game.HEIGHT + 635, 65, 65);
+		key2.setBounds(Game.WIDTH+590, Game.HEIGHT + 635, 65, 65);
 		//itemDescription.setBounds(Game.WIDTH+320, Game.HEIGHT + 150, 386*2, 378*2);
 		itemDescription.setBounds(Game.WIDTH+220, Game.HEIGHT, 579, 567);
 		
@@ -63,6 +66,7 @@ public class MainUI {
 		light.setIcon(new ImageIcon("res/light.png"));
 		bluePotion.setIcon(new ImageIcon("res/blue_potion.png"));
 		itemDescription.setIcon(new ImageIcon("res/keyUI.png"));
+		key2.setIcon(new ImageIcon("res/key2.png"));
 		
 		//add to frame
 		//FL.add(hp, new Integer(1));
@@ -71,9 +75,10 @@ public class MainUI {
 		FL.add(potion, new Integer(2));
 		FL.add(light, new Integer(2));
 		FL.add(bluePotion, new Integer(2));
+		FL.add(key2, new Integer(2));
 		FL.add(itemDescription, new Integer(2));
 		key.setVisible(false);
-		potion.setVisible(false);
+		//potion.setVisible(false);
 		light.setVisible(false);
 		bluePotion.setVisible(false);
 		itemDescription.setVisible(false);
@@ -163,6 +168,9 @@ public class MainUI {
 	}
 	public boolean getBluePotionVisibility() {
 		return bluePotion.isVisible();
+	}
+	public boolean getMasterKeyVisibility() {
+		return key2.isVisible();
 	}
 
 }

@@ -20,7 +20,7 @@ public class LevelDark extends Level{
 		}
 		xtile=Game.game.playerXTile;
 		ytile=Game.game.playerYTile;
-		System.out.println("player x tile:"+Game.game.playerXTile+" play y tile:"+Game.game.playerYTile);
+		//System.out.println("player x tile:"+Game.game.playerXTile+" play y tile:"+Game.game.playerYTile);
 		if(xtile<=3)
 		{
 			xtile=3;
