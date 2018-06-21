@@ -15,6 +15,7 @@ import audio.AudioPlayer;
 import character.Candle;
 import character.Door;
 import character.Ghost;
+import character.Lattern;
 import character.NPC;
 import character.NPC1;
 import character.Table;
@@ -77,6 +78,7 @@ public class Game extends Canvas implements Runnable {
 	private Table table;
 	private Door doorR1ToHallway;
 	private Candle candle;
+	private Lattern lattern;
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
@@ -159,7 +161,8 @@ public class Game extends Canvas implements Runnable {
 		table=new Table(level1,2,3+3*Level.width);
 		treasureBoxPotion = new TreasureBox(level1, 4 ,600);
 		doorR1ToHallway = new Door(level1, 5, 1800);
-
+		candle = new Candle();
+		lattern  = new Lattern(level1,7,1231);
 		// each audioplayer object plays a song
 
 		// Play Bgm by new AudioPlay
