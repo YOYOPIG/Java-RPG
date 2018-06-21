@@ -2,8 +2,8 @@
  * This class adds the dialog pop up dialog layer into the game.
  * To show a certain message, please use the showDialog() method, using a string(ur message)
  * as argument.
- * @version 1.0
- * @since   2018-06-10
+ * @version 2.0
+ * @since   2018-06-22
  */
 
 package ui;
@@ -52,6 +52,11 @@ public class Dialog{
 	// show
 	public void showDialog(String msg)
 	{
+		if(msg.equals("JUMPSCARE"))
+		{
+			Game.ui.jumpScare();
+			msg = "ROARRRRRRR!";
+		}
 		textbox.setVisible(true);
 		textbox.setText(msg);
 	}

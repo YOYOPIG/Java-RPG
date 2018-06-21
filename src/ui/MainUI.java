@@ -22,7 +22,9 @@ public class MainUI {
 	private JLabel potion;
 	private JLabel light;
 	private JLabel bluePotion;
+	private JLabel key2;
 	private JLabel itemDescription;
+	private JLabel jumpscare;
 	private JLayeredPane pane;
 	
 	public MainUI()
@@ -39,7 +41,9 @@ public class MainUI {
 		potion = new JLabel();
 		light = new JLabel();
 		bluePotion = new JLabel();
+		key2 = new JLabel();
 		itemDescription = new JLabel();
+		jumpscare = new JLabel();
 		
 		// set position and dimension
 		//hp.setBounds(25, 25, 236, 70);
@@ -48,8 +52,10 @@ public class MainUI {
 		potion.setBounds(Game.WIDTH+365, Game.HEIGHT + 635, 65, 65);
 		light.setBounds(Game.WIDTH+440, Game.HEIGHT + 635, 65, 65);
 		bluePotion.setBounds(Game.WIDTH+512, Game.HEIGHT + 635, 65, 65);
+		key2.setBounds(Game.WIDTH+590, Game.HEIGHT + 635, 65, 65);
 		//itemDescription.setBounds(Game.WIDTH+320, Game.HEIGHT + 150, 386*2, 378*2);
 		itemDescription.setBounds(Game.WIDTH+220, Game.HEIGHT, 579, 567);
+		jumpscare.setBounds(Game.WIDTH, Game.HEIGHT, 900, 601);
 		
 		//add image
 		ImageIcon icon = new ImageIcon("res/hp3.png");
@@ -63,6 +69,8 @@ public class MainUI {
 		light.setIcon(new ImageIcon("res/light.png"));
 		bluePotion.setIcon(new ImageIcon("res/blue_potion.png"));
 		itemDescription.setIcon(new ImageIcon("res/keyUI.png"));
+		key2.setIcon(new ImageIcon("res/key2.png"));
+		jumpscare.setIcon(new ImageIcon("res/jump scare.jpg"));
 		
 		//add to frame
 		//FL.add(hp, new Integer(1));
@@ -71,12 +79,15 @@ public class MainUI {
 		FL.add(potion, new Integer(2));
 		FL.add(light, new Integer(2));
 		FL.add(bluePotion, new Integer(2));
+		FL.add(key2, new Integer(2));
 		FL.add(itemDescription, new Integer(2));
+		FL.add(jumpscare, new Integer(3));
 		key.setVisible(false);
 		potion.setVisible(false);
 		light.setVisible(false);
 		bluePotion.setVisible(false);
 		itemDescription.setVisible(false);
+		jumpscare.setVisible(false);
 	}
 	
 	public void changeHP(int value)
@@ -152,6 +163,11 @@ public class MainUI {
 		}
 	}
 	
+	public void jumpScare()
+	{
+		jumpscare.setVisible(true);
+	}
+	
 	public boolean getKeyVisibility() {
 		return key.isVisible();
 	}
@@ -163,6 +179,9 @@ public class MainUI {
 	}
 	public boolean getBluePotionVisibility() {
 		return bluePotion.isVisible();
+	}
+	public boolean getMasterKeyVisibility() {
+		return key2.isVisible();
 	}
 
 }

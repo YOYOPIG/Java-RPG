@@ -13,6 +13,7 @@ import javax.xml.stream.events.Namespace;
 
 import audio.AudioPlayer;
 import character.Candle;
+import character.DeadBody;
 import character.Door;
 import character.Ghost;
 import character.Lattern;
@@ -76,6 +77,7 @@ public class Game extends Canvas implements Runnable {
 
 	// gameObject
 	private NPC1 npc1;
+	private DeadBody deadBody1;
 	private TreasureBox treasureBoxPotion;
 	private TreasureBox treasureBoxGhost;
 	private Table table;
@@ -159,9 +161,10 @@ public class Game extends Canvas implements Runnable {
 		
 		// passing current level to treasureBox
 		// 0 stands for no-item box
-		player = new Player(level1, 33*8, 33*8, input);
+		player = new Player(level1, 33*8,33*8, input);
 		treasureBoxGhost = new TreasureBox(level1, 0,400);
 		npc1 = new NPC1(level1,1,455);
+		deadBody1 = new DeadBody(level1, 9, 20+40*64);
 		// a table with purple potion on it
 		table=new Table(level1,2,3+3*Level.width);
 		treasureBoxPotion = new TreasureBox(level1, 4 ,600);
@@ -246,13 +249,21 @@ public class Game extends Canvas implements Runnable {
 		
 		// if collide with something
 		if(Player.itemID >= 4) {
+			
 			int NPCID = Player.itemID / 4;
+			System.out.println(NPCID);
 			// press 4 and 
 			if(input.item4.getKeyDown() && ui.getBluePotionVisibility() && NPCID==1)
 				npc1.missionCompleted();
 			else if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==1) {
 				level1.renderingOpen( npc1.getPosition(),npc1.getID());
 				gameOver=true;
+			}
+			else if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==19) {
+				System.out.println("hit!");
+			}
+			else if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==20) {
+				System.out.println("hit!");
 			}
 			else if(input.item1.getKeyDown() && ui.getKeyVisibility() && NPCID==4) {
 				level1.renderingOpen(doorR1ToHallway.getPosition(), doorR1ToHallway.getID());
@@ -261,6 +272,7 @@ public class Game extends Canvas implements Runnable {
 				level1.renderingOpen(specialCandle.getPosition(), specialCandle.getID());
 			}
 			
+
 		}
 		else //if no collide, we can see item description
 		{
@@ -292,6 +304,8 @@ public class Game extends Canvas implements Runnable {
 				candle.talkTo();
 			} else if(NPCID==17) {
 				lattern.talkTo(lattern.getPosition());
+			} else if(NPCID==19||NPCID==20) {
+				deadBody1.talkTo();
 			}
 			else if(NPCID==16) {
 				specialCandle.talkTo(specialCandle.getPosition());
