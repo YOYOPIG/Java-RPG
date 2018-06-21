@@ -110,7 +110,7 @@ public class MainUI {
 		case 2:
 			potion.setVisible(true);
 			break;
-		case 3:
+		case 7:
 			light.setVisible(true);
 			break;
 		case 4:
