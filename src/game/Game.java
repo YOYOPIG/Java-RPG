@@ -159,7 +159,7 @@ public class Game extends Canvas implements Runnable {
 		table=new Table(level1,2,3+3*Level.width);
 		treasureBoxPotion = new TreasureBox(level1, 4 ,600);
 		doorR1ToHallway = new Door(level1, 5, 1800);
-
+		candle = new Candle();
 		// each audioplayer object plays a song
 
 		// Play Bgm by new AudioPlay

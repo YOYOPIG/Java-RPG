@@ -75,10 +75,10 @@ public class Level1 extends Level {
 		
 
 
-		tiles[30+32*width] = Tile.DoorBetweenR3AndHallway11.getID();
-		tiles[31+32*width] = Tile.DoorBetweenR3AndHallway12.getID();
-		tiles[30+33*width] = Tile.DoorBetweenR3AndHallway21.getID();
-		tiles[31+33*width] = Tile.DoorBetweenR3AndHallway22.getID();
+//		tiles[30+32*width] = Tile.DoorBetweenR3AndHallway11.getID();
+//		tiles[31+32*width] = Tile.DoorBetweenR3AndHallway12.getID();
+//		tiles[30+33*width] = Tile.DoorBetweenR3AndHallway21.getID();
+//		tiles[31+33*width] = Tile.DoorBetweenR3AndHallway22.getID();
 
 
 		tiles[53+12*width] = Tile.DoorExit11.getID();
