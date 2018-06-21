@@ -106,6 +106,7 @@ public class Level1 extends Level {
 		// rendering candles
 		// top side
 		for(int i=32 ; i< 56 ; i+=2 ) {
+			if(i==52) continue;
 			tiles[i+14*width] = Tile.candle11.getID();
 			tiles[i+1+14*width] = Tile.candle12.getID();
 			tiles[i+15*width] = Tile.candle21.getID();
@@ -141,25 +142,25 @@ public class Level1 extends Level {
 	}
 	@ Override
 	public void renderingOpen(int position,int ID) {
-		if(ID==0 || ID==1) {
+		if(ID==0 || ID==1) { // npc and chest
 			tiles[position] = Tile.Ghost11.getID();
 			tiles[position+1] = Tile.Ghost12.getID();
 			tiles[position+width] = Tile.Ghost21.getID();
 			tiles[position+1+width] = Tile.Ghost22.getID();
 		}
-		else if(ID == 5) {
+		else if(ID == 5) { // door open
 			tiles[position] = Tile.DoorOpen11.getID();
 			tiles[position+1] = Tile.DoorOpen12.getID();
 			tiles[position+width] = Tile.DoorOpen21.getID();
 			tiles[position+1+width] = Tile.DoorOpen22.getID();
 		}
-		else if(ID==7) {
+		else if(ID==7) { // take up the lattern
 			tiles[position] = Tile.FLOOR.getID();
 			tiles[position+1] = Tile.FLOOR.getID();
 			tiles[position+width] = Tile.FLOOR.getID();
 			tiles[position+1+width] = Tile.FLOOR.getID();
 		}
-		else{
+		else{ 
 			tiles[position] = Tile.ChestOpen11.getID();
 			tiles[position+1] = Tile.ChestOpen12.getID();
 			tiles[position+width] = Tile.ChestOpen21.getID();
