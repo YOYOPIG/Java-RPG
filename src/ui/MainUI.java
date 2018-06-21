@@ -33,7 +33,7 @@ public class MainUI {
 	public MainUI(JLayeredPane FL)
 	{
 		//initialize
-		hp = new JLabel();
+		//hp = new JLabel();
 		inventory = new JLabel();
 		key = new JLabel();
 		potion = new JLabel();
@@ -42,18 +42,19 @@ public class MainUI {
 		itemDescription = new JLabel();
 		
 		// set position and dimension
-		hp.setBounds(25, 25, 236, 70);
+		//hp.setBounds(25, 25, 236, 70);
 		inventory.setBounds(Game.WIDTH+260, Game.HEIGHT + 560, 496, 167);
 		key.setBounds(Game.WIDTH+285, Game.HEIGHT + 635, 65, 65);
 		potion.setBounds(Game.WIDTH+365, Game.HEIGHT + 635, 65, 65);
 		light.setBounds(Game.WIDTH+440, Game.HEIGHT + 635, 65, 65);
 		bluePotion.setBounds(Game.WIDTH+512, Game.HEIGHT + 635, 65, 65);
-		itemDescription.setBounds(Game.WIDTH+320, Game.HEIGHT + 150, 386, 378);
+		//itemDescription.setBounds(Game.WIDTH+320, Game.HEIGHT + 150, 386*2, 378*2);
+		itemDescription.setBounds(Game.WIDTH+220, Game.HEIGHT, 579, 567);
 		
 		//add image
 		ImageIcon icon = new ImageIcon("res/hp3.png");
 		icon = new ImageIcon(icon.getImage().getScaledInstance(236, 70, BufferedImage.SCALE_SMOOTH));
-		hp.setIcon(icon);
+		//hp.setIcon(icon);
 		ImageIcon icon2 = new ImageIcon("res/inventory2.png");
 		icon2 = new ImageIcon(icon2.getImage().getScaledInstance(496, 167, BufferedImage.SCALE_SMOOTH));
 		inventory.setIcon(icon2);
@@ -64,7 +65,7 @@ public class MainUI {
 		itemDescription.setIcon(new ImageIcon("res/keyUI.png"));
 		
 		//add to frame
-		FL.add(hp, new Integer(1));
+		//FL.add(hp, new Integer(1));
 		FL.add(inventory, new Integer(1));
 		FL.add(key, new Integer(2));
 		FL.add(potion, new Integer(2));
@@ -129,18 +130,18 @@ public class MainUI {
 		{
 			switch (itemID) {
 			case 1:
-				itemDescription.setIcon(new ImageIcon("res/keyUI.png"));
+				itemDescription.setIcon(new ImageIcon("res/keyUI2.png"));
 				itemDescription.setVisible(true);
 				break;
 			case 2:
-				itemDescription.setIcon(new ImageIcon("res/potionUI.png"));
+				itemDescription.setIcon(new ImageIcon("res/potionUI2.png"));
 				itemDescription.setVisible(true);
 				break;
 			case 3:
 				itemDescription.setVisible(true);
 				break;
 			case 4:
-				itemDescription.setIcon(new ImageIcon("res/blueUI.png"));
+				itemDescription.setIcon(new ImageIcon("res/blueUI2.png"));
 				itemDescription.setVisible(true);
 				break;
 
