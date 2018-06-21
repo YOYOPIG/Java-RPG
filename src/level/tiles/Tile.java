@@ -120,10 +120,16 @@ public abstract class Tile {
 	public static final Tile lattern21 = new BasicSolidTile(70, 10, 27, Colours.get(-1, 542, 430, 500));
 	public static final Tile lattern22 = new BasicSolidTile(71, 11, 27, Colours.get(-1, 542, 430, 500));
 
+	public static final Tile Paint11 = new BasicSolidTile(72, 10, 28, Colours.get(-1, 542, 430, 500));
+	public static final Tile Paint12 = new BasicSolidTile(73, 11, 29, Colours.get(-1, 542, 430, 500));
+	public static final Tile Paint21 = new BasicSolidTile(74, 10, 28, Colours.get(-1, 542, 430, 500));
+	public static final Tile Paint22 = new BasicSolidTile(75, 11, 29, Colours.get(-1, 542, 430, 500));
+	
+	//18 
+	
 	//Dark tile
 	public static final Tile Dark = new BasicTile(99, 0, 2, Colours.get(000, 000, 000, 000));
 	
-
 	
 	protected byte id;
 	protected boolean solid;
