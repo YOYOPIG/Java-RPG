@@ -138,6 +138,7 @@ public class MainUI {
 				itemDescription.setVisible(true);
 				break;
 			case 3:
+				itemDescription.setIcon(new ImageIcon("res/lanternUI.png"));
 				itemDescription.setVisible(true);
 				break;
 			case 4:
