@@ -18,6 +18,7 @@ import character.Ghost;
 import character.Lattern;
 import character.NPC;
 import character.NPC1;
+import character.Sign;
 import character.SpecialCandle;
 import character.Table;
 import character.TreasureBox;
@@ -82,6 +83,7 @@ public class Game extends Canvas implements Runnable {
 	private Candle candle;
 	private Lattern lattern;
 	private SpecialCandle specialCandle;
+	private Sign sign;
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
@@ -167,6 +169,7 @@ public class Game extends Canvas implements Runnable {
 		candle = new Candle();
 		lattern  = new Lattern(level1,7,1579);
 		specialCandle = new SpecialCandle(level1, 8, 2216);
+		sign = new Sign(9, 121);
 		// each audioplayer object plays a song
 
 		// Play Bgm by new AudioPlay
@@ -292,6 +295,9 @@ public class Game extends Canvas implements Runnable {
 			}
 			else if(NPCID==16) {
 				specialCandle.talkTo(specialCandle.getPosition());
+			}
+			else if(NPCID==22) {
+				sign.talkTo();
 			}
 		}
 		levelFloor.tick();

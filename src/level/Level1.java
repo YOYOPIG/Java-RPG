@@ -119,6 +119,12 @@ public class Level1 extends Level {
 
 		// rendering candles
 		renderingCandles();
+		
+		// rendering a sign
+		tiles[50 + 30 * width] = Tile.sign11.getID();
+		tiles[51 + 30 * width] = Tile.sign12.getID();
+		tiles[50 + 31 * width] = Tile.sign21.getID();
+		tiles[51 + 31 * width] = Tile.sign22.getID();
 
 	}
 
