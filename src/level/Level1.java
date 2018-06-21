@@ -81,10 +81,10 @@ public class Level1 extends Level {
 //		tiles[31+33*width] = Tile.DoorBetweenR3AndHallway22.getID();
 
 		// rendering DoorEcit on room 3
-		tiles[53+12*width] = Tile.DoorExit11.getID();
-		tiles[54+12*width] = Tile.DoorExit12.getID();
-		tiles[53+13*width] = Tile.DoorExit21.getID();
-		tiles[54+13*width] = Tile.DoorExit22.getID();
+		tiles[53+10*width] = Tile.DoorExit11.getID();
+		tiles[54+10*width] = Tile.DoorExit12.getID();
+		tiles[53+11*width] = Tile.DoorExit21.getID();
+		tiles[54+11*width] = Tile.DoorExit22.getID();
 		
 		// rendering Paint beside DoorExit
 		tiles[40+12*width] = Tile.Paint11.getID();

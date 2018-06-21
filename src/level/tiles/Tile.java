@@ -109,23 +109,23 @@ public abstract class Tile {
 	public static final Tile candle22 = new BasicSolidTile(63, 9, 25, Colours.get(-1, 111, 542, 555));
 	
 	// 16 (dark gray,gray,white)
-	public static final Tile specialCandle11 = new BasicSolidTile(64, 8, 24, Colours.get(-1, 555, 542, 555));
-	public static final Tile specialCandle12 = new BasicSolidTile(65, 8, 24, Colours.get(-1, 555, 542, 555));
-	public static final Tile specialCandle21 = new BasicSolidTile(66, 8, 24, Colours.get(-1, 555, 542, 555));
-	public static final Tile specialCandle22 = new BasicSolidTile(67, 8, 24, Colours.get(-1, 555, 542, 555));
+	public static final Tile specialCandle11 = new BasicSolidTile(64, 8, 24, Colours.get(-1, 111, 542, 555));
+	public static final Tile specialCandle12 = new BasicSolidTile(65, 9, 24, Colours.get(-1, 111, 542, 555));
+	public static final Tile specialCandle21 = new BasicSolidTile(66, 8, 25, Colours.get(-1, 111, 542, 555));
+	public static final Tile specialCandle22 = new BasicSolidTile(67, 9, 25, Colours.get(-1, 111, 542, 555));
 	
 	// 17 (dark gray,gray,white)
 	public static final Tile lattern11 = new BasicSolidTile(68, 10, 26, Colours.get(-1, 542, 430, 500));
 	public static final Tile lattern12 = new BasicSolidTile(69, 11, 26, Colours.get(-1, 542, 430, 500));
 	public static final Tile lattern21 = new BasicSolidTile(70, 10, 27, Colours.get(-1, 542, 430, 500));
 	public static final Tile lattern22 = new BasicSolidTile(71, 11, 27, Colours.get(-1, 542, 430, 500));
-
-	public static final Tile Paint11 = new BasicSolidTile(72, 10, 28, Colours.get(-1, 542, 430, 500));
-	public static final Tile Paint12 = new BasicSolidTile(73, 11, 29, Colours.get(-1, 542, 430, 500));
-	public static final Tile Paint21 = new BasicSolidTile(74, 10, 28, Colours.get(-1, 542, 430, 500));
-	public static final Tile Paint22 = new BasicSolidTile(75, 11, 29, Colours.get(-1, 542, 430, 500));
 	
-	//18 
+	// 18 
+	public static final Tile Paint11 = new BasicSolidTile(72, 10, 28, Colours.get(453, 000, 000, 543));
+	public static final Tile Paint12 = new BasicSolidTile(73, 11, 28, Colours.get(453, 000, 000, 543));
+	public static final Tile Paint21 = new BasicSolidTile(74, 10, 29, Colours.get(453, 000, 000, 543));
+	public static final Tile Paint22 = new BasicSolidTile(75, 11, 29, Colours.get(453, 000, 000, 543));
+	
 	
 	//Dark tile
 	public static final Tile Dark = new BasicTile(99, 0, 2, Colours.get(000, 000, 000, 000));
