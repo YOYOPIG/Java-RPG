@@ -146,6 +146,12 @@ public class Level1 extends Level {
 			tiles[position+width] = Tile.DoorOpen21.getID();
 			tiles[position+1+width] = Tile.DoorOpen22.getID();
 		}
+		else if(ID==7) {
+			tiles[position] = Tile.FLOOR.getID();
+			tiles[position+1] = Tile.FLOOR.getID();
+			tiles[position+width] = Tile.FLOOR.getID();
+			tiles[position+1+width] = Tile.FLOOR.getID();
+		}
 		else{
 			tiles[position] = Tile.ChestOpen11.getID();
 			tiles[position+1] = Tile.ChestOpen12.getID();
