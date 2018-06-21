@@ -29,6 +29,14 @@ public class LevelDark extends Level{
 		{
 			ytile=3;
 		}
+		if(xtile>=62)
+		{
+			xtile=62;
+		}
+		if(ytile>=62)
+		{
+			ytile=62;
+		}
 		for (int i = -3; i < 3; i++) {
 			for(int j = -3; j < 3; j++) {
 				tiles[(xtile+i)+(ytile+j)*width]=Tile.VOID.getID();
