@@ -162,7 +162,7 @@ public class Game extends Canvas implements Runnable {
 		treasureBoxPotion = new TreasureBox(level1, 4 ,600);
 		doorR1ToHallway = new Door(level1, 5, 1800);
 		candle = new Candle();
-		lattern  = new Lattern(level1,7,1231);
+		lattern  = new Lattern(level1,7,1579);
 		// each audioplayer object plays a song
 
 		// Play Bgm by new AudioPlay
@@ -278,6 +278,8 @@ public class Game extends Canvas implements Runnable {
 				doorR1ToHallway.talkTo();
 			} else if(NPCID==15) {
 				candle.talkTo();
+			} else if(NPCID==17) {
+				lattern.talkTo(lattern.getPosition());
 			}
 		}
 		levelFloor.tick();
