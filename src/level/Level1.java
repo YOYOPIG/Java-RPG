@@ -240,6 +240,7 @@ public class Level1 extends Level {
 			// tiles[40+35*width] = Tile.litCandle21.getID();
 			// tiles[41+35*width] = Tile.litCandle22.getID();
 			renderingLitCandles();
+			Game.game.light = true ;
 		} else {
 			tiles[position] = Tile.ChestOpen11.getID();
 			tiles[position + 1] = Tile.ChestOpen12.getID();

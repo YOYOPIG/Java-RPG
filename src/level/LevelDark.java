@@ -42,6 +42,11 @@ public class LevelDark extends Level{
 				tiles[(xtile+i)+(ytile+j)*width]=Tile.VOID.getID();
 			}
 		}
+		if(Game.game.light) {
+			for(int i=0;i<64*64;i++) {
+				tiles[i]=Tile.VOID.getID();
+			}
+		}
 	
 	}
 
