@@ -101,6 +101,9 @@ public abstract class Tile {
 	public static final Tile DoorOpen21 = new BasicTile(58, 6, 25, Colours.get(-1, 111, 332, 321));
 	public static final Tile DoorOpen22 = new BasicTile(59, 7, 25, Colours.get(-1, 111, 332, 321));
 	
+	//Dark tile
+	public static final Tile Dark = new BasicTile(99, 0, 2, Colours.get(000, 000, 000, 000));
+	
 	
 	protected byte id;
 	protected boolean solid;

@@ -1,9 +1,11 @@
 package level;
 
+import game.Game;
 import level.tiles.Tile;
 
 public class Level1 extends Level {
-
+	
+	
 	public Level1(int height, int width) {
 		super(height, width);
 	}
@@ -12,7 +14,6 @@ public class Level1 extends Level {
 		for(int i=0;i<64*64;i++) {
 			tiles[i]=Tile.VOID.getID();
 		}
-		
 		// rendering walls
 		for (int i = 0; i < 30; i++) {
 			if(i == 8 || i == 9)	continue;
