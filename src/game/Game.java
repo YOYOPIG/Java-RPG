@@ -157,7 +157,8 @@ public class Game extends Canvas implements Runnable {
 		
 		// passing current level to treasureBox
 		// 0 stands for no-item box
-		player = new Player(level1, 33*8, 33*8, input);
+		//player = new Player(level1, 33*8, 33*8, input);
+		player = new Player(level1, 0, 0, input);
 		treasureBoxGhost = new TreasureBox(level1, 0,400);
 		npc1 = new NPC1(level1,1,455);
 		// a table with purple potion on it
