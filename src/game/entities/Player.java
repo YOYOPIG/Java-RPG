@@ -23,10 +23,10 @@ public class Player extends Mob{
 		int ya = 0;
 
 		// player moves
-		if(input.up.getPressed())	ya-=2;
-		if(input.down.getPressed())	ya+=2;
-		if(input.right.getPressed())xa+=2;
-		if(input.left.getPressed())	xa-=2;
+		if(input.up.getPressed())	ya--;
+		if(input.down.getPressed())	ya++;
+		if(input.right.getPressed())xa++;
+		if(input.left.getPressed())	xa--;
 		
 		if(xa != 0 || ya != 0) {
 			//System.out.println("condition is good!");
