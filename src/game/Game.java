@@ -25,6 +25,7 @@ import gfx.Screen;
 import gfx.SpriteSheet;
 import level.Level;
 import level.Level1;
+import level.LevelDark;
 import level.StartLevel;
 import level.LevelFloor;
 import ui.Dialog;
@@ -32,6 +33,11 @@ import ui.Hint;
 import ui.MainUI;
 
 public class Game extends Canvas implements Runnable {
+	
+	//player tile
+	public int playerXTile=0;
+	public int playerYTile=0;
+	public static Game game;
 
 	private static final long serialVersionUID = 1L;
 
@@ -56,6 +62,7 @@ public class Game extends Canvas implements Runnable {
 	// levels
 	public Level levelFloor;
 	public Level level1;
+	public Level levelDark;
 
 	public Level startLevel;
 	public Font font;
@@ -136,6 +143,11 @@ public class Game extends Canvas implements Runnable {
 		// level initialization
 		levelFloor = new LevelFloor(64, 64);
 		level1 = new Level1(64, 64);
+		
+		//**********************************************
+		levelDark = new LevelDark(64, 64);
+		//**********************************************
+		
 		// passing current level to treasureBox
 		// 0 stands for no-item box
 		treasureBoxPotion = new TreasureBox(level1, 4 ,600);
@@ -231,7 +243,6 @@ public class Game extends Canvas implements Runnable {
 				gameOver=true;
 			}
 			else if(input.item1.getKeyDown() && ui.getKeyVisibility() && NPCID==4) {
-				System.out.println("hey!!");
 				level1.renderingOpen(doorR1ToHallway.getPosition(), doorR1ToHallway.getID());
 			}
 			
@@ -264,6 +275,10 @@ public class Game extends Canvas implements Runnable {
 		}
 		levelFloor.tick();
 		level1.tick();
+
+		//**********************************************
+		levelDark.tick();
+		//**********************************************
 	}
 
 	public void render() {
@@ -276,14 +291,20 @@ public class Game extends Canvas implements Runnable {
 		double yOffset = player.y - (screen.height / 2);
 
 		//System.out.println("player x:"+player.x+" play y:"+player.y);
-		int playerXTile=player.x/8+1;
-		int playerYTile=player.y/8+1;
-		System.out.println("player x tile:"+playerXTile+" play y tile:"+playerYTile);
+		playerXTile=player.x/8+1;
+		playerYTile=player.y/8+1;
+		//System.out.println("player x tile:"+playerXTile+" play y tile:"+playerYTile);
 		
 		levelFloor.renderTiles(screen, xOffset, yOffset);
 		levelFloor.renderEntities(screen);
 		level1.renderTiles(screen, xOffset, yOffset);
 		level1.renderEntities(screen);
+		
+
+		//**********************************************
+		levelDark.renderTiles(screen, xOffset, yOffset);
+		levelDark.renderEntities(screen);
+		//**********************************************
 
 		startMenu();
 
@@ -358,7 +379,9 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		new Game().start();
+		game = new Game();
+		game.start();
+		
 	}
 
 }

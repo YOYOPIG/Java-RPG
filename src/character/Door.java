@@ -23,7 +23,7 @@ public class Door extends NPCWithItem{
 	@Override
 	public void setNormalDialog() {
 		msg.clear();
-		msg.add("Seems like locked.");
+		msg.add("Seems locked.");
 	}
 
 }

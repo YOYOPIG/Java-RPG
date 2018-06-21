@@ -1,9 +1,11 @@
 package level;
 
+import game.Game;
 import level.tiles.Tile;
 
 public class Level1 extends Level {
-
+	
+	
 	public Level1(int height, int width) {
 		super(height, width);
 	}
@@ -12,7 +14,6 @@ public class Level1 extends Level {
 		for(int i=0;i<64*64;i++) {
 			tiles[i]=Tile.VOID.getID();
 		}
-		
 		// rendering walls
 		for (int i = 0; i < 30; i++) {
 			if(i == 8 || i == 9)	continue;
@@ -65,12 +66,21 @@ public class Level1 extends Level {
 		tiles[16+36*width] = Tile.DoorBetweenR2AndHallway12.getID();
 		tiles[15+37*width] = Tile.DoorBetweenR2AndHallway21.getID();
 		tiles[16+37*width] = Tile.DoorBetweenR2AndHallway22.getID();
+
 		
 //		tiles[30+32*width] = Tile.DoorBetweenR3AndHallway11.getID();
 //		tiles[31+32*width] = Tile.DoorBetweenR3AndHallway12.getID();
 //		tiles[30+33*width] = Tile.DoorBetweenR3AndHallway21.getID();
 //		tiles[31+33*width] = Tile.DoorBetweenR3AndHallway22.getID();
 		
+
+
+		tiles[30+32*width] = Tile.DoorBetweenR3AndHallway11.getID();
+		tiles[31+32*width] = Tile.DoorBetweenR3AndHallway12.getID();
+		tiles[30+33*width] = Tile.DoorBetweenR3AndHallway21.getID();
+		tiles[31+33*width] = Tile.DoorBetweenR3AndHallway22.getID();
+
+
 		tiles[53+12*width] = Tile.DoorExit11.getID();
 		tiles[54+12*width] = Tile.DoorExit12.getID();
 		tiles[53+13*width] = Tile.DoorExit21.getID();
@@ -85,6 +95,40 @@ public class Level1 extends Level {
 		tiles[6+3*width] = Tile.Table32.getID();
 		tiles[5+4*width] = Tile.Table41.getID();
 		tiles[6+4*width] = Tile.Table42.getID();
+		
+		// rendering candles
+		// top side
+		for(int i=32 ; i< 56 ; i+=2 ) {
+			tiles[i+14*width] = Tile.candle11.getID();
+			tiles[i+1+14*width] = Tile.candle12.getID();
+			tiles[i+15*width] = Tile.candle21.getID();
+			tiles[i+1+15*width] = Tile.candle22.getID();
+		}
+		
+		// right side
+		for(int i=14 ; i < 36 ; i+=2 ) {
+			tiles[54+i*width] = Tile.candle11.getID();
+			tiles[55+i*width] = Tile.candle12.getID();
+			tiles[54+(i+1)*width] = Tile.candle21.getID();
+			tiles[55+(i+1)*width] = Tile.candle22.getID();
+		}
+		
+		// down side
+		for(int i=54 ; i> 32 ; i-=2 ) {
+			tiles[i+34*width] = Tile.candle11.getID();
+			tiles[i+1+34*width] = Tile.candle12.getID();
+			tiles[i+35*width] = Tile.candle21.getID();
+			tiles[i+1+35*width] = Tile.candle22.getID();
+		}
+		
+		// left side
+		for(int i=34 ; i > 12 ; i-=2 ) {
+			if(i==32) continue;
+			tiles[32+i*width] = Tile.candle11.getID();
+			tiles[33+i*width] = Tile.candle12.getID();
+			tiles[32+(i+1)*width] = Tile.candle21.getID();
+			tiles[33+(i+1)*width] = Tile.candle22.getID();
+		}
 		
 		
 	}
