@@ -82,10 +82,10 @@ public class Level1 extends Level {
 //		tiles[31+33*width] = Tile.DoorBetweenR3AndHallway22.getID();
 
 		// rendering DoorEcit on room 3
-		tiles[53+12*width] = Tile.DoorExit11.getID();
-		tiles[54+12*width] = Tile.DoorExit12.getID();
-		tiles[53+13*width] = Tile.DoorExit21.getID();
-		tiles[54+13*width] = Tile.DoorExit22.getID();
+		tiles[53+10*width] = Tile.DoorExit11.getID();
+		tiles[54+10*width] = Tile.DoorExit12.getID();
+		tiles[53+11*width] = Tile.DoorExit21.getID();
+		tiles[54+11*width] = Tile.DoorExit22.getID();
 		
 		// rendering Paint beside DoorExit
 		tiles[40+12*width] = Tile.Paint11.getID();
@@ -160,25 +160,25 @@ public class Level1 extends Level {
 	}
 	@ Override
 	public void renderingOpen(int position,int ID) {
-		if(ID==0 || ID==1) {
+		if(ID==0 || ID==1) { // npc and chest
 			tiles[position] = Tile.Ghost11.getID();
 			tiles[position+1] = Tile.Ghost12.getID();
 			tiles[position+width] = Tile.Ghost21.getID();
 			tiles[position+1+width] = Tile.Ghost22.getID();
 		}
-		else if(ID == 5) {
+		else if(ID == 5) { // door open
 			tiles[position] = Tile.DoorOpen11.getID();
 			tiles[position+1] = Tile.DoorOpen12.getID();
 			tiles[position+width] = Tile.DoorOpen21.getID();
 			tiles[position+1+width] = Tile.DoorOpen22.getID();
 		}
-		else if(ID==7) {
+		else if(ID==7) { // take up the lattern
 			tiles[position] = Tile.FLOOR.getID();
 			tiles[position+1] = Tile.FLOOR.getID();
 			tiles[position+width] = Tile.FLOOR.getID();
 			tiles[position+1+width] = Tile.FLOOR.getID();
 		}
-		else{
+		else{ 
 			tiles[position] = Tile.ChestOpen11.getID();
 			tiles[position+1] = Tile.ChestOpen12.getID();
 			tiles[position+width] = Tile.ChestOpen21.getID();
