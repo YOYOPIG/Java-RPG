@@ -90,7 +90,6 @@ public abstract class Level {
 				getTile(x,y).render(screen, this, x<<3, y<<3);
 			}
 		}
-		generateLevel();
 		
 	}
 

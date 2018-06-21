@@ -1,6 +1,7 @@
 package level;
 
 import game.Game;
+import gfx.Screen;
 import level.tiles.Tile;
 
 public class LevelDark extends Level{
@@ -46,6 +47,25 @@ public class LevelDark extends Level{
 	public void renderingOpen(int position, int ID, int widthCount) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public void renderTiles(Screen screen, double xOffset, double yOffset){
+		if(xOffset<=0)	xOffset = 0;
+		if(xOffset>((width<<3) - screen.width))	xOffset = ((width<<3) - screen.width);
+		if(yOffset<=0)	yOffset = 0;
+		if(yOffset>((height<<3) - screen.height))	yOffset = ((height<<3) - screen.height);
+		
+		screen.setOffset(xOffset, yOffset);
+		
+		for(int y=0; y<height; y++)
+		{
+			for(int x=0; x<width; x++)
+			{
+				getTile(x,y).render(screen, this, x<<3, y<<3);
+			}
+		}
+		generateLevel();
 	}
 
 }
