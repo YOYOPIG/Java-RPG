@@ -317,6 +317,7 @@ public class Game extends Canvas implements Runnable {
 				gameOverMusic.loop();
 				gameOverMusicPlaying=true;
 			}
+			NPC.isTalking = true;
 			Font.render("Game Over!", screen, WIDTH / 2 - "Game Over!".length() * 8 / 2 + (int) xOffset,
 					20 + (int) yOffset, Colours.get(333, -1, -1, 555));
 			Font.render("You Die!", screen, WIDTH / 2 - "You Die!".length() * 8 / 2 + (int) xOffset,
