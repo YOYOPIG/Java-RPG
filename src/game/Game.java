@@ -19,6 +19,7 @@ import character.Ghost;
 import character.Lattern;
 import character.NPC;
 import character.NPC1;
+import character.SpecialCandle;
 import character.Table;
 import character.TreasureBox;
 import game.entities.Player;
@@ -81,6 +82,7 @@ public class Game extends Canvas implements Runnable {
 	private Door doorR1ToHallway;
 	private Candle candle;
 	private Lattern lattern;
+	private SpecialCandle specialCandle;
 	// UI
 	public static Dialog dialog;
 	public static Hint hint;
@@ -156,7 +158,7 @@ public class Game extends Canvas implements Runnable {
 		
 		// passing current level to treasureBox
 		// 0 stands for no-item box
-		player = new Player(level1, 33*8, 33*8, input);
+		player = new Player(level1, 0, 0, input);
 		treasureBoxGhost = new TreasureBox(level1, 0,400);
 		npc1 = new NPC1(level1,1,455);
 		deadBody1 = new DeadBody(level1, 9, 20+40*64);
@@ -166,6 +168,7 @@ public class Game extends Canvas implements Runnable {
 		doorR1ToHallway = new Door(level1, 5, 1800);
 		candle = new Candle();
 		lattern  = new Lattern(level1,7,1579);
+		specialCandle = new SpecialCandle(level1, 8, 2216);
 		// each audioplayer object plays a song
 
 		// Play Bgm by new AudioPlay
@@ -242,7 +245,9 @@ public class Game extends Canvas implements Runnable {
 		
 		// if collide with something
 		if(Player.itemID >= 4) {
+			
 			int NPCID = Player.itemID / 4;
+			System.out.println(NPCID);
 			// press 4 and 
 			if(input.item4.getKeyDown() && ui.getBluePotionVisibility() && NPCID==1)
 				npc1.missionCompleted();
@@ -250,17 +255,20 @@ public class Game extends Canvas implements Runnable {
 				level1.renderingOpen( npc1.getPosition(),npc1.getID());
 				gameOver=true;
 			}
+			else if(input.item4.getKeyDown() && ui.getBluePotionVisibility() && NPCID==19) {
+				System.out.println("hit!");
+			}
+			else if(input.item4.getKeyDown() && ui.getBluePotionVisibility() && NPCID==20) {
+				System.out.println("hit!");
+			}
 			else if(input.item1.getKeyDown() && ui.getKeyVisibility() && NPCID==4) {
 				level1.renderingOpen(doorR1ToHallway.getPosition(), doorR1ToHallway.getID());
 			}
-			if(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==19) {
-				System.out.println("yee");
-				deadBody1.missionCompleted();
+			else if(input.item3.getKeyDown() && ui.getLightVisibility() && NPCID==16) {
+				level1.renderingOpen(specialCandle.getPosition(), specialCandle.getID());
 			}
-			System.out.println("1"+input.item2.getKeyDown());
-			System.out.println("2"+ui.getPotionVisibility());
-			System.out.println("3"+ (NPCID==19));
-			//System.out.println("ID = "+(input.item2.getKeyDown() && ui.getPotionVisibility() && NPCID==19));
+			
+
 		}
 		else //if no collide, we can see item description
 		{
@@ -294,6 +302,9 @@ public class Game extends Canvas implements Runnable {
 				lattern.talkTo(lattern.getPosition());
 			} else if(NPCID==19||NPCID==20) {
 				deadBody1.talkTo();
+			}
+			else if(NPCID==16) {
+				specialCandle.talkTo(specialCandle.getPosition());
 			}
 		}
 		levelFloor.tick();

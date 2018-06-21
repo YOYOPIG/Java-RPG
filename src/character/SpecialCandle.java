@@ -2,20 +2,21 @@ package character;
 
 import level.Level;
 
-public class SpecialCandle extends 	NPCWithItem{
+public class SpecialCandle extends NPCWithItem{
 	public SpecialCandle(Level gameLevel, int itemID,int p) {
 		super(gameLevel, itemID, p);
+		msg.add("A normal candle.");
 	}
 
 	@Override
 	public void setDialog() {
-		// TODO Auto-generated method stub
+	
 		
 	}
 
 	@Override
 	public void setNormalDialog() {
-		// TODO Auto-generated method stub
-		
+		msg.clear();
+		msg.add("A normal candle.");
 	}
 }

@@ -78,7 +78,7 @@ public class MainUI {
 		FL.add(key2, new Integer(2));
 		FL.add(itemDescription, new Integer(2));
 		key.setVisible(false);
-		//potion.setVisible(false);
+		potion.setVisible(false);
 		light.setVisible(false);
 		bluePotion.setVisible(false);
 		itemDescription.setVisible(false);
