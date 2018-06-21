@@ -231,7 +231,6 @@ public class Game extends Canvas implements Runnable {
 				gameOver=true;
 			}
 			else if(input.item1.getKeyDown() && ui.getKeyVisibility() && NPCID==4) {
-				System.out.println("hey!!");
 				level1.renderingOpen(doorR1ToHallway.getPosition(), doorR1ToHallway.getID());
 			}
 			

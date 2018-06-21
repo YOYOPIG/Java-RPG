@@ -101,6 +101,17 @@ public abstract class Tile {
 	public static final Tile DoorOpen21 = new BasicTile(58, 6, 25, Colours.get(-1, 111, 332, 321));
 	public static final Tile DoorOpen22 = new BasicTile(59, 7, 25, Colours.get(-1, 111, 332, 321));
 	
+	// 15 
+	public static final Tile candle11 = new BasicSolidTile(60, 8, 24, Colours.get(-1, 111, 542, 555));
+	public static final Tile candle12 = new BasicSolidTile(61, 9, 24, Colours.get(-1, 111, 542, 555));
+	public static final Tile candle21 = new BasicSolidTile(62, 8, 25, Colours.get(-1, 111, 542, 555));
+	public static final Tile candle22 = new BasicSolidTile(63, 9, 25, Colours.get(-1, 111, 542, 555));
+	
+	// 16 (dark gray,gray,white)
+	public static final Tile specialCandle11 = new BasicSolidTile(64, 8, 24, Colours.get(-1, 555, 542, 555));
+	public static final Tile specialCandle12 = new BasicSolidTile(65, 8, 24, Colours.get(-1, 555, 542, 555));
+	public static final Tile specialCandle21 = new BasicSolidTile(66, 8, 24, Colours.get(-1, 555, 542, 555));
+	public static final Tile specialCandle22 = new BasicSolidTile(67, 8, 24, Colours.get(-1, 555, 542, 555));
 	
 	protected byte id;
 	protected boolean solid;
