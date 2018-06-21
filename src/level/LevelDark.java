@@ -15,12 +15,49 @@ public class LevelDark extends Level{
 
 	@Override
 	public void generateLevel() {
+//		if(Game.game.light) {
+//			for(int i=0;i<64*64;i++) {
+//				tiles[i]=Tile.VOID.getID();
+//			}
+//		}
+//		else {
+//			for(int i=0;i<64*64;i++) {
+//				tiles[i]=Tile.Dark.getID();
+//			}
+//			xtile=Game.game.playerXTile;
+//			ytile=Game.game.playerYTile;
+//			if(xtile<=3)
+//			{
+//				xtile=3;
+//			}
+//			if(ytile<=3)
+//			{
+//				ytile=3;
+//			}
+//			if(xtile>=62)
+//			{
+//				xtile=62;
+//			}
+//			if(ytile>=62)
+//			{
+//				ytile=62;
+//			}
+//			for (int i = -3; i < 3; i++) {
+//				for(int j = -3; j < 3; j++) {
+//					tiles[(xtile+i)+(ytile+j)*width]=Tile.VOID.getID();
+//				}
+//			}
+//		}
 		for(int i=0;i<64*64;i++) {
 			tiles[i]=Tile.Dark.getID();
 		}
+		for(int i=0;i<32;i++) {
+			for(int j=0;j<38;j++) {
+				tiles[i+j*width]=Tile.VOID.getID();
+			}
+		}
 		xtile=Game.game.playerXTile;
 		ytile=Game.game.playerYTile;
-		//System.out.println("player x tile:"+Game.game.playerXTile+" play y tile:"+Game.game.playerYTile);
 		if(xtile<=3)
 		{
 			xtile=3;
@@ -42,9 +79,12 @@ public class LevelDark extends Level{
 				tiles[(xtile+i)+(ytile+j)*width]=Tile.VOID.getID();
 			}
 		}
+//		/System.out.println(Game.game.light);
 		if(Game.game.light) {
-			for(int i=0;i<64*64;i++) {
-				tiles[i]=Tile.VOID.getID();
+			for(int i=32;i<58;i++) {
+				for(int j=0;j<38;j++) {
+					tiles[i+j*width]=Tile.VOID.getID();
+				}
 			}
 		}
 	

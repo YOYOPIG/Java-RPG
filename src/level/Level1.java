@@ -24,12 +24,14 @@ public class Level1 extends Level {
 			tiles[i + 11 * width] = Tile.STONE.getID();
 			tiles[i + 10 * width] = Tile.STONE.getID();
 		}
+		//R2 row
 		for (int i = 0; i < 55; i++) {
 			if (i == 15 || i == 16)
 				continue;
 			tiles[i + 36 * width] = Tile.STONE.getID();
 			tiles[i + 37 * width] = Tile.STONE.getID();
 		}
+		//center
 		for (int i = 0; i < height; i++) {
 			if (i == 32 || i == 33)
 				continue;
